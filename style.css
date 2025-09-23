@@ -1,23 +1,33 @@
+/* ===== Global Styles ===== */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.6;
+  background: #fafafa;
+  color: #333;
 }
 
+h1, h2, h3 {
+  margin-top: 0;
+}
+
+/* ===== Header ===== */
 header {
   text-align: center;
   background: #333;
   color: white;
   padding: 2rem;
+  position: relative;
 }
 
 header .headshot {
   width: 150px;
-  border-radius: 50%;
+  border-radius: 12px; /* soft rounded corners */
   margin-bottom: 1rem;
 }
 
+/* ===== Sections ===== */
 section {
   padding: 2rem;
   max-width: 800px;
@@ -28,15 +38,107 @@ h2 {
   color: #333;
   border-bottom: 2px solid #ddd;
   padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .project {
   margin-bottom: 1.5rem;
 }
 
+/* ===== Footer ===== */
 footer {
   text-align: center;
   background: #f4f4f4;
   padding: 1rem;
   margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* ===== Language Toggle (Slider) — labels outside track ===== */
+.lang-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+/* Hide the real checkbox */
+.lang-toggle input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Make the container wider so labels sit outside the track */
+.lang-toggle .toggle {
+  position: relative;
+  display: inline-block;
+  width: 140px;   /* overall width including labels */
+  height: 36px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Track centered within the wider container */
+.lang-toggle .track {
+  position: absolute;
+  top: 0;
+  left: 22px;     /* center the 96px track within 140px container */
+  width: 96px;
+  height: 36px;
+  background: #e5e5e5;
+  border-radius: 9999px;
+  box-shadow: inset 0 0 0 1px #d0d0d0;
+  transition: background .25s ease;
+}
+
+/* Labels now OUTSIDE the track so the thumb never covers them */
+.lang-toggle .label {
+  position: absolute;
+  top: 0; bottom: 0;
+  display: flex;
+  align-items: center;
+  font: 700 13px/1 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: #FFFFFF;               /* default */
+  pointer-events: none;
+  transition: color .25s ease;
+}
+
+.lang-toggle .label.left  { left: 0;   padding-left: 0; }
+.lang-toggle .label.right { right: 0;  padding-right: 0; }
+
+/* Active side darker for contrast */
+.lang-toggle input:not(:checked) + .toggle .label.left  { color: #111; }  /* EN active */
+.lang-toggle input:checked + .toggle .label.right       { color: #111; }  /* DE active */
+
+/* Thumb (moving circle) */
+.lang-toggle .thumb {
+  position: absolute;
+  top: 4px;
+  left: 22px;     /* start aligned with track’s left edge */
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,.18);
+  transition: transform .25s ease, background .25s ease;
+  will-change: transform;
+  z-index: 1;
+  transform: translateX(0);  /* EN */
+}
+
+/* Slide distance equals track width minus thumb width minus 2*4px gaps = 60px */
+.lang-toggle input:checked + .toggle .thumb {
+  transform: translateX(60px); /* DE */
+}
+
+/* Track color hints */
+.lang-toggle input:not(:checked) + .toggle .track { background: #e9f2ff; } /* EN */
+.lang-toggle input:checked + .toggle .track       { background: #fff0e6; } /* DE */
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .lang-toggle .thumb { transition: none; }
+}
+
 }

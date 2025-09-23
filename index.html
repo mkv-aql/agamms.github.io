@@ -5,47 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Agam Safaruddin - Portfolio</title>
   <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
   <header>
+    <div class="lang-toggle" aria-label="Language toggle">
+  <input id="langSwitch" type="checkbox" aria-label="Switch language">
+  <label for="langSwitch" class="toggle">
+      <span class="label left">EN</span>
+    <span class="track"></span>
+    <span class="thumb" id="langThumb" aria-hidden="true">EN</span>
+      <span class="label right">DE</span>
+  </label>
+</div>
+
+
     <img src="images/headshot.jpg" alt="Agam Safaruddin" class="headshot">
-    <h1>Agam Safaruddin</h1>
-    <p>Mechatronics Engineer | AI & Computer Vision Specialist</p>
+    <h1 data-en="Agam Safaruddin" data-de="Agam Safaruddin"></h1>
+    <p data-en="Mechatronics Engineer | AI & Computer Vision Specialist"
+       data-de="Mechatronik Ingenieur | KI & Computer Vision Spezialist"></p>
   </header>
 
   <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I am a Master’s graduate in Mechatronics Engineering with expertise in
-      Machine Learning, Computer Vision, and Software Engineering.
-      My projects range from <strong>human-robot collaboration</strong> to
-      <strong>AI-powered computer vision tools</strong>.
-    </p>
+    <h2 data-en="About Me" data-de="Über mich"></h2>
+    <p data-en="I am a Master’s graduate in Mechatronics Engineering with expertise in <strong>Machine Learning, Computer Vision,</strong> and <strong>Software Engineering.</strong> "
+       data-de="Ich habe einen Master in Mechatronik und verfüge über Fachwissen in <strong>Machine Learning, Computer Vision</strong> und <strong>Softwareentwicklung.</strong>"></p>
   </section>
 
   <section id="skills">
-    <h2>Skills</h2>
+    <h2 data-en="Skills" data-de="Fähigkeiten"></h2>
     <ul>
-      <li>Python, Java, C++</li>
-      <li>Machine Learning (PyTorch, TensorFlow, Scikit-Learn)</li>
-      <li>Computer Vision (OpenCV, Mediapipe, OCR)</li>
-      <li>Data Engineering (Pandas, NumPy, SQL, Airflow)</li>
-      <li>DevOps (GitHub Actions, Docker, AWS)</li>
+      <li data-en="Python, Java, C++" data-de="Python, Java, C++"></li>
+      <li data-en="Machine Learning (PyTorch, TensorFlow)" data-de="Machine Learning (PyTorch, TensorFlow)"></li>
+      <li data-en="Computer Vision (OpenCV, OCR)" data-de="Computer Vision (OpenCV, OCR)"></li>
+      <li data-en="DevOps (GitHub Actions, Docker, AWS)" data-de="DevOps (GitHub Actions, Docker, AWS)"></li>
     </ul>
   </section>
 
   <section id="projects">
-    <h2>Projects</h2>
+    <h2 data-en="Projects" data-de="Projekte"></h2>
     <div class="project">
-      <h3>Human-Robot Collaboration</h3>
-      <p>Master’s thesis using 4D cameras, OpenCV, and LSTM for real-time human action recognition.</p>
-      <a href="https://github.com/yourusername/yourproject1">View Project</a>
+      <h3 data-en="Human-Robot Collaboration" data-de="Mensch-Roboter Zusammenarbeit"></h3>
+      <p data-en="Master’s thesis using 4D cameras, OpenCV, and LSTM for real-time human action recognition."
+         data-de="Masterarbeit mit 4D-Kameras, OpenCV und LSTM zur Echtzeit-Erkennung menschlicher Aktionen."></p>
+    <a href="https://github.com/yourusername/yourproject1">View Project 1</a>
     </div>
 
-    <div class="project">
+      <div class="project">
       <h3>Street Surface Material Classification</h3>
       <p>Deep learning classifier for street-level materials using OpenCV and PyTorch.</p>
-      <a href="https://github.com/yourusername/yourproject2">View Project</a>
+      <a href="https://github.com/yourusername/yourproject2">View Project 2</a>
     </div>
   </section>
 
@@ -57,7 +66,7 @@
   </section>
 
   <footer>
-    <p>© 2025 Agam Safaruddin</p>
+    <p data-en="© 2025 Agam Safaruddin" data-de="© 2025 Agam Safaruddin"></p>
   </footer>
 </body>
 </html>
