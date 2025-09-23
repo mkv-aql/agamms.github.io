@@ -60,6 +60,7 @@ footer {
   position: absolute;
   top: 1rem;
   right: 1rem;
+  padding: 1rem;
   font: 700 13px/1 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
@@ -147,4 +148,28 @@ footer {
   .lang-toggle .thumb { transition: none; }
   .lang-toggle .track { transition: none; }
 }
+
+/* Mobile adjustments */
+@media (max-width: 550px) {
+  .lang-toggle .toggle {
+    width: 100px;   /* narrower container */
+  }
+  .lang-toggle .track {
+    left: 20px;
+    width: 60px;    /* smaller track */
+  }
+  .lang-toggle .thumb {
+    left: 20px;
+    width: 24px;
+    height: 24px;
+  }
+  /* New slide distance = 60 - 24 - 8px gaps = 28px */
+  .lang-toggle input:checked + .toggle .thumb {
+    transform: translateX(28px);
+  }
+  .lang-toggle .label {
+    font-size: 11px; /* smaller labels */
+  }
+}
+
 
