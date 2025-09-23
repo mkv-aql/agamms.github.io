@@ -55,11 +55,12 @@ footer {
   color: #666;
 }
 
-/* ===== Language Toggle (Slider) — labels outside track ===== */
+/* ===== Language Toggle (labels outside track) ===== */
 .lang-toggle {
   position: absolute;
   top: 1rem;
   right: 1rem;
+  font: 700 13px/1 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
 /* Hide the real checkbox */
@@ -69,53 +70,52 @@ footer {
   pointer-events: none;
 }
 
-/* Make the container wider so labels sit outside the track */
+/* Wider container to fit labels left/right */
 .lang-toggle .toggle {
   position: relative;
   display: inline-block;
-  width: 140px;   /* overall width including labels */
+  width: 160px;          /* overall container */
   height: 36px;
   cursor: pointer;
   user-select: none;
 }
 
-/* Track centered within the wider container */
+/* Track centered inside container */
 .lang-toggle .track {
   position: absolute;
   top: 0;
-  left: 22px;     /* center the 96px track within 140px container */
+  left: 32px;            /* centers a 96px track */
   width: 96px;
   height: 36px;
-  background: #e5e5e5;
+  background: #e9f2ff;   /* EN default */
   border-radius: 9999px;
   box-shadow: inset 0 0 0 1px #d0d0d0;
   transition: background .25s ease;
+  z-index: 0;
 }
 
-/* Labels now OUTSIDE the track so the thumb never covers them */
+/* Labels OUTSIDE the track so the thumb never covers them */
 .lang-toggle .label {
   position: absolute;
   top: 0; bottom: 0;
   display: flex;
   align-items: center;
-  font: 700 13px/1 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  color: #FFFFFF;               /* default */
+  color: #FFFFFF;
   pointer-events: none;
   transition: color .25s ease;
 }
-
-.lang-toggle .label.left  { left: 0;   padding-left: 0; }
-.lang-toggle .label.right { right: 0;  padding-right: 0; }
+.lang-toggle .label.left  { left: 0;  padding-left: 0;  content: "EN"; }
+.lang-toggle .label.right { right: 0; padding-right: 0; content: "DE"; }
 
 /* Active side darker for contrast */
 .lang-toggle input:not(:checked) + .toggle .label.left  { color: #111; }  /* EN active */
 .lang-toggle input:checked + .toggle .label.right       { color: #111; }  /* DE active */
 
-/* Thumb (moving circle) */
+/* Thumb (moving circle) — your HTML has text inside (#langThumb) */
 .lang-toggle .thumb {
   position: absolute;
   top: 4px;
-  left: 22px;     /* start aligned with track’s left edge */
+  left: 32px;            /* align with track start */
   width: 28px;
   height: 28px;
   border-radius: 50%;
@@ -123,22 +123,28 @@ footer {
   box-shadow: 0 2px 6px rgba(0,0,0,.18);
   transition: transform .25s ease, background .25s ease;
   will-change: transform;
-  z-index: 1;
   transform: translateX(0);  /* EN */
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: 700 10px/1 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: #333;
 }
 
-/* Slide distance equals track width minus thumb width minus 2*4px gaps = 60px */
+/* Slide distance: 96 - 28 - 2*4 = 60px */
 .lang-toggle input:checked + .toggle .thumb {
   transform: translateX(60px); /* DE */
 }
 
-/* Track color hints */
-.lang-toggle input:not(:checked) + .toggle .track { background: #e9f2ff; } /* EN */
-.lang-toggle input:checked + .toggle .track       { background: #fff0e6; } /* DE */
+/* Track color when DE active */
+.lang-toggle input:checked + .toggle .track {
+  background: #fff0e6; /* DE */
+}
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .lang-toggle .thumb { transition: none; }
+  .lang-toggle .track { transition: none; }
 }
 
-}
