@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects – Agam Safaruddin</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header>
+    <!-- language slider (same HTML you use on index) -->
+    <div class="lang-toggle" aria-label="Language toggle">
+      <input id="langSwitch" type="checkbox" aria-label="Switch language" />
+      <label for="langSwitch" class="toggle">
+        <span class="label left">EN</span>
+        <span class="track"></span>
+        <span class="thumb" aria-hidden="true">EN</span>
+        <span class="label right">DE</span>
+      </label>
+    </div>
+
+    <h1 data-en="Projects" data-de="Projekte"></h1>
+    <p data-en="Selected work with full details and visuals."
+       data-de="Ausgewählte Arbeiten mit Details und Bildern."></p>
+  </header>
+
+  <main class="container">
+    <div class="projects-grid">
+      <!-- Card 1: Human–Robot Collaboration -->
+      <article class="project-card">
+        <img src="images/projects/hrc/cover_HRC.jpg" alt="Human–Robot Collaboration" />
+        <h2 data-en="Human–Robot Collaboration"
+            data-de="Mensch–Roboter Zusammenarbeit"></h2>
+        <p data-en="Real-time human action recognition with LSTM and 4D camera."
+           data-de="Echtzeit-Erkennung menschlicher Aktionen mit LSTM und 4D-Kamera."></p>
+        <a class="btn"
+           href="project-human-robot.html"
+           data-en="View Project"
+           data-de="Projekt ansehen"></a>
+      </article>
+
+      <!-- Add more cards here later -->
+    </div>
+
+      <p><a class="btn" href="index.html" data-en="Back to Resume" data-de="Zurück zu Lebenslauf"></a></p>
+  </main>
+
+
+
+  <footer>
+    <p data-en="© 2025 Agam Safaruddin" data-de="© 2025 Agam Safaruddin"></p>
+  </footer>
+</body>
+</html>

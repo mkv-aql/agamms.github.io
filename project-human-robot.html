@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Human–Robot Collaboration – Project</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header>
+    <!-- language slider -->
+    <div class="lang-toggle" aria-label="Language toggle">
+      <input id="langSwitch" type="checkbox" aria-label="Switch language" />
+      <label for="langSwitch" class="toggle">
+        <span class="label left">EN</span>
+        <span class="track"></span>
+        <span class="thumb" aria-hidden="true">EN</span>
+        <span class="label right">DE</span>
+      </label>
+    </div>
+
+    <h1 data-en="Human–Robot Collaboration"
+        data-de="Mensch–Roboter Zusammenarbeit"></h1>
+    <p data-en="Real-time human action recognition with LSTM and 4D camera."
+       data-de="Echtzeit-Erkennung menschlicher Aktionen mit LSTM und 4D-Kamera."></p>
+
+    <nav class="breadcrumb">
+      <a href="index.html" data-en="Home" data-de="Start"></a> /
+      <a href="projects.html" data-en="Projects" data-de="Projekte"></a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2 data-en="Overview" data-de="Überblick"></h2>
+      <p data-en="I built a real-time Human Action Recognition pipeline using 4D camera data, OpenCV/Mediapipe for keypoints, and an LSTM model to anticipate actions for collaborative robots."
+         data-de="Ich entwickelte eine Echtzeit-Pipeline zur Erkennung menschlicher Aktionen mit 4D-Kameradaten, OpenCV/Mediapipe für Keypoints und einem LSTM-Modell zur Antizipation von Aktionen für kollaborative Roboter."></p>
+      <p data-en="My projects range from <strong>human-robot collaboration</strong> to <strong>AI-powered computer vision tools</strong>."
+         data-de="Meine Projekte reichen von der <strong>Mensch-Roboter Zusammenarbeit</strong> bis hin zu <strong>KI-gestützten Computer-Vision-Tools</strong>."></p>
+    </section>
+
+    <section>
+      <h2 data-en="Tech Stack" data-de="Technologie-Stack"></h2>
+      <ul>
+        <li data-en="Python, PyTorch, OpenCV, Mediapipe"
+            data-de="Python, PyTorch, OpenCV, Mediapipe"></li>
+        <li data-en="LSTM model for temporal classification"
+            data-de="LSTM-Modell für zeitliche Klassifikation"></li>
+        <li data-en="Flask web view for live status"
+            data-de="Flask-Ansicht für Live-Status"></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 data-en="Highlights" data-de="Highlights"></h2>
+      <ul>
+        <li data-en="Captured and preprocessed skeletal keypoints from video streams."
+            data-de="Erfassung und Vorverarbeitung von Skelett-Keypoints aus Videostreams."></li>
+        <li data-en="Trained LSTM to recognize primitive actions and compose gestures."
+            data-de="Training eines LSTM zur Erkennung primitiver Aktionen und Gestenzusammensetzung."></li>
+        <li data-en="Live inference with low latency suitable for collaboration."
+            data-de="Live-Inferenz mit geringer Latenz für die Zusammenarbeit geeignet."></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 data-en="Gallery" data-de="Galerie"></h2>
+      <div class="gallery">
+        <img src="images/projects/hrc/frame1.jpg" alt="Frame 1" />
+        <img src="images/projects/hrc/frame2.jpg" alt="Frame 2" />
+        <img src="images/projects/hrc/frame3.jpg" alt="Frame 3" />
+      </div>
+    </section>
+
+    <section>
+      <h2 data-en="Links" data-de="Links"></h2>
+      <ul>
+        <li><a href="#" data-en="Source code (private/placeholder)"
+               data-de="Quellcode (privat/Platzhalter)"></a></li>
+        <li><a href="#" data-en="Demo video"
+               data-de="Demo-Video"></a></li>
+      </ul>
+    </section>
+
+    <p><a class="btn" href="projects.html" data-en="Back to Projects" data-de="Zurück zu Projekte"></a></p>
+      <p><a class="btn" href="index.html" data-en="Back to Resume" data-de="Zurück zu Lebenslauf"></a></p>
+  </main>
+
+  <footer>
+    <p data-en="© 2025 Agam Safaruddin" data-de="© 2025 Agam Safaruddin"></p>
+  </footer>
+</body>
+</html>
