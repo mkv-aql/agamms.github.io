@@ -227,7 +227,7 @@ footer {
 .gallery.gallery--two figure { grid-column: span 2; }
 
 /* Optional: larger images inside figures while preserving aspect ratio */
-.gallery figure img { max-height: 520px; }
+.gallery figure img { max-height: 340px; }
 
 /* Optional: caption styling for clarity */
 .gallery figure { margin: 0; }
