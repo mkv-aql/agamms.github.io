@@ -223,5 +223,15 @@ footer {
 /* Force two columns for phase 1 galleries */
 .gallery.gallery--two { grid-template-columns: repeat(2, 1fr); }
 
+/* Make each figure occupy both columns to increase size */
+.gallery.gallery--two figure { grid-column: span 2; }
+
+/* Optional: larger images inside figures while preserving aspect ratio */
+.gallery figure img { max-height: 520px; }
+
+/* Optional: caption styling for clarity */
+.gallery figure { margin: 0; }
+.gallery figcaption { margin-top: .4rem; font-size: .95rem; color: #555; text-align: center; }
+
 
 
