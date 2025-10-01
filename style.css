@@ -233,5 +233,27 @@ footer {
 .gallery figure { margin: 0; }
 .gallery figcaption { margin-top: .4rem; font-size: .95rem; color: #555; text-align: center; }
 
+/* Under construction styling */
+.project.under-construction {
+  opacity: 0.6;
+  filter: grayscale(0.3);
+  position: relative;
+}
+
+.project.under-construction::after {
+  content: "Site under construction";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  pointer-events: none;
+  z-index: 10;
+}
+
 
 
