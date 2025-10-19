@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>3D Point Cloud of Street View and Satellite View – Project</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header>
+    <!-- language slider -->
+    <div class="lang-toggle" aria-label="Language toggle">
+      <input id="langSwitch" type="checkbox" aria-label="Switch language" />
+      <label for="langSwitch" class="toggle">
+        <span class="label left">EN</span>
+        <span class="track"></span>
+        <span class="thumb" aria-hidden="true">EN</span>
+        <span class="label right">DE</span>
+      </label>
+    </div>
+
+    <h1 data-en="3D Point Cloud of Street View and Satellite View"
+        data-de="3D-Punktwolke von Street View und Satellitenansicht"></h1>
+    <p data-en="Research Phase: Connecting Multi-Perspective Views"
+       data-de="Forschungsphase: Verbindung von Multi-Perspektiven-Ansichten"></p>
+
+    <nav class="breadcrumb">
+      <a href="index.html" data-en="Back to Home" data-de="Zurück zum Start"></a> /
+      <a href="projects.html" data-en="Back to Projects" data-de="Zurück zur Projekte"></a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2 data-en="Overview" data-de="Überblick"></h2>
+      <p data-en="I am developing an experimental research project that connects street view images with satellite views through 3D point cloud data. The goal is to create unified 3D representations of urban environments by linking both perspectives to the same 3D anchor points."
+         data-de="Ich entwickle ein experimentelles Forschungsprojekt, das Street View Bilder mit Satellitenansichten durch 3D-Punktwolkendaten verbindet. Das Ziel ist die Erstellung einheitlicher 3D-Darstellungen urbaner Umgebungen durch die Verknüpfung beider Perspektiven mit denselben 3D-Ankerpunkten."></p>
+
+        <p data-en="This <strong>research phase project</strong> explores multiple experimental methods including Open3D and advanced depth processing techniques to bridge computer vision, 3D geometry, and geospatial analysis."
+         data-de="Dieses <strong>Forschungsphasenprojekt</strong> erkundet mehrere experimentelle Methoden einschließlich Open3D und fortgeschrittenen Tiefenverarbeitungstechniken, um Computer Vision, 3D-Geometrie und Geospatialanalyse zu verbinden."></p>
+
+        <p data-en="This project demonstrates expertise in <strong>3D computer vision</strong>, <strong>geospatial analysis</strong>, <strong>experimental research</strong>, and <strong>multi-perspective data fusion</strong>."
+         data-de="Dieses Projekt zeigt Fachwissen in <strong>3D Computer Vision</strong>, <strong>Geospatialanalyse</strong>, <strong>experimenteller Forschung</strong> und <strong>Multi-Perspektiven-Datenfusion</strong>."></p>
+    </section>
+
+    <section>
+      <h2 data-en="Research Motivation" data-de="Forschungsmotivation"></h2>
+      <p data-en="Current urban analysis relies on separate street-level and aerial perspectives, creating disconnected datasets. This research aims to bridge this gap by creating unified 3D representations that connect ground-level street views with satellite imagery through common 3D anchor points."
+         data-de="Aktuelle Stadtanalysen stützen sich auf getrennte Straßenebenen- und Luftperspektiven, wodurch unverbundene Datensätze entstehen. Diese Forschung zielt darauf ab, diese Lücke zu schließen, indem einheitliche 3D-Darstellungen erstellt werden, die Straßenansichten auf Bodenniveau mit Satellitenbildern durch gemeinsame 3D-Ankerpunkte verbinden."></p>
+      <p data-en="The experimental nature of this project pushes the boundaries of current APIs and 3D reconstruction techniques, exploring novel approaches to multi-perspective urban analysis."
+         data-de="Der experimentelle Charakter dieses Projekts erweitert die Grenzen aktueller APIs und 3D-Rekonstruktionstechniken und erkundet neuartige Ansätze für Multi-Perspektiven-Stadtanalyse."></p>
+    </section>
+
+    <section>
+      <h2 data-en="Tech Stack" data-de="Technologie-Stack"></h2>
+      <ul>
+        <li data-en="<strong>Python</strong> with NumPy, Matplotlib for 3D data processing"
+            data-de="<strong>Python</strong> mit NumPy, Matplotlib für 3D-Datenverarbeitung"></li>
+        <li data-en="<strong>Google Street View API</strong> for street-level imagery collection"
+            data-de="<strong>Google Street View API</strong> für Straßenebenen-Bildsammlung"></li>
+        <li data-en="<strong>Google Static Maps API</strong> for satellite imagery"
+            data-de="<strong>Google Static Maps API</strong> für Satellitenbilder"></li>
+        <li data-en="<strong>Advanced Depth Processing</strong> with binary parsing of Google's internal depth data"
+            data-de="<strong>Fortgeschrittene Tiefenverarbeitung</strong> mit binärer Analyse von Googles internen Tiefendaten"></li>
+        <li data-en="<strong>Open3D</strong> for experimental 3D point cloud processing"
+            data-de="<strong>Open3D</strong> für experimentelle 3D-Punktwolkenverarbeitung"></li>
+        <li data-en="<strong>3D Coordinate Mapping</strong> for mathematical conversion between 2D and 3D space"
+            data-de="<strong>3D-Koordinaten-Mapping</strong> für mathematische Umwandlung zwischen 2D- und 3D-Raum"></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 data-en="Key Features" data-de="Hauptmerkmale"></h2>
+      <ul>
+        <li data-en="<strong>Multi-Perspective Data Collection</strong> from both street and satellite views"
+            data-de="<strong>Multi-Perspektiven-Datensammlung</strong> von sowohl Straßen- als auch Satellitenansichten"></li>
+        <li data-en="<strong>Advanced Depth Map Extraction</strong> from Google's internal APIs"
+            data-de="<strong>Fortgeschrittene Tiefenkarten-Extraktion</strong> aus Googles internen APIs"></li>
+        <li data-en="<strong>3D Point Cloud Generation</strong> for spatial data representation"
+            data-de="<strong>3D-Punktwolken-Generierung</strong> für räumliche Datenrepräsentation"></li>
+        <li data-en="<strong>Panoramic Processing</strong> for 360° street view conversion"
+            data-de="<strong>Panoramische Verarbeitung</strong> für 360° Street View Konvertierung"></li>
+        <li data-en="<strong>Experimental Methods</strong> including Open3D and custom algorithms"
+            data-de="<strong>Experimentelle Methoden</strong> einschließlich Open3D und benutzerdefinierten Algorithmen"></li>
+        <li data-en="<strong>High-Resolution Processing</strong> with 640x640 imagery and advanced zoom levels"
+            data-de="<strong>Hochauflösende Verarbeitung</strong> mit 640x640 Bildern und fortgeschrittenen Zoomstufen"></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 data-en="Technical Highlights" data-de="Technische Highlights"></h2>
+      <ul>
+        <li data-en="<strong>Complex Binary Parsing</strong>: Advanced decoding of Google's internal depth data format with base64 and binary processing"
+            data-de="<strong>Komplexe Binär-Analyse</strong>: Fortgeschrittene Dekodierung von Googles internem Tiefendatenformat mit Base64- und Binärverarbeitung"></li>
+        <li data-en="<strong>3D Mathematical Conversion</strong>: Sophisticated algorithms for converting 2D panoramic data to 3D spatial coordinates"
+            data-de="<strong>3D-Mathematische Umwandlung</strong>: Ausgeklügelte Algorithmen zur Umwandlung von 2D-Panoramadaten in 3D-Raumkoordinaten"></li>
+        <li data-en="<strong>Multi-API Integration</strong>: Seamless coordination between Google Street View and Static Maps APIs"
+            data-de="<strong>Multi-API-Integration</strong>: Nahtlose Koordination zwischen Google Street View und Static Maps APIs"></li>
+        <li data-en="<strong>Experimental Depth Processing</strong>: Custom implementation of depth map generation from panoramic imagery"
+            data-de="<strong>Experimentelle Tiefenverarbeitung</strong>: Benutzerdefinierte Implementierung der Tiefenkarten-Generierung aus Panoramabildern"></li>
+        <li data-en="<strong>Research-Grade Architecture</strong>: Modular design supporting multiple experimental approaches and method testing"
+            data-de="<strong>Forschungsgrad-Architektur</strong>: Modulares Design zur Unterstützung mehrerer experimenteller Ansätze und Methodentests"></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 data-en="Research Workflow" data-de="Forschungsworkflow"></h2>
+      <ol>
+        <li data-en="<strong>Street View Collection</strong>: Automated download of street-level imagery from specified coordinates"
+            data-de="<strong>Street View Sammlung</strong>: Automatischer Download von Straßenebenen-Bildern von spezifizierten Koordinaten"></li>
+        <li data-en="<strong>Panoramic Conversion</strong>: Transformation of street view images into 360° panoramic format"
+            data-de="<strong>Panoramische Konvertierung</strong>: Transformation von Street View Bildern in 360° Panoramaformat"></li>
+        <li data-en="<strong>Depth Map Generation</strong>: Advanced extraction of 3D depth information from panoramic data"
+            data-de="<strong>Tiefenkarten-Generierung</strong>: Fortgeschrittene Extraktion von 3D-Tiefeninformationen aus Panoramadaten"></li>
+        <li data-en="<strong>Satellite View Integration</strong>: Collection of high-resolution aerial imagery from same coordinates"
+            data-de="<strong>Satellitenansicht-Integration</strong>: Sammlung hochauflösender Luftbilder von denselben Koordinaten"></li>
+        <li data-en="<strong>3D Point Cloud Creation</strong>: Experimental methods to connect both perspectives through 3D anchor points"
+            data-de="<strong>3D-Punktwolken-Erstellung</strong>: Experimentelle Methoden zur Verbindung beider Perspektiven durch 3D-Ankerpunkte"></li>
+      </ol>
+    </section>
+
+    <section>
+      <h2 data-en="Research Applications" data-de="Forschungsanwendungen"></h2>
+      <ul>
+        <li data-en="<strong>Urban 3D Modeling</strong> for comprehensive city analysis"
+            data-de="<strong>Urbane 3D-Modellierung</strong> für umfassende Stadtanalyse"></li>
+        <li data-en="<strong>Multi-Perspective Infrastructure Assessment</strong> combining ground and aerial views"
+            data-de="<strong>Multi-Perspektiven-Infrastrukturbewertung</strong> kombiniert Boden- und Luftansichten"></li>
+        <li data-en="<strong>Geospatial Research</strong> in 3D urban data fusion"
+            data-de="<strong>Geospatiale Forschung</strong> in 3D-urbaner Datenfusion"></li>
+        <li data-en="<strong>Computer Vision Research</strong> in multi-perspective analysis"
+            data-de="<strong>Computer Vision Forschung</strong> in Multi-Perspektiven-Analyse"></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 data-en="Gallery" data-de="Galerie"></h2>
+      <h3 data-en="Multi-Perspective Data Collection" data-de="Multi-Perspektiven-Datensammlung"></h3>
+      <div class="gallery gallery--two">
+        <figure>
+          <img src="images/projects/3d_point_cloud/streetview.jpg" alt="Street View Image" />
+          <figcaption data-en="Street View Image" data-de="Street View Bild"></figcaption>
+        </figure>
+        <figure>
+          <img src="images/projects/3d_point_cloud/satellite_view.jpg" alt="Satellite View" />
+          <figcaption data-en="Satellite View" data-de="Satellitenansicht"></figcaption>
+        </figure>
+        <figure>
+          <img src="images/projects/3d_point_cloud/pano.jpg" alt="Panoramic View" />
+          <figcaption data-en="Panoramic View" data-de="Panoramaansicht"></figcaption>
+        </figure>
+        <figure>
+          <img src="images/projects/3d_point_cloud/depth.jpg" alt="Depth Information" />
+          <figcaption data-en="Depth Information" data-de="Tiefeninformationen"></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section>
+      <h2 data-en="Research Status" data-de="Forschungsstatus"></h2>
+      <p data-en="This project is currently in the <strong>experimental research phase</strong>. Multiple approaches are being tested, including Open3D integration and custom 3D processing algorithms. The research is ongoing with continuous refinement of methods and techniques."
+         data-de="Dieses Projekt befindet sich derzeit in der <strong>experimentellen Forschungsphase</strong>. Mehrere Ansätze werden getestet, einschließlich Open3D-Integration und benutzerdefinierten 3D-Verarbeitungsalgorithmen. Die Forschung ist fortlaufend mit kontinuierlicher Verfeinerung von Methoden und Techniken."></p>
+    </section>
+
+    <section>
+      <h2 data-en="Links" data-de="Links"></h2>
+      <ul>
+        <li><a href="#" data-en="Research documentation (private/placeholder)"
+               data-de="Forschungsdokumentation (privat/Platzhalter)"></a></li>
+        <li><a href="#" data-en="Experimental results"
+               data-de="Experimentelle Ergebnisse"></a></li>
+        <li><a href="#" data-en="3D visualization demo"
+               data-de="3D-Visualisierungsdemo"></a></li>
+      </ul>
+    </section>
+
+    <p><a class="btn" href="projects.html" data-en="Back to Projects" data-de="Zurück zu Projekte"></a></p>
+    <p><a class="btn" href="index.html" data-en="Back to Resume" data-de="Zurück zu Lebenslauf"></a></p>
+  </main>
+
+  <footer>
+    <p data-en="© 2025 Agam Safaruddin" data-de="© 2025 Agam Safaruddin"></p>
+  </footer>
+</body>
+</html>

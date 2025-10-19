@@ -34,81 +34,99 @@
   <main class="container">
     <section>
       <h2 data-en="Overview" data-de="Überblick"></h2>
-      <p data-en="I developed an advanced AI model for comprehensive street material surface analysis using deep learning techniques and computer vision.
-      The system can accurately classify and analyze various street-level materials including asphalt, cobblestone, brick, and other surface types.
-         "
-         data-de="Ich entwickelte ein fortgeschrittenes KI-Modell für umfassende Straßenoberflächenmaterialanalyse mit Deep-Learning-Techniken und Computer Vision.
-         Das System kann verschiedene Materialien auf Straßenebene wie Asphalt, Pflastersteinweg, Ziegel und andere Oberflächentypen genau klassifizieren und analysieren."></p>
+      <p data-en="I developed an AI-powered street surface analysis system that combines Google Street View imagery with advanced computer vision techniques to automatically classify and analyze street surface materials. The system uses SAM2 (Segment Anything Model 2) for interactive segmentation and creates comprehensive training datasets for machine learning models."
+         data-de="Ich entwickelte ein KI-gestütztes Straßenoberflächenanalysesystem, das Google Street View Bildmaterial mit fortgeschrittenen Computer Vision Techniken kombiniert, um Straßenoberflächenmaterialien automatisch zu klassifizieren und zu analysieren. Das System verwendet SAM2 (Segment Anything Model 2) für interaktive Segmentierung und erstellt umfassende Trainingsdatensätze für Machine Learning Modelle."></p>
 
-        <p data-en="In Phase 1 of the project is to collect dataset for training; labeling or annotating the pixel locations of these surface materials in an image of a street view.
-        With that the ground truth dataset would consist of the pixel location and their street view image reference."
-         data-de="plaholder"></p>
+        <p data-en="Phase 1 focuses on <strong>automated dataset collection and interactive annotation</strong>. The system automatically downloads street view images from specified locations, then provides an interactive interface for users to segment and label four material types: asphalt, cobblestone, sidewalk, and boundary. This creates high-quality ground truth data for training AI models."
+         data-de="Phase 1 konzentriert sich auf <strong>automatisierte Datensatzsammlung und interaktive Annotation</strong>. Das System lädt automatisch Street View Bilder von bestimmten Standorten herunter und bietet dann eine interaktive Benutzeroberfläche für Benutzer, um vier Materialtypen zu segmentieren und zu beschriften: Asphalt, Pflasterstein, Gehweg und Grenze. Dies erstellt hochwertige Ground Truth Daten für das Training von KI-Modellen."></p>
 
-        <p data-en="This project demonstrates expertise in <strong>computer vision</strong>, <strong>deep learning</strong>, and <strong>urban infrastructure analysis</strong>."
-         data-de="Dieses Projekt zeigt Fachwissen in <strong>Computer Vision</strong>, <strong>Deep Learning</strong> und <strong>urbaner Infrastrukturanalyse</strong>."></p>
-    </section>
+        </section>
 
     <section>
       <h2 data-en="Motivation" data-de="Motivation"></h2>
       <p data-en="Large-scale fiber optic build out requires fast and objective understanding of street and sidewalk surfaces to estimate costs and plan routes. Today, available datasets are incomplete: roads and sidewalks are often provided only as lines (for example OSM) rather than polygons, and surface materials are missing or inconsistent, which forces expensive purchases from third parties."
          data-de="Der großflächige Glasfaserausbau benötigt eine schnelle und objektive Einschätzung von Straßen- und Gehwegoberflächen, um Kosten zu kalkulieren und Trassen zu planen. Aktuell sind verfügbare Datensätze unvollständig: Straßen und Gehwege liegen häufig nur als Linien (zum Beispiel OSM) statt als Polygone vor, und Informationen zu Oberflächenmaterialien fehlen oder sind inkonsistent, was teure Zukäufe bei Drittanbietern erzwingt."></p>
-      <p data-en="This project addresses those gaps with semantic segmentation. We combine Google Street View imagery with available in house resources (ground truth driving data as point clouds and polygons, on site photos, and 20 cm orthophotos) to derive polygons for roads and sidewalks and to classify materials (asphalt, pavement, unpaved). The output standardizes surface analysis, reduces manual effort and data costs, and directly supports portfolio selection as well as decisions about costs and benefits for network expansion."
-         data-de="Dieses Projekt schließt diese Lücken mittels semantischer Segmentierung. Wir kombinieren Google Street View Bildmaterial mit verfügbaren internen Ressourcen (Ground Truth Fahrtdaten als Punktwolken und Polygone, Vor Ort Bilder sowie Orthofotos mit 20 cm Auflösung), um Polygone für Straßen und Gehwege abzuleiten und Materialien (Asphalt, Pflaster, unbefestigt) zu klassifizieren. Die Ergebnisse standardisieren die Oberflächenanalyse, reduzieren manuellen Aufwand und Datenkosten und unterstützen unmittelbar die Portfolioauswahl sowie Entscheidungen zu Kosten und Nutzen für den Netzausbau."></p>
-    </section>
+      </section>
 
     <section>
       <h2 data-en="Tech Stack" data-de="Technologie-Stack"></h2>
       <ul>
-        <li data-en="Python, PyTorch, OpenCV, scikit-learn"
-            data-de="Python, PyTorch, OpenCV, scikit-learn"></li>
-        <li data-en="Convolutional Neural Networks (CNN) for image classification"
-            data-de="Convolutional Neural Networks (CNN) für Bildklassifikation"></li>
-        <li data-en="Data augmentation and preprocessing pipelines"
-            data-de="Datenaugmentierung und Vorverarbeitungspipelines"></li>
-        <li data-en="Model optimization and deployment strategies"
-            data-de="Modelloptimierung und Deployment-Strategien"></li>
+        <li data-en="<strong>Python</strong> with OpenCV, NumPy, PIL for image processing"
+            data-de="<strong>Python</strong> mit OpenCV, NumPy, PIL für Bildverarbeitung"></li>
+        <li data-en="<strong>SAM2 (Segment Anything Model 2)</strong> from Meta for interactive segmentation"
+            data-de="<strong>SAM2 (Segment Anything Model 2)</strong> von Meta für interaktive Segmentierung"></li>
+        <li data-en="<strong>Google Street View API</strong> for automated image collection"
+            data-de="<strong>Google Street View API</strong> für automatisierte Bildsammlung"></li>
+        <li data-en="<strong>OpenCV</strong> for computer vision operations and user interface"
+            data-de="<strong>OpenCV</strong> für Computer Vision Operationen und Benutzeroberfläche"></li>
+        <li data-en="<strong>Matplotlib</strong> for visualization and result display"
+            data-de="<strong>Matplotlib</strong> für Visualisierung und Ergebnisanzeige"></li>
+        <li data-en="<strong>Keyboard input handling</strong> for interactive segmentation workflow"
+            data-de="<strong>Tastatureingabe-Behandlung</strong> für interaktiven Segmentierungsworkflow"></li>
       </ul>
     </section>
 
     <section>
       <h2 data-en="Key Features" data-de="Hauptmerkmale"></h2>
       <ul>
-        <li data-en="Multi-class material classification with high accuracy"
-            data-de="Multi-Klassen-Materialklassifikation mit hoher Genauigkeit"></li>
-        <li data-en="Real-time processing capabilities for street-level imagery"
-            data-de="Echtzeitverarbeitungsfähigkeiten für Straßenebenen-Bilder"></li>
-        <li data-en="Robust feature extraction from complex urban environments"
-            data-de="Robuste Merkmalsextraktion aus komplexen urbanen Umgebungen"></li>
-        <li data-en="Scalable architecture for large-scale urban analysis"
-            data-de="Skalierbare Architektur für großflächige urbane Analysen"></li>
+        <li data-en="<strong>Automated data collection</strong> from Google Street View API with batch processing"
+            data-de="<strong>Automatisierte Datensammlung</strong> von Google Street View API mit Batch-Verarbeitung"></li>
+        <li data-en="<strong>Interactive segmentation interface</strong> with click-to-segment functionality"
+            data-de="<strong>Interaktive Segmentierungsoberfläche</strong> mit Klick-zu-Segmentieren-Funktionalität"></li>
+        <li data-en="<strong>Four material type classification</strong>: asphalt, cobblestone, sidewalk, and boundary"
+            data-de="<strong>Vier Materialtypen-Klassifikation</strong>: Asphalt, Pflasterstein, Gehweg und Grenze"></li>
+        <li data-en="<strong>Color-coded segmentation output</strong> for easy visual identification"
+            data-de="<strong>Farbkodierte Segmentierungsausgabe</strong> für einfache visuelle Identifikation"></li>
+        <li data-en="<strong>Batch processing workflow</strong> for handling multiple images automatically"
+            data-de="<strong>Batch-Verarbeitungsworkflow</strong> für automatische Behandlung mehrerer Bilder"></li>
+        <li data-en="<strong>Preview and redo functionality</strong> for quality control during annotation"
+            data-de="<strong>Vorschau- und Wiederholungsfunktionalität</strong> für Qualitätskontrolle während der Annotation"></li>
       </ul>
     </section>
 
     <section>
       <h2 data-en="Technical Highlights" data-de="Technische Highlights"></h2>
       <ul>
-        <li data-en="Placeholder"
-            data-de="Placeholder"></li>
-        <li data-en="Placeholder"
-            data-de="Placeholder"></li>
-        <li data-en="Placeholder"
-            data-de="Placeholder"></li>
-        <li data-en="Placeholder"
-            data-de="Placeholder"></li>
+        <li data-en="<strong>Advanced SAM2 Integration</strong>: Implemented Meta's latest Segment Anything Model for state-of-the-art interactive segmentation"
+            data-de="<strong>Fortgeschrittene SAM2-Integration</strong>: Implementierung von Metas neuestem Segment Anything Model für modernste interaktive Segmentierung"></li>
+        <li data-en="<strong>Intelligent User Interface</strong>: Custom OpenCV-based interface with keyboard shortcuts for efficient annotation workflow"
+            data-de="<strong>Intelligente Benutzeroberfläche</strong>: Benutzerdefinierte OpenCV-basierte Oberfläche mit Tastenkürzeln für effizienten Annotation-Workflow"></li>
+        <li data-en="<strong>Automated API Integration</strong>: Seamless Google Street View data collection with metadata extraction and batch processing"
+            data-de="<strong>Automatisierte API-Integration</strong>: Nahtlose Google Street View Datensammlung mit Metadaten-Extraktion und Batch-Verarbeitung"></li>
+        <li data-en="<strong>Color-coded Material Classification</strong>: Red (asphalt), Green (cobblestone), Blue (sidewalk), Yellow (boundary) for intuitive visual feedback"
+            data-de="<strong>Farbkodierte Materialklassifikation</strong>: Rot (Asphalt), Grün (Pflasterstein), Blau (Gehweg), Gelb (Grenze) für intuitive visuelle Rückmeldung"></li>
+        <li data-en="<strong>Robust Error Handling</strong>: Comprehensive exception handling for API failures, segmentation errors, and user input validation"
+            data-de="<strong>Robuste Fehlerbehandlung</strong>: Umfassende Ausnahmebehandlung für API-Fehler, Segmentierungsfehler und Benutzereingabe-Validierung"></li>
       </ul>
+    </section>
+
+    <section>
+      <h2 data-en="Workflow Process" data-de="Workflow-Prozess"></h2>
+      <ol>
+        <li data-en="<strong>Data Collection</strong>: Automated download of street view images from Google Street View API using specified coordinates"
+            data-de="<strong>Datensammlung</strong>: Automatischer Download von Street View Bildern von Google Street View API mit spezifizierten Koordinaten"></li>
+        <li data-en="<strong>Interactive Segmentation</strong>: User clicks on different material areas in each image, with SAM2 model performing real-time segmentation"
+            data-de="<strong>Interaktive Segmentierung</strong>: Benutzer klickt auf verschiedene Materialbereiche in jedem Bild, SAM2-Modell führt Echtzeit-Segmentierung durch"></li>
+        <li data-en="<strong>Material Classification</strong>: Four material types are classified with color coding: Red (asphalt), Green (cobblestone), Blue (sidewalk), Yellow (boundary)"
+            data-de="<strong>Materialklassifikation</strong>: Vier Materialtypen werden mit Farbkodierung klassifiziert: Rot (Asphalt), Grün (Pflasterstein), Blau (Gehweg), Gelb (Grenze)"></li>
+        <li data-en="<strong>Quality Control</strong>: Preview functionality allows users to review segmentation before finalizing, with redo option for corrections"
+            data-de="<strong>Qualitätskontrolle</strong>: Vorschau-Funktionalität ermöglicht Benutzern Segmentierung vor der Finalisierung zu überprüfen, mit Wiederholungsoption für Korrekturen"></li>
+        <li data-en="<strong>Training Data Generation</strong>: Segmented images are saved in material-specific folders, creating labeled datasets for machine learning model training"
+            data-de="<strong>Trainingsdaten-Generierung</strong>: Segmentierte Bilder werden in materialspezifischen Ordnern gespeichert, wodurch beschriftete Datensätze für Machine Learning Modelltraining erstellt werden"></li>
+      </ol>
     </section>
 
     <section>
       <h2 data-en="Applications" data-de="Anwendungen"></h2>
       <ul>
-        <li data-en="Urban planning and infrastructure assessment"
-            data-de="Stadtplanung und Infrastrukturbewertung"></li>
-        <li data-en="Automated road condition monitoring systems"
-            data-de="Automatisierte Straßenzustandsüberwachungssysteme"></li>
-        <li data-en="Smart city analytics and maintenance planning"
-            data-de="Smart City Analytics und Wartungsplanung"></li>
-        <li data-en="Research in urban material science and sustainability"
-            data-de="Forschung in urbaner Materialwissenschaft und Nachhaltigkeit"></li>
+        <li data-en="<strong>Fiber optic network planning</strong> and infrastructure cost estimation"
+            data-de="<strong>Glasfasernetzplanung</strong> und Infrastrukturkostenschätzung"></li>
+        <li data-en="<strong>Automated road condition monitoring</strong> for maintenance planning"
+            data-de="<strong>Automatisierte Straßenzustandsüberwachung</strong> für Wartungsplanung"></li>
+        <li data-en="<strong>Smart city analytics</strong> and urban infrastructure assessment"
+            data-de="<strong>Smart City Analytics</strong> und urbane Infrastrukturbewertung"></li>
+        <li data-en="<strong>Research applications</strong> in urban material science and sustainability"
+            data-de="<strong>Forschungsanwendungen</strong> in urbaner Materialwissenschaft und Nachhaltigkeit"></li>
       </ul>
     </section>
 
@@ -158,10 +176,12 @@
     <section>
       <h2 data-en="Links" data-de="Links"></h2>
       <ul>
+        <!--
         <li><a href="#" data-en="Source code (private/placeholder)"
                data-de="Quellcode (privat/Platzhalter)"></a></li>
         <li><a href="#" data-en="Research paper"
                data-de="Forschungsarbeit"></a></li>
+               -->
         <li><a href="#" data-en="Demo application"
                data-de="Demo-Anwendung"></a></li>
         <li><a href="Ziel/AI approach to street surface analysis.pdf" target="_blank" rel="noopener" data-en="Project plan (PDF)" data-de="Projektplan (PDF)"></a></li>
