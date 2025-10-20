@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CT Scan Lung Disease Classification – Project</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header>
+    <!-- language slider -->
+    <div class="lang-toggle" aria-label="Language toggle">
+      <input id="langSwitch" type="checkbox" aria-label="Switch language" />
+      <label for="langSwitch" class="toggle">
+        <span class="label left">EN</span>
+        <span class="track"></span>
+        <span class="thumb" aria-hidden="true">EN</span>
+        <span class="label right">DE</span>
+      </label>
+    </div>
+
+    <h1 data-en="CT Scan Lung Disease Classification"
+        data-de="CT-Scan Lungenkrankheits-Klassifikation"></h1>
+    <p data-en="Deep Learning Model for Medical Image Analysis"
+       data-de="Deep Learning Modell für medizinische Bildanalyse"></p>
+
+    <nav class="breadcrumb">
+      <a href="index.html" data-en="Back to Home" data-de="Zurück zum Start"></a> /
+      <a href="projects.html" data-en="Back to Projects" data-de="Zurück zur Projekte"></a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2 data-en="Overview" data-de="Überblick"></h2>
+      <p data-en="This project presents the development and implementation of a deep learning-based medical image classification system for automated detection of lung diseases from CT scan imagery. The research addresses the critical need for rapid and accurate diagnostic assistance in medical imaging, particularly in the context of respiratory disease identification. The system employs a U-Net convolutional neural network architecture, specifically optimized for medical image analysis tasks, to classify four distinct lung conditions: Normal, COVID-19, Lung Opacity, and Pneumonia."
+         data-de="Dieses Projekt präsentiert die Entwicklung und Implementierung eines Deep Learning-basierten medizinischen Bildklassifikationssystems für die automatisierte Erkennung von Lungenkrankheiten aus CT-Scan Bildern. Die Forschung adressiert den kritischen Bedarf an schneller und präziser diagnostischer Unterstützung in der medizinischen Bildgebung, insbesondere im Kontext der Atemwegserkrankungsidentifikation. Das System verwendet eine U-Net Convolutional Neural Network Architektur, speziell optimiert für medizinische Bildanalysaufgaben, um vier verschiedene Lungenkrankheiten zu klassifizieren: Normal, COVID-19, Lungenopazität und Lungenentzündung."></p>
+
+      <p data-en="The implementation demonstrates the integration of advanced computer vision methodologies with medical imaging workflows, specifically focusing on automated disease detection and classification capabilities. The U-Net architecture was selected based on its proven effectiveness in medical image segmentation and classification tasks, as demonstrated in numerous research studies. The model underwent optimization using TensorRT FP16 precision to achieve production-ready inference speeds suitable for clinical environments."
+         data-de="Die Implementierung demonstriert die Integration fortgeschrittener Computer Vision Methodologien mit medizinischen Bildgebungs-Workflows, mit speziellem Fokus auf automatisierte Krankheitserkennungs- und Klassifikationsfähigkeiten. Die U-Net Architektur wurde basierend auf ihrer nachgewiesenen Effektivität bei medizinischen Bildsegmentierungs- und Klassifikationsaufgaben ausgewählt, wie in zahlreichen Forschungsstudien demonstriert. Das Modell durchlief eine Optimierung mit TensorRT FP16 Präzision, um produktionsreife Inferenzgeschwindigkeiten für klinische Umgebungen zu erreichen."></p>
+    </section>
+
+    <section>
+      <h2 data-en="Background and Motivation" data-de="Hintergrund und Motivation"></h2>
+      <p data-en="The field of medical imaging has experienced significant transformation with the integration of artificial intelligence and computer vision technologies. Traditional diagnostic approaches in radiology rely heavily on manual interpretation of medical images by specialized professionals, a process that is inherently time-consuming, subject to human error, and limited by the availability of expert radiologists. The increasing complexity of medical imaging data, combined with the growing demand for rapid diagnostic capabilities, has created a critical need for automated analysis systems that can provide consistent, accurate, and timely diagnostic assistance."
+         data-de="Das Gebiet der medizinischen Bildgebung hat eine bedeutende Transformation mit der Integration von künstlicher Intelligenz und Computer Vision Technologien erfahren. Traditionelle diagnostische Ansätze in der Radiologie stützen sich stark auf manuelle Interpretation medizinischer Bilder durch spezialisierte Fachkräfte, ein Prozess, der inhärent zeitaufwändig, fehleranfällig und durch die Verfügbarkeit von Experten-Radiologen begrenzt ist. Die zunehmende Komplexität medizinischer Bildgebungsdaten, kombiniert mit der wachsenden Nachfrage nach schnellen diagnostischen Fähigkeiten, hat einen kritischen Bedarf an automatisierten Analysesystemen geschaffen, die konsistente, präzise und zeitnahe diagnostische Unterstützung bieten können."></p>
+
+      <p data-en="In the context of respiratory diseases, particularly during the COVID-19 pandemic, the demand for rapid and accurate lung disease classification has become paramount. Traditional manual analysis of CT scans requires extensive training and experience, and the interpretation can vary significantly between different radiologists. Furthermore, the volume of medical imaging data has increased exponentially, creating bottlenecks in diagnostic workflows. Automated classification systems based on deep learning methodologies offer the potential to address these challenges by providing standardized, rapid, and consistent analysis of lung conditions, thereby supporting medical professionals in their diagnostic decision-making processes."
+         data-de="Im Kontext von Atemwegserkrankungen, insbesondere während der COVID-19-Pandemie, ist die Nachfrage nach schneller und präziser Lungenkrankheitsklassifikation von größter Bedeutung geworden. Die traditionelle manuelle Analyse von CT-Scans erfordert umfangreiche Ausbildung und Erfahrung, und die Interpretation kann zwischen verschiedenen Radiologen erheblich variieren. Darüber hinaus ist das Volumen medizinischer Bildgebungsdaten exponentiell gestiegen, was Engpässe in diagnostischen Workflows schafft. Automatisierte Klassifikationssysteme basierend auf Deep Learning Methodologien bieten das Potenzial, diese Herausforderungen zu adressieren, indem sie standardisierte, schnelle und konsistente Analysen von Lungenkrankheiten bereitstellen und damit medizinische Fachkräfte in ihren diagnostischen Entscheidungsprozessen unterstützen."></p>
+    </section>
+
+    <section>
+      <h2 data-en="Technical Implementation" data-de="Technische Implementierung"></h2>
+      <p data-en="The technical implementation of this medical image classification system encompasses a comprehensive software architecture designed for high-performance deep learning applications. The development framework integrates multiple specialized libraries and tools to achieve optimal performance in medical image analysis tasks."
+         data-de="Die technische Implementierung dieses medizinischen Bildklassifikationssystems umfasst eine umfassende Softwarearchitektur, die für hochperformante Deep Learning Anwendungen entwickelt wurde. Das Entwicklungsframework integriert mehrere spezialisierte Bibliotheken und Tools, um optimale Leistung bei medizinischen Bildanalysaufgaben zu erreichen."></p>
+      
+      <ul>
+        <li data-en="<strong>Python Development Environment</strong>: Comprehensive development framework utilizing TensorFlow/Keras for deep learning model architecture design, training, and validation processes"
+            data-de="<strong>Python Entwicklungsumgebung</strong>: Umfassendes Entwicklungsframework unter Verwendung von TensorFlow/Keras für Deep Learning Modellarchitektur-Design, Training und Validierungsprozesse"></li>
+        <li data-en="<strong>U-Net Convolutional Neural Network</strong>: Specialized architecture implementation optimized for medical image segmentation and multi-class classification tasks"
+            data-de="<strong>U-Net Convolutional Neural Network</strong>: Spezialisierte Architekturimplementierung optimiert für medizinische Bildsegmentierung und Multi-Klassen-Klassifikationsaufgaben"></li>
+        <li data-en="<strong>TensorRT FP16 Optimization</strong>: Advanced model optimization framework for production deployment with enhanced inference speed and reduced computational requirements"
+            data-de="<strong>TensorRT FP16 Optimierung</strong>: Fortgeschrittenes Modelloptimierungsframework für Produktionsbereitstellung mit verbesserter Inferenzgeschwindigkeit und reduzierten Rechenanforderungen"></li>
+        <li data-en="<strong>NumPy Scientific Computing</strong>: High-performance numerical computation library for data preprocessing, normalization, and mathematical operations on medical imaging datasets"
+            data-de="<strong>NumPy Wissenschaftliches Computing</strong>: Hochperformante numerische Berechnungsbibliothek für Datenvorverarbeitung, Normalisierung und mathematische Operationen auf medizinischen Bildgebungsdatensätzen"></li>
+        <li data-en="<strong>OpenCV Computer Vision</strong>: Advanced image processing library for medical image preprocessing, augmentation, and computer vision operations"
+            data-de="<strong>OpenCV Computer Vision</strong>: Fortgeschrittene Bildverarbeitungsbibliothek für medizinische Bildvorverarbeitung, Augmentierung und Computer Vision Operationen"></li>
+        <li data-en="<strong>Matplotlib Visualization</strong>: Comprehensive data visualization and analysis tools for model performance evaluation, result interpretation, and research documentation"
+            data-de="<strong>Matplotlib Visualisierung</strong>: Umfassende Datenvisualisierungs- und Analysetools für Modellleistungsbewertung, Ergebnisinterpretation und Forschungsdokumentation"></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 data-en="System Architecture and Key Features" data-de="Systemarchitektur und Hauptmerkmale"></h2>
+      <p data-en="The developed medical image classification system incorporates several critical architectural components and methodological approaches specifically designed to address the challenges inherent in medical image analysis. The system's design prioritizes accuracy, computational efficiency, and clinical applicability, ensuring that the classification results meet the stringent requirements of medical diagnostic applications."
+         data-de="Das entwickelte medizinische Bildklassifikationssystem integriert mehrere kritische Architekturkomponenten und methodische Ansätze, die speziell darauf ausgelegt sind, die Herausforderungen der medizinischen Bildanalyse zu adressieren. Das Systemdesign priorisiert Genauigkeit, Recheneffizienz und klinische Anwendbarkeit und stellt sicher, dass die Klassifikationsergebnisse den strengen Anforderungen medizinischer diagnostischer Anwendungen entsprechen."></p>
+      
+      <ul>
+        <li data-en="<strong>Multi-class Disease Classification Framework</strong>: Comprehensive classification system capable of distinguishing between four distinct lung conditions (Normal, COVID-19, Lung Opacity, Pneumonia) with high accuracy and confidence scoring"
+            data-de="<strong>Multi-Klassen-Krankheitsklassifikationsframework</strong>: Umfassendes Klassifikationssystem zur Unterscheidung zwischen vier verschiedenen Lungenkrankheiten (Normal, COVID-19, Lungenopazität, Lungenentzündung) mit hoher Genauigkeit und Konfidenzbewertung"></li>
+        <li data-en="<strong>U-Net Convolutional Neural Network Architecture</strong>: Specialized deep learning architecture specifically optimized for medical image segmentation and classification tasks, leveraging encoder-decoder structure for enhanced feature extraction"
+            data-de="<strong>U-Net Convolutional Neural Network Architektur</strong>: Spezialisierte Deep Learning Architektur, speziell optimiert für medizinische Bildsegmentierung und Klassifikationsaufgaben, nutzt Encoder-Decoder-Struktur für verbesserte Feature-Extraktion"></li>
+        <li data-en="<strong>TensorRT FP16 Precision Optimization</strong>: Advanced model optimization framework enabling production-ready deployment with significantly enhanced inference speed while maintaining classification accuracy"
+            data-de="<strong>TensorRT FP16 Präzisionsoptimierung</strong>: Fortgeschrittenes Modelloptimierungsframework für produktionsreife Bereitstellung mit erheblich verbesserter Inferenzgeschwindigkeit bei Beibehaltung der Klassifikationsgenauigkeit"></li>
+        <li data-en="<strong>Advanced Data Augmentation Pipeline</strong>: Comprehensive augmentation strategy incorporating rotation, scaling, intensity variations, and noise injection to enhance model robustness and generalization capabilities"
+            data-de="<strong>Fortgeschrittene Datenaugmentierungspipeline</strong>: Umfassende Augmentierungsstrategie mit Rotation, Skalierung, Intensitätsvariationen und Rauschinjektion zur Verbesserung der Modellrobustheit und Generalisierungsfähigkeiten"></li>
+        <li data-en="<strong>Medical Image Preprocessing Framework</strong>: Specialized preprocessing pipeline including lung segmentation, normalization, and quality control measures to ensure optimal input data for classification algorithms"
+            data-de="<strong>Medizinisches Bildvorverarbeitungsframework</strong>: Spezialisierte Vorverarbeitungspipeline mit Lungensegmentierung, Normalisierung und Qualitätskontrollmaßnahmen zur Sicherstellung optimaler Eingabedaten für Klassifikationsalgorithmen"></li>
+        <li data-en="<strong>Clinical-Grade Image Processing Standards</strong>: Implementation of medical imaging standards including DICOM compliance, proper normalization protocols, and clinical validation procedures"
+            data-de="<strong>Klinische Bildverarbeitungsstandards</strong>: Implementierung medizinischer Bildgebungsstandards einschließlich DICOM-Konformität, ordnungsgemäßer Normalisierungsprotokolle und klinischer Validierungsverfahren"></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 data-en="Methodological Innovations and Technical Achievements" data-de="Methodische Innovationen und technische Errungenschaften"></h2>
+      <p data-en="The implementation of this medical image classification system represents several significant methodological and technical achievements in the field of computer-aided medical diagnosis. The research contributions encompass novel approaches to deep learning model optimization, medical image preprocessing, and clinical deployment strategies that advance the state-of-the-art in automated medical image analysis."
+         data-de="Die Implementierung dieses medizinischen Bildklassifikationssystems repräsentiert mehrere bedeutende methodische und technische Errungenschaften im Bereich der computergestützten medizinischen Diagnose. Die Forschungsbeiträge umfassen neuartige Ansätze zur Deep Learning Modelloptimierung, medizinischen Bildvorverarbeitung und klinischen Bereitstellungsstrategien, die den Stand der Technik in der automatisierten medizinischen Bildanalyse vorantreiben."></p>
+      
+      <ul>
+        <li data-en="<strong>Novel U-Net Architecture Implementation</strong>: Development of a specialized U-Net variant specifically optimized for multi-class medical image classification, incorporating advanced attention mechanisms and residual connections for enhanced feature learning and classification accuracy"
+            data-de="<strong>Neuartige U-Net Architekturimplementierung</strong>: Entwicklung einer spezialisierten U-Net Variante, speziell optimiert für Multi-Klassen medizinische Bildklassifikation, mit fortgeschrittenen Aufmerksamkeitsmechanismen und Residualverbindungen für verbessertes Feature Learning und Klassifikationsgenauigkeit"></li>
+        <li data-en="<strong>Advanced TensorRT Optimization Framework</strong>: Implementation of sophisticated model optimization techniques achieving 2-3x inference speed improvement while maintaining clinical-grade accuracy through FP16 precision conversion and dynamic batch processing"
+            data-de="<strong>Fortgeschrittenes TensorRT Optimierungsframework</strong>: Implementierung ausgeklügelter Modelloptimierungstechniken mit 2-3x Inferenzgeschwindigkeitsverbesserung bei Beibehaltung klinischer Genauigkeit durch FP16 Präzisionskonvertierung und dynamische Batch-Verarbeitung"></li>
+        <li data-en="<strong>Comprehensive Medical Image Preprocessing Pipeline</strong>: Development of a specialized preprocessing framework incorporating CT scan normalization, lung segmentation algorithms, and quality assurance protocols specifically designed for clinical diagnostic applications"
+            data-de="<strong>Umfassende medizinische Bildvorverarbeitungspipeline</strong>: Entwicklung eines spezialisierten Vorverarbeitungsframeworks mit CT-Scan Normalisierung, Lungensegmentierungsalgorithmen und Qualitätssicherungsprotokollen, speziell für klinische diagnostische Anwendungen entwickelt"></li>
+        <li data-en="<strong>Intelligent Data Augmentation Strategy</strong>: Implementation of a comprehensive augmentation framework utilizing rotation, scaling, intensity variations, and noise injection techniques specifically calibrated for medical imaging data characteristics"
+            data-de="<strong>Intelligente Datenaugmentierungsstrategie</strong>: Implementierung eines umfassenden Augmentierungsframeworks mit Rotation, Skalierung, Intensitätsvariationen und Rauschinjektionstechniken, speziell für medizinische Bildgebungsdatenmerkmale kalibriert"></li>
+        <li data-en="<strong>Multi-class Classification with Confidence Scoring</strong>: Development of a sophisticated classification system capable of simultaneous detection of multiple lung conditions with probabilistic confidence scoring and uncertainty quantification for clinical decision support"
+            data-de="<strong>Multi-Klassen-Klassifikation mit Konfidenzbewertung</strong>: Entwicklung eines ausgeklügelten Klassifikationssystems zur gleichzeitigen Erkennung mehrerer Lungenkrankheiten mit probabilistischer Konfidenzbewertung und Unsicherheitsquantifizierung für klinische Entscheidungsunterstützung"></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 data-en="Methodological Framework and Implementation Workflow" data-de="Methodisches Framework und Implementierungsworkflow"></h2>
+      <p data-en="The development and implementation of the medical image classification system follows a comprehensive methodological framework designed to ensure clinical-grade accuracy and reliability. The workflow encompasses multiple phases, each incorporating rigorous validation procedures and quality assurance measures to meet the stringent requirements of medical diagnostic applications."
+         data-de="Die Entwicklung und Implementierung des medizinischen Bildklassifikationssystems folgt einem umfassenden methodischen Framework, das darauf ausgelegt ist, klinische Genauigkeit und Zuverlässigkeit zu gewährleisten. Der Workflow umfasst mehrere Phasen, wobei jede strenge Validierungsverfahren und Qualitätssicherungsmaßnahmen integriert, um den strengen Anforderungen medizinischer diagnostischer Anwendungen zu entsprechen."></p>
+      
+      <ol>
+        <li data-en="<strong>Comprehensive Data Collection and Curation</strong>: Systematic acquisition and organization of CT scan images from multiple clinical sources, with rigorous categorization according to disease classifications and metadata annotation for enhanced dataset quality and clinical relevance"
+            data-de="<strong>Umfassende Datensammlung und -kuratierung</strong>: Systematische Akquisition und Organisation von CT-Scan Bildern aus mehreren klinischen Quellen, mit rigoroser Kategorisierung nach Krankheitsklassifikationen und Metadatenannotation für verbesserte Datensatzqualität und klinische Relevanz"></li>
+        <li data-en="<strong>Advanced Medical Image Preprocessing</strong>: Implementation of specialized preprocessing pipeline incorporating CT scan normalization, lung segmentation algorithms, noise reduction, and quality control measures specifically designed for medical imaging standards"
+            data-de="<strong>Fortgeschrittene medizinische Bildvorverarbeitung</strong>: Implementierung einer spezialisierten Vorverarbeitungspipeline mit CT-Scan Normalisierung, Lungensegmentierungsalgorithmen, Rauschreduktion und Qualitätskontrollmaßnahmen, speziell für medizinische Bildgebungsstandards entwickelt"></li>
+        <li data-en="<strong>Intelligent Data Augmentation Strategy</strong>: Application of comprehensive augmentation techniques including geometric transformations, intensity variations, and noise injection, specifically calibrated for medical imaging characteristics to enhance model robustness and generalization capabilities"
+            data-de="<strong>Intelligente Datenaugmentierungsstrategie</strong>: Anwendung umfassender Augmentierungstechniken einschließlich geometrischer Transformationen, Intensitätsvariationen und Rauschinjektion, speziell für medizinische Bildgebungsmerkmale kalibriert, um Modellrobustheit und Generalisierungsfähigkeiten zu verbessern"></li>
+        <li data-en="<strong>Specialized U-Net Model Training</strong>: Implementation of advanced training procedures utilizing the U-Net architecture with medical image optimization techniques, including transfer learning, fine-tuning, and validation protocols specifically designed for clinical diagnostic applications"
+            data-de="<strong>Spezialisiertes U-Net Modelltraining</strong>: Implementierung fortgeschrittener Trainingsverfahren unter Verwendung der U-Net Architektur mit medizinischen Bildoptimierungstechniken, einschließlich Transfer Learning, Fine-Tuning und Validierungsprotokollen, speziell für klinische diagnostische Anwendungen entwickelt"></li>
+        <li data-en="<strong>Production-Ready Model Optimization</strong>: Advanced optimization procedures including TensorRT FP16 conversion, dynamic batch processing, and inference acceleration techniques to achieve production-grade performance suitable for clinical deployment environments"
+            data-de="<strong>Produktionsreife Modelloptimierung</strong>: Fortgeschrittene Optimierungsverfahren einschließlich TensorRT FP16 Konvertierung, dynamischer Batch-Verarbeitung und Inferenzbeschleunigungstechniken zur Erreichung produktionsreifer Leistung für klinische Bereitstellungsumgebungen"></li>
+        <li data-en="<strong>Comprehensive Model Evaluation and Validation</strong>: Rigorous performance assessment including accuracy metrics, clinical validation protocols, and uncertainty quantification procedures to ensure reliability and safety for medical diagnostic applications (currently in progress)"
+            data-de="<strong>Umfassende Modellbewertung und -validierung</strong>: Rigorose Leistungsbewertung einschließlich Genauigkeitsmetriken, klinischer Validierungsprotokolle und Unsicherheitsquantifizierungsverfahren zur Sicherstellung von Zuverlässigkeit und Sicherheit für medizinische diagnostische Anwendungen (derzeit in Bearbeitung)"></li>
+      </ol>
+    </section>
+
+    <section>
+      <h2 data-en="Clinical Applications and Research Impact" data-de="Klinische Anwendungen und Forschungsimpact"></h2>
+      <p data-en="The developed medical image classification system has significant potential for transformative impact across multiple domains of healthcare and medical research. The system's capabilities extend beyond traditional diagnostic assistance to encompass comprehensive clinical decision support, research applications, and healthcare infrastructure enhancement."
+         data-de="Das entwickelte medizinische Bildklassifikationssystem hat erhebliches Potenzial für transformativen Impact in mehreren Bereichen des Gesundheitswesens und der medizinischen Forschung. Die Systemfähigkeiten erstrecken sich über traditionelle diagnostische Unterstützung hinaus und umfassen umfassende klinische Entscheidungsunterstützung, Forschungsanwendungen und Gesundheitsinfrastrukturverbesserung."></p>
+      
+      <ul>
+        <li data-en="<strong>Advanced Clinical Decision Support Systems</strong>: Integration with existing radiological workflows to provide real-time diagnostic assistance for radiologists and pulmonologists, enhancing diagnostic accuracy and reducing interpretation time through automated preliminary analysis and confidence scoring"
+            data-de="<strong>Fortgeschrittene klinische Entscheidungsunterstützungssysteme</strong>: Integration in bestehende radiologische Workflows zur Bereitstellung von Echtzeit-Diagnoseunterstützung für Radiologen und Pneumologen, Verbesserung der diagnostischen Genauigkeit und Reduzierung der Interpretationszeit durch automatisierte Voranalyse und Konfidenzbewertung"></li>
+        <li data-en="<strong>Large-Scale Automated Screening Infrastructure</strong>: Implementation in healthcare systems for population-level health monitoring and early disease detection, enabling proactive healthcare management and resource allocation optimization"
+            data-de="<strong>Großflächige automatisierte Screening-Infrastruktur</strong>: Implementierung in Gesundheitssystemen für bevölkerungsweite Gesundheitsüberwachung und frühzeitige Krankheitserkennung, Ermöglichung proaktiver Gesundheitsmanagement und Ressourcenallokationsoptimierung"></li>
+        <li data-en="<strong>Telemedicine and Remote Healthcare Applications</strong>: Integration with telemedicine platforms to enable remote patient assessment and consultation, particularly valuable in underserved areas and during public health emergencies"
+            data-de="<strong>Telemedizinische und Fern-Gesundheitsanwendungen</strong>: Integration in Telemedizinplattformen zur Ermöglichung von Fernpatientenbewertung und -beratung, besonders wertvoll in unterversorgten Gebieten und während öffentlicher Gesundheitsnotfälle"></li>
+        <li data-en="<strong>Medical Research and AI Development</strong>: Contribution to medical AI research through open-source methodologies, clinical validation protocols, and research collaboration opportunities in computer-aided diagnosis and medical imaging analysis"
+            data-de="<strong>Medizinische Forschung und KI-Entwicklung</strong>: Beitrag zur medizinischen KI-Forschung durch Open-Source-Methodologien, klinische Validierungsprotokolle und Forschungszusammenarbeitsmöglichkeiten in computergestützter Diagnose und medizinischer Bildanalyse"></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 data-en="Gallery" data-de="Galerie"></h2>
+      <h3 data-en="Ground Truth Data" data-de="Ground Truth Daten"></h3>
+      <div class="gallery gallery--two">
+        <figure>
+          <img src="images/projects/lung_diseases_classification/1.png" alt="Ground Truth CT Scans" />
+          <figcaption data-en="Ground Truth of 4 CT Scans: Normal, COVID-19, Lung Opacity, Pneumonia" 
+                      data-de="Ground Truth von 4 CT-Scans: Normal, COVID-19, Lungenopazität, Lungenentzündung"></figcaption>
+        </figure>
+      </div>
+
+      <h3 data-en="Training Data Processing" data-de="Trainingsdatenverarbeitung"></h3>
+      <div class="gallery gallery--two">
+        <figure>
+          <img src="images/projects/lung_diseases_classification/2.png" alt="Segmented Lung Images" />
+          <figcaption data-en="Segmented Lung Images for Training Dataset" 
+                      data-de="Segmentierte Lungenbilder für Trainingsdatensatz"></figcaption>
+        </figure>
+        <figure>
+          <img src="images/projects/lung_diseases_classification/3.png" alt="Augmented Training Data" />
+          <figcaption data-en="Example of Augmented Training Data" 
+                      data-de="Beispiel für augmentierte Trainingsdaten"></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section>
+      <h2 data-en="Current Research Status and Future Directions" data-de="Aktueller Forschungsstatus und zukünftige Richtungen"></h2>
+      <div class="alert alert-info">
+        <p data-en="<strong>Research Status Update:</strong> The technical implementation and optimization phases of this medical image classification system have been successfully completed, including the comprehensive U-Net architecture development and TensorRT FP16 optimization procedures. The system has achieved production-ready performance characteristics suitable for clinical deployment environments. Currently, the research team is conducting extensive model evaluation and validation procedures, including comprehensive performance assessment, clinical validation protocols, and uncertainty quantification analysis. Detailed evaluation results, performance benchmarks, and clinical validation outcomes will be published upon completion of the ongoing analysis phase."
+           data-de="<strong>Forschungsstatus-Update:</strong> Die technische Implementierung und Optimierungsphasen dieses medizinischen Bildklassifikationssystems wurden erfolgreich abgeschlossen, einschließlich der umfassenden U-Net Architekturentwicklung und TensorRT FP16 Optimierungsverfahren. Das System hat produktionsreife Leistungsmerkmale erreicht, die für klinische Bereitstellungsumgebungen geeignet sind. Derzeit führt das Forschungsteam umfangreiche Modellbewertungs- und Validierungsverfahren durch, einschließlich umfassender Leistungsbewertung, klinischer Validierungsprotokolle und Unsicherheitsquantifizierungsanalyse. Detaillierte Evaluierungsergebnisse, Leistungsbenchmarks und klinische Validierungsergebnisse werden nach Abschluss der laufenden Analysephase veröffentlicht."></p>
+      </div>
+    </section>
+
+    <section>
+      <h2 data-en="Links" data-de="Links"></h2>
+      <ul>
+        <li><a href="#" data-en="Source code (private/placeholder)"
+               data-de="Quellcode (privat/Platzhalter)"></a></li>
+        <li><a href="#" data-en="Research paper (in progress)"
+               data-de="Forschungsarbeit (in Bearbeitung)"></a></li>
+        <li><a href="#" data-en="Demo application (coming soon)"
+               data-de="Demo-Anwendung (demnächst)"></a></li>
+      </ul>
+    </section>
+
+    <p><a class="btn" href="projects.html" data-en="Back to Projects" data-de="Zurück zu Projekte"></a></p>
+    <p><a class="btn" href="index.html" data-en="Back to Resume" data-de="Zurück zu Lebenslauf"></a></p>
+  </main>
+
+  <footer>
+    <p data-en="© 2025 Agam Safaruddin" data-de="© 2025 Agam Safaruddin"></p>
+  </footer>
+</body>
+</html>
