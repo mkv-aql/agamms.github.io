@@ -102,10 +102,11 @@ footer {
 /* ===== Theme Toggle (same style as language toggle) ===== */
 .theme-toggle {
   position: absolute;
-  top: 4rem;
+  top: 5rem;
   right: 1rem;
   padding: 1rem;
   font: 700 13px/1 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  z-index: 10;
 }
 
 /* Hide the real checkbox */
@@ -114,6 +115,17 @@ footer {
   position: absolute;
   opacity: 0;
   pointer-events: none;
+}
+
+/* Ensure theme toggle has proper display */
+.theme-toggle {
+  display: block !important;
+}
+
+/* Debug: Make sure theme toggle is visible */
+.theme-toggle .toggle {
+  display: inline-block !important;
+  visibility: visible !important;
 }
 
 /* Wider container to fit labels left/right */
