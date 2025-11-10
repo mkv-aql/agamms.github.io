@@ -2,8 +2,8 @@ import cv2
 import numpy as np
 
 # Input paths
-img1_path = "Sidewalk_Ground_Truth_Combined_Color.png"
-img2_path = "Sidewalk_Segmentation_Alone.jpg"
+img1_path = "Interpolation Before.jpg"
+img2_path = "Interpolation After.jpg"
 
 # Read images
 img1 = cv2.imread(img1_path, cv2.IMREAD_COLOR)
@@ -19,5 +19,5 @@ if img1.shape[0] != img2.shape[0]:
 joined = np.hstack((img1, img2))
 
 # Save result
-cv2.imwrite("Sidewalk_Ground_Truth_SideBySide.png", joined)
+cv2.imwrite("Interpolation before after.jpg", joined)
 print("Saved to Boundary_Ground_Truth_SideBySide.png")

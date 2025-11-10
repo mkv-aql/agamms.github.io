@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fluidized Bed Spray Granulation – ML Prediction</title>
+  <link rel="stylesheet" href="style.css?v=darkmode1" />
+  <script defer src="script.js?v=darkmode1"></script>
+</head>
+<body>
+  <header>
+    <!-- language slider -->
+    <div class="lang-toggle" aria-label="Language toggle">
+      <input id="langSwitch" type="checkbox" aria-label="Switch language" />
+      <label for="langSwitch" class="toggle">
+        <span class="label left">EN</span>
+        <span class="track"></span>
+        <span class="thumb" aria-hidden="true">EN</span>
+        <span class="label right">DE</span>
+      </label>
+    </div>
+
+    <!-- theme toggle -->
+    <div class="theme-toggle" aria-label="Theme toggle">
+      <input id="themeSwitch" type="checkbox" aria-label="Switch theme" />
+      <label for="themeSwitch" class="toggle">
+        <span class="label left">☀️</span>
+        <span class="track"></span>
+        <span class="thumb" id="themeThumb" aria-hidden="true"></span>
+        <span class="label right">🌙</span>
+      </label>
+    </div>
+
+    <h1
+      data-en="Fluidized Bed Spray Granulation — Predicting Particle Size Distributions with Machine Learning"
+      data-de="Wirbelschicht-Sprühgranulation — Vorhersage von Partikelgrößenverteilungen mit Machine Learning">
+    </h1>
+    <p
+      data-en="Research project: ML model to predict particle size distributions over time in fluidized bed spray granulation."
+      data-de="Forschungsprojekt: ML-Modell zur zeitlichen Vorhersage von Partikelgrößenverteilungen in der Wirbelschicht-Sprühgranulation.">
+    </p>
+
+    <nav class="breadcrumb">
+      <a href="index.html" data-en="Back to Home" data-de="Zurück zum Start"></a> /
+      <a href="projects.html" data-en="Back to Projects" data-de="Zurück zur Projekte"></a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- Overview -->
+    <section>
+      <h2 data-en="Overview" data-de="Überblick"></h2>
+      <p data-en="This project develops a machine learning model that predicts the particle size distribution (PSD) at any time during fluidized bed spray granulation. Nine experiments were conducted with varying inlet temperature and air flow; sensor data and PSD measurements were used to train and evaluate models."
+         data-de="Dieses Projekt entwickelt ein Machine-Learning-Modell, das die Partikelgrößenverteilung (PSD) zu beliebigen Zeitpunkten während der Wirbelschicht-Sprühgranulation vorhersagt. Neun Experimente mit variierender Eintrittstemperatur und Luftstrom wurden durchgeführt; Sensordaten und PSD-Messungen dienten zum Trainieren und Evaluieren der Modelle."></p>
+      <p data-en="Granulation used Cellets®-200 as cores and a Sodium Benzoate solution as spray; samples were taken periodically during the run."
+         data-de="Als Kerne wurden Cellets®-200 verwendet und eine Natriumbenzoat-Lösung als Sprühmedium; während des Versuchs wurden periodisch Proben entnommen."></p>
+      <p data-en="Goal: enable reliable, real-time-like prediction of PSD to support quality and process control."
+         data-de="Ziel: verlässliche, quasi-echtzeitfähige Vorhersage der PSD zur Unterstützung von Qualität und Prozessführung."></p>
+    </section>
+
+    <!-- Process & Equipment -->
+    <section>
+      <h2 data-en="Process & Equipment" data-de="Prozess & Anlage"></h2>
+      <p data-en="Process: wet granulation in a Glatt GF3 (ProCell LabSystems) with Vario 3 insert (top-spray, two-fluid nozzle). Air is heated and fluidizes the bed; the solution is atomized into the chamber; samples are taken roughly every 17 minutes."
+         data-de="Prozess: Nassgranulation in einer Glatt GF3 (ProCell LabSystems) mit Vario-3-Einsatz (Top-Spray, Zweistoffdüse). Die Luft wird erhitzt und fluidisiert das Bett; die Lösung wird in die Kammer zerstäubt; Proben werden etwa alle 17 Minuten genommen."></p>
+
+      <!-- Image placeholders -->
+      <div class="gallery gallery--two">
+        <figure>
+          <img src="images/projects/granulation/glattgf3_with_vario3_insert.JPG" alt="Glatt GF3 with Vario 3 insert and top-spray nozzle" />
+          <figcaption data-en="Setup — process chamber & nozzle" data-de="Aufbau — Prozesskammer & Düse"></figcaption>
+        </figure>
+        <figure>
+          <img src="images/projects/granulation/design_of_experiment.jpg" alt="Design of experiments chart of temperature versus air flow" />
+          <figcaption data-en="DoE — temperature vs. air flow" data-de="DoE — Temperatur vs. Luftstrom"></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Data Acquisition -->
+    <section>
+      <h2 data-en="Data Acquisition" data-de="Datenerfassung"></h2>
+      <ul>
+        <li data-en="<strong>Inline PSD — Parsum IPP 70-S:</strong> spatial filtering technique (laser + fiber optics), logs particle sizes every 10 s."
+            data-de="<strong>Inline-PSD — Parsum IPP 70-S:</strong> Spatial-Filtering-Technik (Laser + Lichtleiter), protokolliert alle 10 s Partikelgrößen."></li>
+        <li data-en="<strong>Offline PSD — Camsizer X2 (X-Fall):</strong> dynamic image analysis with dual-camera technology; sample measured multiple times."
+            data-de="<strong>Offline-PSD — Camsizer X2 (X-Fall):</strong> Dynamische Bildanalyse mit Dual-Kamera-Technologie; Probe mehrfach vermessen."></li>
+        <li data-en="<strong>Process sensors:</strong> temperatures, humidity, pressures, air flows, spray pump status, etc."
+            data-de="<strong>Prozesssensorik:</strong> Temperaturen, Feuchten, Drücke, Luftströme, Sprühpumpen-Status u. a."></li>
+      </ul>
+
+      <div class="gallery gallery--two">
+        <figure>
+          <img src="images/projects/granulation/parsum_ipp_70s.JPG" alt="Parsum IPP 70-S inline PSD probe" />
+          <figcaption data-en="Inline PSD probe" data-de="Inline-PSD-Sonde"></figcaption>
+        </figure>
+        <figure>
+          <img src="images/projects/granulation/Camsizer_X2.jpg" alt="Camsizer X2 offline PSD analyzer" />
+          <figcaption data-en="Offline PSD analyzer" data-de="Offline-PSD-Analysator"></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Data Preparation -->
+    <section>
+      <h2 data-en="Data Preparation" data-de="Datenaufbereitung"></h2>
+      <ul>
+        <li data-en="<strong>Cleaning:</strong> keep only non-idle machine states; remove redundant constant columns; handle blockage intervals."
+            data-de="<strong>Bereinigung:</strong> nur nicht-idle Zustände; redundante konstante Spalten entfernen; Blockage-Intervalle behandeln."></li>
+        <li data-en="<strong>Unit fix:</strong> corrected spray-rate units; added cumulative mass feature <code>sprayed_total[g]</code> as time index."
+            data-de="<strong>Einheiten-Fix:</strong> Sprührate korrigiert; kumulative Masse <code>sprayed_total[g]</code> als Zeitindex ergänzt."></li>
+        <li data-en="<strong>Interpolation:</strong> fill 10-s gaps in PSD with PCHIP (prevents overshoot; preserves monotonic trends)."
+            data-de="<strong>Interpolation:</strong> 10-s-Lücken der PSD mit PCHIP gefüllt (vermeidet Overshoot; erhält monotone Trends)."></li>
+        <li data-en="<strong>Label trimming:</strong> drop empty PSD bins outside measured range to speed up training."
+            data-de="<strong>Label-Trimmung:</strong> leere PSD-Bins außerhalb des Messbereichs entfernen für schnelleres Training."></li>
+      </ul>
+
+      <div class="gallery gallery--two">
+        <figure>
+          <img src="images/projects/granulation/Interpolation before after.jpg" alt="Before and after comparison of PCHIP interpolation" />
+          <figcaption data-en="Interpolation example" data-de="Interpolationsbeispiel"></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Modeling -->
+    <section>
+      <h2 data-en="Modeling Approach" data-de="Modellierungsansatz"></h2>
+      <p data-en="We evaluated Random Forest Regressor to map process features to multi-output PSD bins (regression). Feature relationships were explored via correlation matrices and Random-Forest feature importance."
+         data-de="Zur Abbildung von Prozessmerkmalen auf mehrere PSD-Bins (Regression) wurde ein Random-Forest-Regressor evaluiert. Merkmalsbeziehungen wurden über Korrelationsmatrizen und RF-Feature-Importance untersucht."></p>
+
+      <div class="gallery gallery--two">
+        <figure>
+          <img src="images/projects/granulation/Random forest regressor tree diagram.jpg" alt="Random forest regressor structure diagram" />
+          <figcaption data-en="RF regressor concept" data-de="RF-Regressor-Konzept"></figcaption>
+        </figure>
+        <figure>
+          <img src="images/projects/granulation/Correlation Matrix Heatmap.jpg" alt="Correlation matrix heatmap of process features" />
+          <figcaption data-en="Correlation / importance" data-de="Korrelation / Importance"></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Experiments & Training Strategies -->
+    <section>
+      <h2 data-en="Experiments & Training Strategies" data-de="Experimente & Trainingsstrategien"></h2>
+      <ul>
+        <li data-en="<strong>9 experiments</strong> (varying temperature & air flow) with periodic sampling; PSD logged inline and offline."
+            data-de="<strong>9 Experimente</strong> (Temperatur & Luftstrom variiert) mit periodischer Probenahme; PSD inline und offline erfasst."></li>
+        <li data-en="<strong>Strategy A — per-dataset models:</strong> 9 separate RF models (train/test split within each dataset)."
+            data-de="<strong>Strategie A — Modell pro Datensatz:</strong> 9 separate RF-Modelle (Train/Test-Split innerhalb jedes Datensatzes)."></li>
+        <li data-en="<strong>Strategy B — 8-train / 1-test:</strong> concatenate eight datasets for training; test on the held-out dataset."
+            data-de="<strong>Strategie B — 8-Train / 1-Test:</strong> Acht Datensätze zum Training konkatenieren; auf dem zurückgehaltenen testen."></li>
+        <li data-en="<strong>Strategy C — 8-train + 20% of test:</strong> add 20% of the target dataset into training (then test on remaining 80%)."
+            data-de="<strong>Strategie C — 8-Train + 20% Testdatensatz:</strong> 20% des Ziel-Datensatzes ins Training mischen (Test auf übrigen 80%)."></li>
+      </ul>
+    </section>
+
+    <!-- Results -->
+    <section>
+      <h2 data-en="Results (Highlights)" data-de="Ergebnisse (Highlights)"></h2>
+      <ul>
+        <li data-en="<strong>Per-dataset models:</strong> very high R² (&gt;0.99) on their own test splits, but poor generalization to other experiments (often negative R²)."
+            data-de="<strong>Modell pro Datensatz:</strong> sehr hohe R²-Werte (&gt;0,99) auf eigenen Test-Splits, aber geringe Generalisierung auf andere Experimente (oft negative R²)."></li>
+        <li data-en="<strong>8-train / 1-test:</strong> negative R² across combinations — not suitable for generalization in this setup."
+            data-de="<strong>8-Train / 1-Test:</strong> negative R² über die Kombinationen — in diesem Setup nicht geeignet für Generalisierung."></li>
+        <li data-en="<strong>8-train + 20% of test:</strong> positive R² (≈0.38–0.82), but the model becomes constrained to seen parameter ranges."
+            data-de="<strong>8-Train + 20% Test:</strong> positive R² (≈0,38–0,82), aber das Modell wird auf gesehene Parameterbereiche eingegrenzt."></li>
+        <li data-en="<strong>Root causes:</strong> dataset drift between experiments; varying feature importance; blocked/noisy intervals impacting linear trends."
+            data-de="<strong>Ursachen:</strong> Datensatz-Drift zwischen Experimenten; variierende Feature-Importance; blockierte/rauschhafte Intervalle beeinflussen lineare Trends."></li>
+      </ul>
+
+      <div class="gallery gallery--two">
+        <figure>
+          <img src="images/projects/granulation/Combined_Real_vs_Predicted ex7 mod 6.jpg" alt="Comparison plot of real versus predicted PSD" />
+          <figcaption data-en="Per-dataset fit (example)" data-de="Einzeldatensatz-Fit (Beispiel)"></figcaption>
+        </figure>
+        <figure>
+          <img src="images/projects/granulation/Parity Plot Particle sizes over Total Liquid Solution Sprayed.jpg" alt="PSD parity plot showing predicted versus actual values" />
+          <figcaption data-en="Parity plot" data-de="Parity-Plot"></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Lessons & Next Steps -->
+    <section>
+      <h2 data-en="Lessons & Next Steps" data-de="Learnings & Nächste Schritte"></h2>
+      <ul>
+        <li data-en="Stabilize inputs via robust feature engineering (composite indices) to reduce variability across experiments."
+            data-de="Eingaben über robuste Feature-Engineering (Komposit-Indizes) stabilisieren, um Variabilität zwischen Experimenten zu reduzieren."></li>
+        <li data-en="Reduce dimensionality (e.g., PCA/autoencoders) for more consistent features across runs."
+            data-de="Dimensionalität reduzieren (z. B. PCA/Autoencoder) für konsistentere Merkmale über Läufe hinweg."></li>
+        <li data-en="Consider models tolerant to drift and sequential behavior (e.g., gradient boosting, temporal models, domain adaptation)."
+            data-de="Modelle mit Drift-Toleranz und zeitlichem Verhalten prüfen (z. B. Gradient Boosting, zeitliche Modelle, Domain-Adaption)."></li>
+        <li data-en="Repair blocked intervals by interpolation/augmentation to restore near-linear trends where appropriate."
+            data-de="Blockierte Intervalle durch Interpolation/Augmentation reparieren, um annähernd lineare Trends wiederherzustellen."></li>
+      </ul>
+    </section>
+
+    <!-- Gallery placeholders -->
+    <section>
+      <h2 data-en="Gallery" data-de="Galerie"></h2>
+      <div class="gallery gallery--two">
+        <figure>
+          <img src="images/projects/granulation/Materials & Solution.JPG" alt="Cellets-200 cores with sodium benzoate solution" />
+          <figcaption data-en="Materials" data-de="Materialien"></figcaption>
+        </figure>
+        <figure>
+          <div class="img-placeholder">[Process hardware (valves, pump, nozzle)]</div>
+          <figcaption data-en="Hardware" data-de="Hardware"></figcaption>
+        </figure>
+        <figure>
+          <div class="img-placeholder">[R² table snapshot / bar chart]</div>
+          <figcaption data-en="R² overview" data-de="R²-Übersicht"></figcaption>
+        </figure>
+        <figure>
+          <div class="img-placeholder">[Data pipeline (collect → clean → interpolate → train → evaluate)]</div>
+          <figcaption data-en="Workflow" data-de="Workflow"></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Links -->
+    <section>
+      <h2 data-en="Links" data-de="Links"></h2>
+      <ul>
+        <li><a href="images/projects/granulation/Projektarbeit_Final.pdf" target="_blank" rel="noopener"
+          data-en="Project report (PDF)"
+          data-de="Projektbericht (PDF)"></a></li>
+        <!-- Optional: add demo/code links later -->
+      </ul>
+    </section>
+
+    <p><a class="btn" href="projects.html" data-en="Back to Projects" data-de="Zurück zu Projekte"></a></p>
+    <p><a class="btn" href="index.html" data-en="Back to Resume" data-de="Zurück zu Lebenslauf"></a></p>
+  </main>
+
+  <footer>
+    <p data-en="© 2025 Agam Safaruddin" data-de="© 2025 Agam Safaruddin"></p>
+  </footer>
+</body>
+</html>
