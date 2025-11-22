@@ -68,11 +68,11 @@
       <div class="gallery gallery--two">
         <figure>
           <img src="images/projects/granulation/glattgf3_with_vario3_insert.JPG" alt="Glatt GF3 with Vario 3 insert and top-spray nozzle" />
-          <figcaption data-en="Setup — process chamber & nozzle" data-de="Aufbau — Prozesskammer & Düse"></figcaption>
+          <figcaption data-en="Setup - process chamber & nozzle" data-de="Aufbau - Prozesskammer & Düse"></figcaption>
         </figure>
         <figure>
           <img src="images/projects/granulation/design_of_experiment.jpg" alt="Design of experiments chart of temperature versus air flow" />
-          <figcaption data-en="DoE — temperature vs. air flow" data-de="DoE — Temperatur vs. Luftstrom"></figcaption>
+          <figcaption data-en="DoE - temperature vs. air flow" data-de="DoE - Temperatur vs. Luftstrom"></figcaption>
         </figure>
       </div>
     </section>
@@ -81,10 +81,10 @@
     <section>
       <h2 data-en="Data Acquisition" data-de="Datenerfassung"></h2>
       <ul>
-        <li data-en="<strong>Inline PSD — Parsum IPP 70-S:</strong> spatial filtering technique (laser + fiber optics), logs particle sizes every 10 s."
-            data-de="<strong>Inline-PSD — Parsum IPP 70-S:</strong> Spatial-Filtering-Technik (Laser + Lichtleiter), protokolliert alle 10 s Partikelgrößen."></li>
-        <li data-en="<strong>Offline PSD — Camsizer X2 (X-Fall):</strong> dynamic image analysis with dual-camera technology; sample measured multiple times."
-            data-de="<strong>Offline-PSD — Camsizer X2 (X-Fall):</strong> Dynamische Bildanalyse mit Dual-Kamera-Technologie; Probe mehrfach vermessen."></li>
+        <li data-en="<strong>Inline PSD - Parsum IPP 70-S:</strong> spatial filtering technique (laser + fiber optics), logs particle sizes every 10 s."
+            data-de="<strong>Inline-PSD - Parsum IPP 70-S:</strong> Spatial-Filtering-Technik (Laser + Lichtleiter), protokolliert alle 10 s Partikelgrößen."></li>
+        <li data-en="<strong>Offline PSD - Camsizer X2 (X-Fall):</strong> dynamic image analysis with dual-camera technology; sample measured multiple times."
+            data-de="<strong>Offline-PSD - Camsizer X2 (X-Fall):</strong> Dynamische Bildanalyse mit Dual-Kamera-Technologie; Probe mehrfach vermessen."></li>
         <li data-en="<strong>Process sensors:</strong> temperatures, humidity, pressures, air flows, spray pump status, etc."
             data-de="<strong>Prozesssensorik:</strong> Temperaturen, Feuchten, Drücke, Luftströme, Sprühpumpen-Status u. a."></li>
       </ul>
@@ -147,12 +147,12 @@
       <ul>
         <li data-en="<strong>9 experiments</strong> (varying temperature & air flow) with periodic sampling; PSD logged inline and offline."
             data-de="<strong>9 Experimente</strong> (Temperatur & Luftstrom variiert) mit periodischer Probenahme; PSD inline und offline erfasst."></li>
-        <li data-en="<strong>Strategy A — per-dataset models:</strong> 9 separate RF models (train/test split within each dataset)."
-            data-de="<strong>Strategie A — Modell pro Datensatz:</strong> 9 separate RF-Modelle (Train/Test-Split innerhalb jedes Datensatzes)."></li>
-        <li data-en="<strong>Strategy B — 8-train / 1-test:</strong> concatenate eight datasets for training; test on the held-out dataset."
-            data-de="<strong>Strategie B — 8-Train / 1-Test:</strong> Acht Datensätze zum Training konkatenieren; auf dem zurückgehaltenen testen."></li>
-        <li data-en="<strong>Strategy C — 8-train + 20% of test:</strong> add 20% of the target dataset into training (then test on remaining 80%)."
-            data-de="<strong>Strategie C — 8-Train + 20% Testdatensatz:</strong> 20% des Ziel-Datensatzes ins Training mischen (Test auf übrigen 80%)."></li>
+        <li data-en="<strong>Strategy A - per-dataset models:</strong> 9 separate RF models (train/test split within each dataset)."
+            data-de="<strong>Strategie A - Modell pro Datensatz:</strong> 9 separate RF-Modelle (Train/Test-Split innerhalb jedes Datensatzes)."></li>
+        <li data-en="<strong>Strategy B - 8-train / 1-test:</strong> concatenate eight datasets for training; test on the held-out dataset."
+            data-de="<strong>Strategie B - 8-Train / 1-Test:</strong> Acht Datensätze zum Training konkatenieren; auf dem zurückgehaltenen testen."></li>
+        <li data-en="<strong>Strategy C - 8-train + 20% of test:</strong> add 20% of the target dataset into training (then test on remaining 80%)."
+            data-de="<strong>Strategie C - 8-Train + 20% Testdatensatz:</strong> 20% des Ziel-Datensatzes ins Training mischen (Test auf übrigen 80%)."></li>
       </ul>
     </section>
 
@@ -162,8 +162,8 @@
       <ul>
         <li data-en="<strong>Per-dataset models:</strong> very high R² (&gt;0.99) on their own test splits, but poor generalization to other experiments (often negative R²)."
             data-de="<strong>Modell pro Datensatz:</strong> sehr hohe R²-Werte (&gt;0,99) auf eigenen Test-Splits, aber geringe Generalisierung auf andere Experimente (oft negative R²)."></li>
-        <li data-en="<strong>8-train / 1-test:</strong> negative R² across combinations — not suitable for generalization in this setup."
-            data-de="<strong>8-Train / 1-Test:</strong> negative R² über die Kombinationen — in diesem Setup nicht geeignet für Generalisierung."></li>
+        <li data-en="<strong>8-train / 1-test:</strong> negative R² across combinations - not suitable for generalization in this setup."
+            data-de="<strong>8-Train / 1-Test:</strong> negative R² über die Kombinationen - in diesem Setup nicht geeignet für Generalisierung."></li>
         <li data-en="<strong>8-train + 20% of test:</strong> positive R² (≈0.38–0.82), but the model becomes constrained to seen parameter ranges."
             data-de="<strong>8-Train + 20% Test:</strong> positive R² (≈0,38–0,82), aber das Modell wird auf gesehene Parameterbereiche eingegrenzt."></li>
         <li data-en="<strong>Root causes:</strong> dataset drift between experiments; varying feature importance; blocked/noisy intervals impacting linear trends."
