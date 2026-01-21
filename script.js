@@ -65,4 +65,49 @@ document.addEventListener("DOMContentLoaded", () => {
       if (themeSwitchEl) themeSwitchEl.checked = newTheme === "dark";
     }
   });
+
+  // Skills categories functionality with sliding
+  const skillCategories = document.querySelectorAll('.skill-category');
+  const skillsContainer = document.querySelector('.skills-container');
+  const col2Content = document.getElementById('skills-content-col2');
+  const col3Content = document.getElementById('skills-content-col3');
+
+  skillCategories.forEach(category => {
+    category.addEventListener('click', () => {
+      const targetTab = category.getAttribute('data-tab');
+      const column = category.getAttribute('data-column');
+      
+      // Toggle active state
+      const isActive = category.classList.contains('active');
+      
+      // Close all categories and reset container
+      skillCategories.forEach(c => c.classList.remove('active'));
+      skillsContainer.classList.remove('col1-active', 'col2-active');
+      
+      // Hide all skill contents
+      col2Content.querySelectorAll('.skill-tab-content').forEach(c => c.classList.remove('active'));
+      col3Content.querySelectorAll('.skill-tab-content').forEach(c => c.classList.remove('active'));
+      
+      // Open clicked category if it wasn't active
+      if (!isActive) {
+        category.classList.add('active');
+        
+        if (column === '1') {
+          // Col1 clicked: slide col2 to col3, show skills in col2
+          skillsContainer.classList.add('col1-active');
+          const content = col2Content.querySelector(`.skill-tab-content[data-content="${targetTab}"]`);
+          if (content) {
+            content.classList.add('active');
+          }
+        } else if (column === '2') {
+          // Col2 clicked: show skills in col3, no sliding
+          skillsContainer.classList.add('col2-active');
+          const content = col3Content.querySelector(`.skill-tab-content[data-content="${targetTab}"]`);
+          if (content) {
+            content.classList.add('active');
+          }
+        }
+      }
+    });
+  });
 });

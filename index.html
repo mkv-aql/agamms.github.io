@@ -34,8 +34,8 @@
     <img src="images/headshot.jpg" alt="Agam Safaruddin" class="headshot">
     <h1 data-en="Agam Safaruddin" data-de="Agam Safaruddin"></h1>
       <P data-en="WEBSITE IS STILL UNDER CONSTRUCTION!" data-de="DIE WEBSEITE WIRD DERZEIT NOCH BEARBEITET!"></P>
-    <p data-en="Mechatronics Engineer | AI & Computer Vision Specialist"
-       data-de="Mechatronik Ingenieur | KI & Computer Vision Spezialist"></p>
+    <p data-en="Mechatronics Engineer"
+       data-de="Mechatronik Ingenieur"></p>
   </header>
 
   <section id="about">
@@ -46,12 +46,227 @@
 
   <section id="skills">
     <h2 data-en="Skills" data-de="Fähigkeiten"></h2>
-    <ul>
-      <li data-en="Python, Java, C++, R" data-de="Python, Java, C++, R"></li>
-      <li data-en="Machine Learning (PyTorch, TensorFlow)" data-de="Machine Learning (PyTorch, TensorFlow)"></li>
-      <li data-en="Computer Vision (OpenCV, OCR)" data-de="Computer Vision (OpenCV, OCR)"></li>
-      <li data-en="DevOps (GitHub Actions, Docker, AWS)" data-de="DevOps (GitHub Actions, Docker, AWS)"></li>
-    </ul>
+    <div class="skills-container">
+      <div class="skills-categories-col1">
+        <button class="skill-category" data-tab="programming" data-column="1">
+          <span class="category-chevron">▶</span>
+          <span data-en="Programming Languages" data-de="Programmiersprachen"></span>
+        </button>
+        <button class="skill-category" data-tab="ml" data-column="1">
+          <span class="category-chevron">▶</span>
+          <span data-en="Machine Learning" data-de="Machine Learning"></span>
+        </button>
+        <button class="skill-category" data-tab="cv" data-column="1">
+          <span class="category-chevron">▶</span>
+          <span data-en="Computer Vision" data-de="Computer Vision"></span>
+        </button>
+        <button class="skill-category" data-tab="dl-opt" data-column="1">
+          <span class="category-chevron">▶</span>
+          <span data-en="Deep Learning Optimization" data-de="Deep Learning Optimierung"></span>
+        </button>
+        <button class="skill-category" data-tab="data" data-column="1">
+          <span class="category-chevron">▶</span>
+          <span data-en="Data Processing & Analysis" data-de="Datenverarbeitung & Analyse"></span>
+        </button>
+      </div>
+      
+      <div class="skills-categories-col2" id="col2-categories">
+        <button class="skill-category" data-tab="web" data-column="2">
+          <span class="category-chevron">▶</span>
+          <span data-en="Web Development" data-de="Webentwicklung"></span>
+        </button>
+        <button class="skill-category" data-tab="cloud" data-column="2">
+          <span class="category-chevron">▶</span>
+          <span data-en="Cloud Services & APIs" data-de="Cloud-Dienste & APIs"></span>
+        </button>
+        <button class="skill-category" data-tab="3d" data-column="2">
+          <span class="category-chevron">▶</span>
+          <span data-en="3D Processing & Geospatial" data-de="3D-Verarbeitung & Geospatial"></span>
+        </button>
+        <button class="skill-category" data-tab="arvr" data-column="2">
+          <span class="category-chevron">▶</span>
+          <span data-en="AR/VR Development" data-de="AR/VR-Entwicklung"></span>
+        </button>
+        <button class="skill-category" data-tab="devops" data-column="2">
+          <span class="category-chevron">▶</span>
+          <span data-en="DevOps" data-de="DevOps"></span>
+        </button>
+      </div>
+      
+      <div class="skills-content" id="skills-content-col2">
+        <div class="skill-tab-content" data-content="programming">
+          <ul>
+            <li>Python</li>
+            <li>Java</li>
+            <li>C++</li>
+          </ul>
+        </div>
+        
+        <div class="skill-tab-content" data-content="ml">
+          <ul>
+            <li>PyTorch</li>
+            <li>TensorFlow</li>
+            <li>Keras</li>
+            <li>scikit-learn</li>
+            <li>LSTM</li>
+            <li>U-Net</li>
+            <li>Random Forest</li>
+          </ul>
+        </div>
+        
+        <div class="skill-tab-content" data-content="cv">
+          <ul>
+            <li>OpenCV</li>
+            <li>Mediapipe</li>
+            <li>SAM2</li>
+            <li>OCR</li>
+            <li>3D Point Clouds</li>
+            <li>Depth Processing</li>
+          </ul>
+        </div>
+        
+        <div class="skill-tab-content" data-content="dl-opt">
+          <ul>
+            <li>TensorRT FP16</li>
+          </ul>
+        </div>
+        
+        <div class="skill-tab-content" data-content="data">
+          <ul>
+            <li>NumPy</li>
+            <li>Matplotlib</li>
+            <li>PIL</li>
+            <li>Open3D</li>
+            
+            
+          </ul>
+        </div>
+        
+        <div class="skill-tab-content" data-content="web">
+          <ul>
+            <li>Flask</li>
+          </ul>
+        </div>
+        
+        <div class="skill-tab-content" data-content="cloud">
+          <ul>
+            <li>Google Street View API</li>
+            <li>Google Static Maps API</li>
+            <li>Google Pub/Sub</li>
+            <li>AWS</li>
+          </ul>
+        </div>
+        
+        <div class="skill-tab-content" data-content="3d">
+          <ul>
+            <li>Open3D</li>
+            <li>3D Coordinate Mapping</li>
+            <li>Binary Data Parsing</li>
+          </ul>
+        </div>
+        
+        <div class="skill-tab-content" data-content="arvr">
+          <ul>
+            <li>Unity</li>
+            <li>Cesium</li>
+            <li>HoloLens 2</li>
+          </ul>
+        </div>
+        
+        <div class="skill-tab-content" data-content="devops">
+          <ul>
+            <li>GitHub Actions</li>
+            <li>Docker</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="skills-content" id="skills-content-col3">
+        <div class="skill-tab-content" data-content="programming">
+          <ul>
+            <li>Python</li>
+            <li>Java</li>
+            <li>C++</li>
+          </ul>
+        </div>
+        
+        <div class="skill-tab-content" data-content="ml">
+          <ul>
+            <li>PyTorch</li>
+            <li>TensorFlow</li>
+            <li>Keras</li>
+            <li>scikit-learn</li>
+            <li>LSTM</li>
+            <li>U-Net</li>
+            <li>Random Forest</li>
+          </ul>
+        </div>
+        
+        <div class="skill-tab-content" data-content="cv">
+          <ul>
+            <li>OpenCV</li>
+            <li>Mediapipe</li>
+            <li>SAM2</li>
+            <li>OCR</li>
+            <li>3D Point Clouds</li>
+            <li>Depth Processing</li>
+          </ul>
+        </div>
+        
+        <div class="skill-tab-content" data-content="dl-opt">
+          <ul>
+            <li>TensorRT FP16</li>
+          </ul>
+        </div>
+        
+        <div class="skill-tab-content" data-content="data">
+          <ul>
+            <li>NumPy</li>
+            <li>Matplotlib</li>
+            <li>PIL</li>
+            <li>Open3D</li>
+          </ul>
+        </div>
+        
+        <div class="skill-tab-content" data-content="web">
+          <ul>
+            <li>Flask</li>
+          </ul>
+        </div>
+        
+        <div class="skill-tab-content" data-content="cloud">
+          <ul>
+            <li>Google Street View API</li>
+            <li>Google Static Maps API</li>
+            <li>Google Pub/Sub</li>
+            <li>AWS</li>
+          </ul>
+        </div>
+        
+        <div class="skill-tab-content" data-content="3d">
+          <ul>
+            <li>Open3D</li>
+            <li>3D Coordinate Mapping</li>
+            <li>Binary Data Parsing</li>
+          </ul>
+        </div>
+        
+        <div class="skill-tab-content" data-content="arvr">
+          <ul>
+            <li>Unity</li>
+            <li>Cesium</li>
+            <li>HoloLens 2</li>
+          </ul>
+        </div>
+        
+        <div class="skill-tab-content" data-content="devops">
+          <ul>
+            <li>GitHub Actions</li>
+            <li>Docker</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section id="projects">
@@ -64,9 +279,9 @@
 
     <div class="project">
       <h3 data-en="Human-Robot Collaboration" data-de="Mensch-Roboter Zusammenarbeit"></h3>
-      <p data-en="Master’s thesis using 4D cameras, OpenCV, and LSTM for real-time human action recognition."
+      <p data-en="Master's thesis using 4D cameras, OpenCV, and LSTM for real-time human action recognition."
          data-de="Masterarbeit mit 4D-Kameras, OpenCV und LSTM zur Echtzeit-Erkennung menschlicher Aktionen."></p>
-    <a href="project-human-robot.html" data-en="View Project" data-de="Projekt ansehen"></a>
+    <a href="project-human-robot.html" class="btn" data-en="View Project" data-de="Projekt ansehen"></a>
     </div>
 
       <div class="project">
@@ -74,7 +289,7 @@
           data-de="KI-Modell zur Klassifizierung und Analyse von Straßenbelagsmaterialien (Phase 1)"></h3>
       <p data-en="Advanced deep learning classifier for comprehensive street-level material analysis using computer vision and neural networks. Phase 1: Dataset Collection"
       data-de="Fortgeschrittener Deep-Learning-Klassifikator für umfassende Materialanalyse auf Straßenebene mit Computer Vision und neuronalen Netzen. Phase 1: Datensatzsammlung"></p>
-      <a href="project-street-material-phase1.html" data-en="View Project" data-de="Projekt ansehen"></a>
+      <a href="project-street-material-phase1.html" class="btn" data-en="View Project" data-de="Projekt ansehen"></a>
     </div>
 
       <div class="project under-construction">
@@ -82,35 +297,35 @@
           data-de="KI-Modell zur Klassifizierung und Analyse von Straßenbelagsmaterialien (Phase 2)"></h3>
       <p data-en="Dataset pre-processing, training architecture design, model training, and model evaluation, model tuning."
       data-de="Deep-Learning-Klassifikator für Materialien auf Straßenebene unter Verwendung von OpenCV und PyTorch."></p>
-      <a href="project-street-material-phase2.html" data-en="View Project" data-de="Projekt ansehen"></a>
+      <a href="project-street-material-phase2.html" class="btn" data-en="View Project" data-de="Projekt ansehen"></a>
     </div>
 
       <div class="project">
       <h3 data-en="3D Point Cloud of Street View and Satellite View" data-de="3D-Punktwolke von Street View und Satellitenansicht"></h3>
       <p data-en="Experimental research project connecting street view and satellite perspectives through 3D point cloud data for unified urban analysis."
       data-de="Experimentelles Forschungsprojekt zur Verbindung von Street View und Satellitenperspektiven durch 3D-Punktwolkendaten für einheitliche Stadtanalyse."></p>
-      <a href="project-3d-point-cloud.html" data-en="View Project" data-de="Projekt ansehen"></a>
+      <a href="project-3d-point-cloud.html" class="btn" data-en="View Project" data-de="Projekt ansehen"></a>
     </div>
 
     <div class="project under-construction">
       <h3 data-en="Augmented Reality of internal Buildings Digital Twin for Indoor navigations" data-de="Augmented Reality von internen Gebäuden Digital Twin für Indoor-Navigation"></h3>
       <p data-en="Development of an Augmented Reality Simulation for a digital twin indoor of a building with Hololens 2, using Cesium library to draw the real world into Unity for a navigation system."
       data-de="Entwicklung einer Augmented Reality Simulation für einen digitalen Zwilling im Innenbereich eines Gebäudes mit Hololens 2, unter Verwendung der Cesium-Bibliothek zur Darstellung der realen Welt in Unity für ein Navigationssystem."></p>
-      <a href="nothing.html" data-en="View Project" data-de="Projekt ansehen"></a>
+      <a href="nothing.html" class="btn" data-en="View Project" data-de="Projekt ansehen"></a>
     </div>
 
     <div class="project under-construction">
       <h3 data-en="Wrist Therapy | Hand Detection and Analyzer" data-de="Handgelenk-Therapie | Hand-Erkennung und Analyser"></h3>
       <p data-en="Development of smart camera for Wrist-Therapy project from IMEK-TUHH using OpenCV and Google's Mediapipe, then sending the wrist live position data to another machine via Google's Pub/Sub."
       data-de="Entwicklung einer intelligenten Kamera für das Handgelenk-Therapie-Projekt von IMEK-TUHH unter Verwendung von OpenCV und Google's Mediapipe, dann Übertragung der Live-Positionsdaten des Handgelenks an eine andere Maschine über Google's Pub/Sub."></p>
-      <a href="nothing.html" data-en="View Project" data-de="Projekt ansehen"></a>
+      <a href="nothing.html" class="btn" data-en="View Project" data-de="Projekt ansehen"></a>
     </div>
 
     <div class="project">
       <h3 data-en="CT Scan Lung Disease Classification" data-de="CT-Scan Lungenkrankheits-Klassifikation"></h3>
       <p data-en="Deep learning model for automated classification of lung diseases (Normal, COVID-19, Lung Opacity, Pneumonia) using U-Net architecture with TensorRT FP16 optimization for faster inference."
       data-de="Deep Learning Modell für automatisierte Klassifikation von Lungenkrankheiten (Normal, COVID-19, Lungenopazität, Lungenentzündung) unter Verwendung der U-Net Architektur mit TensorRT FP16 Optimierung für schnellere Inferenz."></p>
-      <a href="project-lung-diseases-classification.html" data-en="View Project" data-de="Projekt ansehen"></a>
+      <a href="project-lung-diseases-classification.html" class="btn" data-en="View Project" data-de="Projekt ansehen"></a>
     </div>
 
     <div class="project">
@@ -118,7 +333,7 @@
           data-de="Wirbelschicht-Sprühgranulation (ML-Vorhersage)"></h3>
       <p data-en="Machine learning model for predicting particle size distribution (PSD) over time in a fluidized bed spray granulation process using Random Forest Regressor trained on inline and offline sensor data."
          data-de="Machine-Learning-Modell zur zeitlichen Vorhersage der Partikelgrößenverteilung (PSD) in einem Wirbelschicht-Sprühgranulationsprozess unter Verwendung eines Random Forest Regressors, der auf Inline- und Offline-Sensordaten trainiert wurde."></p>
-      <a href="project-fluidized-bed-granulation.html"
+      <a href="project-fluidized-bed-granulation.html" class="btn"
          data-en="View Project"
          data-de="Projekt ansehen"></a>
     </div>

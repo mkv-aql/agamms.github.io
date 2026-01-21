@@ -12,6 +12,7 @@
   --footer-text: #666;
   --link-color: #333;
   --h2-border: #ddd;
+  --skills-bg: #f0f7ff;
 }
 
 [data-theme="dark"] {
@@ -27,6 +28,7 @@
   --footer-text: #999;
   --link-color: #e0e0e0;
   --h2-border: #444;
+  --skills-bg: #2a3441;
 }
 
 /* ===== Global Styles ===== */
@@ -267,6 +269,43 @@ footer {
   width: 100%; height: 180px; object-fit: cover;
   border-radius: 8px; margin-bottom: .8rem;
 }
+/* General button styling */
+.btn {
+  display: inline-block;
+  margin-top: .6rem;
+  padding: .5rem .9rem;
+  background: var(--header-bg); 
+  color: var(--header-text); 
+  text-decoration: none; 
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+/* Enhanced contrast for dark mode */
+[data-theme="dark"] .btn {
+  background: #4a90e2;
+  color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .btn:hover {
+  background: #5ba0f2;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
 .project-card .btn {
   display: inline-block;
   margin-top: .6rem;
@@ -284,8 +323,29 @@ footer {
   .projects-grid { grid-template-columns: 1fr; }
 }
 
-.breadcrumb { margin-top: .5rem; color: #ddd; }
-.breadcrumb a { color: #fff; text-decoration: none; }
+.breadcrumb { 
+  margin-top: .5rem; 
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.breadcrumb .btn {
+  margin-top: 0;
+  font-size: 0.9rem;
+  padding: 0.4rem 0.8rem;
+}
+
+/* Center buttons in paragraphs (for bottom navigation) */
+main p:has(.btn) {
+  text-align: center;
+}
+
+/* Fallback for browsers that don't support :has() */
+main p .btn {
+  display: inline-block;
+}
 .gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -342,6 +402,238 @@ footer {
   font-size: 0.9rem;
   pointer-events: none;
   z-index: 10;
+}
+
+/* ===== Skills 3-Column Layout ===== */
+.skills-container {
+  display: grid;
+  grid-template-columns: 220px 220px 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  align-items: start;
+  align-content: start;
+  position: relative;
+}
+
+.skills-categories-col1,
+.skills-categories-col2 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Default positions */
+.skills-categories-col1 {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: start;
+}
+
+.skills-categories-col2 {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: start;
+}
+
+#skills-content-col2 {
+  grid-column: 2;
+  grid-row: 1;
+  display: none;
+  align-self: start;
+  margin-top: 0;
+}
+
+#skills-content-col3 {
+  grid-column: 3;
+  display: none;
+  align-self: start;
+}
+
+/* When col1 category is clicked: col2 slides to col3, skills show in col2 */
+.skills-container.col1-active {
+  grid-template-columns: 220px 1fr 220px;
+}
+
+.skills-container.col1-active .skills-categories-col2 {
+  grid-column: 3;
+  grid-row: 1;
+  align-self: start;
+}
+
+.skills-container.col1-active #skills-content-col2 {
+  display: block;
+  grid-row: 1;
+  align-self: start;
+}
+
+/* When col2 category is clicked: skills show in col3, no sliding */
+.skills-container.col2-active #skills-content-col3 {
+  display: block;
+}
+
+.skill-category {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: var(--text-color);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: left;
+  position: relative;
+  box-shadow: 0 1px 3px var(--card-shadow);
+}
+
+.skill-category:hover {
+  background: var(--header-bg);
+  color: var(--header-text);
+  border-color: var(--header-bg);
+  transform: translateX(4px);
+  box-shadow: 0 3px 8px var(--card-shadow);
+}
+
+.skill-category.active {
+  background: var(--header-bg);
+  color: var(--header-text);
+  border-color: var(--header-bg);
+}
+
+.skill-category .category-chevron {
+  font-size: 0.7rem;
+  transition: transform 0.3s ease;
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+
+.skill-category.active .category-chevron {
+  transform: rotate(90deg);
+  opacity: 1;
+}
+
+.skills-content {
+  min-height: 200px;
+  position: relative;
+  align-self: start;
+}
+
+.skill-tab-content {
+  display: none;
+  padding: 1.25rem;
+  background: var(--skills-bg);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 6px var(--card-shadow);
+}
+
+.skill-tab-content.active {
+  display: block;
+}
+
+/* Ensure content containers are properly positioned */
+#skills-content-col2,
+#skills-content-col3 {
+  min-height: 200px;
+  position: relative;
+}
+
+.skill-tab-content ul {
+  margin: 0;
+  padding-left: 1.5rem;
+  list-style-type: disc;
+}
+
+.skill-tab-content li {
+  margin-bottom: 0.75rem;
+  color: var(--text-color);
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* Tablet: 2 columns for categories, content below */
+@media (max-width: 1024px) {
+  .skills-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  
+  .skills-content {
+    grid-column: 1 / -1;
+    margin-top: 0.5rem;
+  }
+}
+
+/* Mobile: stack vertically with horizontal scroll for categories */
+@media (max-width: 768px) {
+  .skills-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .skills-categories-col1,
+  .skills-categories-col2 {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 0.5rem;
+    padding-bottom: 0.5rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-color) transparent;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .skills-categories-col1::-webkit-scrollbar,
+  .skills-categories-col2::-webkit-scrollbar {
+    height: 6px;
+  }
+  
+  .skills-categories-col1::-webkit-scrollbar-track,
+  .skills-categories-col2::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .skills-categories-col1::-webkit-scrollbar-thumb,
+  .skills-categories-col2::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 3px;
+  }
+  
+  .skill-category {
+    flex-shrink: 0;
+    white-space: nowrap;
+    min-width: fit-content;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .skill-category:hover {
+    transform: translateY(-2px);
+  }
+  
+  .skills-content {
+    margin-top: 0;
+  }
+  
+  .skill-tab-content {
+    padding: 1rem;
+  }
 }
 
 
