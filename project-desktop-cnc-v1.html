@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Desktop CNC Milling Machine V1 – Project</title>
+  <link rel="stylesheet" href="style.css?v=darkmode1" />
+  <script defer src="script.js?v=darkmode1"></script>
+</head>
+<body>
+  <header>
+    <!-- language slider -->
+    <div class="lang-toggle" aria-label="Language toggle">
+      <input id="langSwitch" type="checkbox" aria-label="Switch language" />
+      <label for="langSwitch" class="toggle">
+        <span class="label left">EN</span>
+        <span class="track"></span>
+        <span class="thumb" aria-hidden="true">EN</span>
+        <span class="label right">DE</span>
+      </label>
+    </div>
+
+    <!-- theme toggle -->
+    <div class="theme-toggle" aria-label="Theme toggle">
+      <input id="themeSwitch" type="checkbox" aria-label="Switch theme" />
+      <label for="themeSwitch" class="toggle">
+        <span class="label left">☀️</span>
+        <span class="track"></span>
+        <span class="thumb" id="themeThumb" aria-hidden="true"></span>
+        <span class="label right">🌙</span>
+      </label>
+    </div>
+
+    <h1 data-en="Desktop CNC Milling Machine V1<br />Building a Low-Cost Desktop CNC Router"
+        data-de="Desktop CNC Fräsmaschine V1<br />Bau eines kostengünstigen Desktop CNC Routers"></h1>
+    <p data-en="Bachelor's Thesis: Design, fabrication, and testing of a prototype desktop CNC milling machine for wood materials"
+       data-de="Bachelorarbeit: Design, Fertigung und Test eines Prototypen einer Desktop CNC Fräsmaschine für Holzmaterialien"></p>
+
+    <nav class="breadcrumb">
+      <a href="index.html" class="btn" data-en="Back to Home" data-de="Zurück zum Start"></a>
+      <a href="projects.html" class="btn" data-en="Back to Projects" data-de="Zurück zur Projekte"></a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2 data-en="Overview" data-de="Überblick"></h2>
+      <p data-en="This bachelor's thesis project involved the complete design, fabrication, and testing of a first-generation (V1) prototype desktop CNC milling machine. The goal was to build a cost-effective CNC router specifically designed for milling wooden materials, making it suitable for educational institutions, hobbyists, and small-scale commercial applications."
+         data-de="Dieses Bachelorarbeit-Projekt umfasste das vollständige Design, die Fertigung und den Test eines Prototypen einer Desktop CNC Fräsmaschine der ersten Generation (V1). Das Ziel war der Bau eines kostengünstigen CNC Routers, der speziell für die Bearbeitung von Holzmaterialien entwickelt wurde und für Bildungseinrichtungen, Hobbyisten und kleinere kommerzielle Anwendungen geeignet ist."></p>
+
+      <p data-en="The project demonstrates expertise in <strong>mechanical design</strong>, <strong>CNC systems</strong>, <strong>electrical engineering</strong>, <strong>CAD/CAM</strong>, <strong>prototype development</strong>, and <strong>system integration</strong>."
+         data-de="Das Projekt zeigt Fachwissen in <strong>Maschinendesign</strong>, <strong>CNC-Systemen</strong>, <strong>Elektrotechnik</strong>, <strong>CAD/CAM</strong>, <strong>Prototypenentwicklung</strong> und <strong>Systemintegration</strong>."></p>
+
+      <p data-en="The final prototype achieved a total cost of approximately 12,000,000 IDR (~$800 USD), significantly lower than commercial alternatives, while maintaining basic functionality for wood milling operations."
+         data-de="Der finale Prototyp erreichte Gesamtkosten von etwa 12.000.000 IDR (~800 USD), deutlich niedriger als kommerzielle Alternativen, bei gleichzeitiger Beibehaltung der Grundfunktionalität für Holzbearbeitungsoperationen."></p>
+    </section>
+
+    <section>
+      <h2 data-en="Project Objectives" data-de="Projektziele"></h2>
+      <ul>
+        <li data-en="Design and build a functional desktop CNC milling machine prototype (V1)"
+            data-de="Design und Bau einer funktionsfähigen Desktop CNC Fräsmaschine (V1)"></li>
+        <li data-en="Optimize for cost-effectiveness while maintaining essential functionality"
+            data-de="Optimierung für Kosteneffizienz bei gleichzeitiger Beibehaltung der wesentlichen Funktionalität"></li>
+        <li data-en="Target wooden materials (no liquid cooling required)"
+            data-de="Zielmaterial: Holz (keine Flüssigkühlung erforderlich)"></li>
+        <li data-en="Create a portable, lightweight machine suitable for desktop use"
+            data-de="Erstellung einer tragbaren, leichten Maschine für den Desktop-Einsatz"></li>
+        <li data-en="Establish a foundation for future development and improvements"
+            data-de="Schaffung einer Grundlage für zukünftige Entwicklung und Verbesserungen"></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 data-en="Mechanical Design" data-de="Mechanisches Design"></h2>
+      <h3 data-en="Frame Structure" data-de="Rahmenstruktur"></h3>
+      <ul>
+        <li data-en="<strong>Material:</strong> Aluminum frame with self-interlocking joints (finger joints, tab and slot joints, half lap joints)"
+            data-de="<strong>Material:</strong> Aluminiumrahmen mit selbstverriegelnden Verbindungen (Fingerzinken, Zapfen-Nut-Verbindungen, Überblattungen)"></li>
+        <li data-en="<strong>Base Plate:</strong> Wooden bed plate to reduce cost"
+            data-de="<strong>Grundplatte:</strong> Holzgrundplatte zur Kostenreduzierung"></li>
+        <li data-en="<strong>Support Components:</strong> 3D printed PLA plastic parts for motor mountings and custom components"
+            data-de="<strong>Stützkomponenten:</strong> 3D-gedruckte PLA-Kunststoffteile für Motormontagen und benutzerdefinierte Komponenten"></li>
+      </ul>
+
+      <h3 data-en="3-Axis System" data-de="3-Achsen-System"></h3>
+      <ul>
+        <li data-en="<strong>X-Axis:</strong> Horizontal movement (gantry system)"
+            data-de="<strong>X-Achse:</strong> Horizontale Bewegung (Portalsystem)"></li>
+        <li data-en="<strong>Y-Axis:</strong> Horizontal movement (bed movement)"
+            data-de="<strong>Y-Achse:</strong> Horizontale Bewegung (Tischbewegung)"></li>
+        <li data-en="<strong>Z-Axis:</strong> Vertical movement (spindle holder)"
+            data-de="<strong>Z-Achse:</strong> Vertikale Bewegung (Spindelhalter)"></li>
+        <li data-en="<strong>Driving System:</strong> Threaded rods and smooth rods for linear motion"
+            data-de="<strong>Antriebssystem:</strong> Gewindestangen und Gleitstangen für lineare Bewegung"></li>
+        <li data-en="<strong>Work Area:</strong> 432mm × 304mm × 106mm (X-Y-Z)"
+            data-de="<strong>Arbeitsbereich:</strong> 432mm × 304mm × 106mm (X-Y-Z)"></li>
+      </ul>
+
+      <h3 data-en="Spindle System" data-de="Spindelsystem"></h3>
+      <ul>
+        <li data-en="<strong>Motor:</strong> 300W spindle motor"
+            data-de="<strong>Motor:</strong> 300W Spindelmotor"></li>
+        <li data-en="<strong>Cooling:</strong> Air cooling system (wind blower) - sufficient for wood materials"
+            data-de="<strong>Kühlung:</strong> Luftkühlsystem (Gebläse) - ausreichend für Holzmaterialien"></li>
+        <li data-en="<strong>Control:</strong> Separate spindle driver with speed control"
+            data-de="<strong>Steuerung:</strong> Separater Spindeltreiber mit Drehzahlregelung"></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 data-en="Electrical Components" data-de="Elektrische Komponenten"></h2>
+      <h3 data-en="Control System" data-de="Steuerungssystem"></h3>
+      <ul>
+        <li data-en="<strong>Microprocessor:</strong> Arduino Uno R3"
+            data-de="<strong>Mikroprozessor:</strong> Arduino Uno R3"></li>
+        <li data-en="<strong>Firmware:</strong> GRBL (open-source CNC firmware)"
+            data-de="<strong>Firmware:</strong> GRBL (Open-Source CNC Firmware)"></li>
+        <li data-en="<strong>Control Software:</strong> Grbl-Controller interface"
+            data-de="<strong>Steuerungssoftware:</strong> Grbl-Controller Interface"></li>
+      </ul>
+
+      <h3 data-en="Motion Control" data-de="Bewegungssteuerung"></h3>
+      <ul>
+        <li data-en="<strong>Stepper Motors:</strong> 4× NEMA 23 stepper motors"
+            data-de="<strong>Schrittmotoren:</strong> 4× NEMA 23 Schrittmotoren"></li>
+        <li data-en="<strong>Stepper Drivers:</strong> 3× TB6600AHQ drivers (selected after comprehensive comparison)"
+            data-de="<strong>Schrittmotortreiber:</strong> 3× TB6600AHQ Treiber (nach umfassendem Vergleich ausgewählt)"></li>
+        <li data-en="<strong>Power Supply:</strong> Multiple power supplies for motors and spindle"
+            data-de="<strong>Stromversorgung:</strong> Mehrere Netzteile für Motoren und Spindel"></li>
+      </ul>
+
+      <h3 data-en="Safety Features" data-de="Sicherheitsmerkmale"></h3>
+      <ul>
+        <li data-en="<strong>Limit Switches:</strong> Designed for axis limits and homing function (future development)"
+            data-de="<strong>Endschalter:</strong> Für Achsengrenzen und Homing-Funktion konzipiert (zukünftige Entwicklung)"></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 data-en="Software Workflow" data-de="Software-Workflow"></h2>
+      <ol>
+        <li data-en="<strong>CAD Design:</strong> Autodesk Inventor Professional 2017 for 3D modeling"
+            data-de="<strong>CAD-Design:</strong> Autodesk Inventor Professional 2017 für 3D-Modellierung"></li>
+        <li data-en="<strong>STL Conversion:</strong> Export CAD files to STL format"
+            data-de="<strong>STL-Konvertierung:</strong> CAD-Dateien in STL-Format exportieren"></li>
+        <li data-en="<strong>G-Code Generation:</strong> FREEMILL VisualCADCAM 2016 for CAM operations and G-code generation"
+            data-de="<strong>G-Code-Generierung:</strong> FREEMILL VisualCADCAM 2016 für CAM-Operationen und G-Code-Generierung"></li>
+        <li data-en="<strong>Simulation:</strong> CAMotics for G-code verification before machining"
+            data-de="<strong>Simulation:</strong> CAMotics zur G-Code-Verifizierung vor der Bearbeitung"></li>
+        <li data-en="<strong>Machine Control:</strong> Grbl-Controller for sending G-code to the CNC machine"
+            data-de="<strong>Maschinensteuerung:</strong> Grbl-Controller zum Senden von G-Code an die CNC-Maschine"></li>
+      </ol>
+    </section>
+
+    <section>
+      <h2 data-en="Fabrication Process" data-de="Fertigungsprozess"></h2>
+      <h3 data-en="Part Gathering" data-de="Teilebeschaffung"></h3>
+      <ul>
+        <li data-en="Electrical components sourced from various suppliers"
+            data-de="Elektrische Komponenten von verschiedenen Lieferanten beschafft"></li>
+        <li data-en="Mechanical components including threaded rods, smooth rods, and bearings"
+            data-de="Mechanische Komponenten einschließlich Gewindestangen, Gleitstangen und Lagern"></li>
+        <li data-en="Spindle motor and driver system"
+            data-de="Spindelmotor und Treibersystem"></li>
+      </ul>
+
+      <h3 data-en="Part Fabrication" data-de="Teilefertigung"></h3>
+      <ul>
+        <li data-en="<strong>3D Printing:</strong> PLA parts for supports, motor mountings, and custom components"
+            data-de="<strong>3D-Druck:</strong> PLA-Teile für Stützen, Motormontagen und benutzerdefinierte Komponenten"></li>
+        <li data-en="<strong>Laser Cutting:</strong> Aluminum frame components cut by professional service"
+            data-de="<strong>Laserschneiden:</strong> Aluminiumrahmenkomponenten von professionellem Dienst geschnitten"></li>
+        <li data-en="<strong>Assembly:</strong> Mechanical assembly followed by electrical wiring"
+            data-de="<strong>Montage:</strong> Mechanische Montage gefolgt von elektrischer Verkabelung"></li>
+      </ul>
+
+      <h3 data-en="Calibration" data-de="Kalibrierung"></h3>
+      <ul>
+        <li data-en="Software-to-mechanical calibration (steps per millimeter)"
+            data-de="Software-zu-mechanische Kalibrierung (Schritte pro Millimeter)"></li>
+        <li data-en="3-axis alignment and parallel rod alignment"
+            data-de="3-Achsen-Ausrichtung und parallele Stangenausrichtung"></li>
+        <li data-en="Work zero positioning"
+            data-de="Arbeitsnullpunkt-Positionierung"></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 data-en="Cost Analysis" data-de="Kostenanalyse"></h2>
+      <h3 data-en="Stepper Motor System" data-de="Schrittmotorsystem"></h3>
+      <ul>
+        <li data-en="Arduino Uno R3: 83,500 IDR (~$5.50 USD)"
+            data-de="Arduino Uno R3: 83.500 IDR (~5,50 USD)"></li>
+        <li data-en="4× NEMA 23 motors: 3,231,000 IDR (~$215 USD)"
+            data-de="4× NEMA 23 Motoren: 3.231.000 IDR (~215 USD)"></li>
+        <li data-en="3× TB6600AHQ drivers: 598,500 IDR (~$40 USD)"
+            data-de="3× TB6600AHQ Treiber: 598.500 IDR (~40 USD)"></li>
+        <li data-en="Power supplies and cables: 290,000 IDR (~$19 USD)"
+            data-de="Netzteile und Kabel: 290.000 IDR (~19 USD)"></li>
+        <li data-en="<strong>Total Price 1: ~4,203,000 IDR (~$280 USD)</strong>"
+            data-de="<strong>Gesamtpreis 1: ~4.203.000 IDR (~280 USD)</strong>"></li>
+      </ul>
+
+      <h3 data-en="Spindle System" data-de="Spindelsystem"></h3>
+      <ul>
+        <li data-en="300W Spindle Motor: 1,067,500 IDR (~$71 USD)"
+            data-de="300W Spindelmotor: 1.067.500 IDR (~71 USD)"></li>
+        <li data-en="Spindle Driver: 250,000 IDR (~$17 USD)"
+            data-de="Spindeltreiber: 250.000 IDR (~17 USD)"></li>
+        <li data-en="Power Supply: 180,000 IDR (~$12 USD)"
+            data-de="Netzteil: 180.000 IDR (~12 USD)"></li>
+        <li data-en="Cables: 50,000 IDR (~$3 USD)"
+            data-de="Kabel: 50.000 IDR (~3 USD)"></li>
+        <li data-en="<strong>Total Price 2: ~1,547,500 IDR (~$103 USD)</strong>"
+            data-de="<strong>Gesamtpreis 2: ~1.547.500 IDR (~103 USD)</strong>"></li>
+      </ul>
+
+      <h3 data-en="Total Project Cost" data-de="Gesamtprojektkosten"></h3>
+      <p data-en="<strong>Approximately 12,000,000 IDR (~$800 USD)</strong> including all mechanical components, frame materials, and fabrication costs."
+         data-de="<strong>Etwa 12.000.000 IDR (~800 USD)</strong> einschließlich aller mechanischen Komponenten, Rahmenmaterialien und Fertigungskosten."></p>
+    </section>
+
+    <section>
+      <h2 data-en="Testing & Results" data-de="Tests & Ergebnisse"></h2>
+      <h3 data-en="Test Procedure" data-de="Testverfahren"></h3>
+      <p data-en="The prototype was tested by milling basic geometric shapes (square, triangle, circle) in wood material. The CAD designs were converted to G-code, simulated in CAMotics, and then executed on the machine."
+         data-de="Der Prototyp wurde durch Fräsen grundlegender geometrischer Formen (Quadrat, Dreieck, Kreis) in Holzmaterial getestet. Die CAD-Designs wurden in G-Code umgewandelt, in CAMotics simuliert und dann auf der Maschine ausgeführt."></p>
+
+      <h3 data-en="Results" data-de="Ergebnisse"></h3>
+      <ul>
+        <li data-en="<strong>Success:</strong> Successfully milled square and triangle shapes with acceptable accuracy"
+            data-de="<strong>Erfolg:</strong> Erfolgreich Quadrat- und Dreiecksformen mit akzeptabler Genauigkeit gefräst"></li>
+        <li data-en="<strong>Challenges:</strong> Router bit broke during circle cutting; depth variations due to unbalanced gantry"
+            data-de="<strong>Herausforderungen:</strong> Fräser brach beim Kreisschneiden; Tiefenvariationen aufgrund unausgewogener Gantry"></li>
+        <li data-en="<strong>Measurements:</strong> Dimensions verified with Vernier calipers; close to design but not perfect"
+            data-de="<strong>Messungen:</strong> Abmessungen mit Messschieber verifiziert; nah am Design, aber nicht perfekt"></li>
+        <li data-en="<strong>Calibration Issues:</strong> X-axis calibration errors (cut longer than designed)"
+            data-de="<strong>Kalibrierungsprobleme:</strong> X-Achsen-Kalibrierungsfehler (Schnitt länger als geplant)"></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 data-en="Comparison with Commercial CNCs" data-de="Vergleich mit kommerziellen CNCs"></h2>
+      <p data-en="Compared to 'Jetpro 4 Axis CNC Router' (commercial alternative):"
+         data-de="Im Vergleich zu 'Jetpro 4 Axis CNC Router' (kommerzielle Alternative):"></p>
+      <ul>
+        <li data-en="<strong>Work Area:</strong> Smaller than standard version (600×400×60mm) but larger Z-axis (106mm vs 60mm)"
+            data-de="<strong>Arbeitsbereich:</strong> Kleiner als Standardversion (600×400×60mm), aber größere Z-Achse (106mm vs 60mm)"></li>
+        <li data-en="<strong>Weight:</strong> Much lighter at ~17kg (21.5kg with drivers) vs 45-65kg - portable with effort"
+            data-de="<strong>Gewicht:</strong> Viel leichter bei ~17kg (21,5kg mit Treibern) vs 45-65kg - mit Aufwand transportierbar"></li>
+        <li data-en="<strong>Cost:</strong> Significantly cheaper at 12M IDR vs 19-29M IDR"
+            data-de="<strong>Kosten:</strong> Deutlich günstiger bei 12M IDR vs 19-29M IDR"></li>
+        <li data-en="<strong>Construction:</strong> Aluminum frame with PLA plastic supports vs aluminum with iron supports"
+            data-de="<strong>Konstruktion:</strong> Aluminiumrahmen mit PLA-Kunststoffstützen vs Aluminium mit Eisenstützen"></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 data-en="Future Development Recommendations" data-de="Empfehlungen für zukünftige Entwicklung"></h2>
+      <h3 data-en="Cost Reduction" data-de="Kostenreduzierung"></h3>
+      <ul>
+        <li data-en="Reduce aluminum frame thickness"
+            data-de="Aluminiumrahmenstärke reduzieren"></li>
+        <li data-en="Switch to lower-torque stepper motors (minimum 1Nm)"
+            data-de="Wechsel zu Schrittmotoren mit niedrigerem Drehmoment (Minimum 1Nm)"></li>
+        <li data-en="Find cheaper frame cutting methods"
+            data-de="Günstigere Rahmenschnittmethoden finden"></li>
+      </ul>
+
+      <h3 data-en="Axis Improvements" data-de="Achsenverbesserungen"></h3>
+      <ul>
+        <li data-en="Redesign for better structural rigidity"
+            data-de="Neugestaltung für bessere strukturelle Steifigkeit"></li>
+        <li data-en="Address gantry balance issues"
+            data-de="Gantry-Gleichgewichtsprobleme beheben"></li>
+        <li data-en="Improve calibration accuracy"
+            data-de="Kalibrierungsgenauigkeit verbessern"></li>
+        <li data-en="Use thicker driving rods to reduce bending"
+            data-de="Dickere Antriebsstangen verwenden, um Biegung zu reduzieren"></li>
+      </ul>
+
+      <h3 data-en="Frame Development" data-de="Rahmenentwicklung"></h3>
+      <ul>
+        <li data-en="Weld joints instead of locking system for better rigidity"
+            data-de="Schweißverbindungen statt Verriegelungssystem für bessere Steifigkeit"></li>
+        <li data-en="Use thicker frame material"
+            data-de="Dickeres Rahmenmaterial verwenden"></li>
+        <li data-en="Add vibration dampers for spindle motor"
+            data-de="Schwingungsdämpfer für Spindelmotor hinzufügen"></li>
+      </ul>
+
+      <h3 data-en="Additional Features" data-de="Zusätzliche Funktionen"></h3>
+      <ul>
+        <li data-en="Implement limit switches for homing function"
+            data-de="Endschalter für Homing-Funktion implementieren"></li>
+        <li data-en="Redesign using inside-out approach (start from cutting tool to base frame)"
+            data-de="Neugestaltung mit Inside-Out-Ansatz (vom Schneidwerkzeug zur Grundplatte)"></li>
+        <li data-en="Consider more rigid mechanical driving system components"
+            data-de="Steifere mechanische Antriebssystemkomponenten in Betracht ziehen"></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 data-en="Technical Highlights" data-de="Technische Highlights"></h2>
+      <ul>
+        <li data-en="<strong>Complete System Integration:</strong> Successfully integrated mechanical, electrical, and software components into a working prototype"
+            data-de="<strong>Vollständige Systemintegration:</strong> Erfolgreiche Integration mechanischer, elektrischer und Softwarekomponenten in einen funktionierenden Prototyp"></li>
+        <li data-en="<strong>Cost Optimization:</strong> Achieved 40-60% cost reduction compared to commercial alternatives"
+            data-de="<strong>Kostenoptimierung:</strong> 40-60% Kostenreduzierung im Vergleich zu kommerziellen Alternativen erreicht"></li>
+        <li data-en="<strong>Design Analysis:</strong> Performed Finite Element Analysis (FEA) for structural validation including Von Mises stress, safety factor, and displacement analysis"
+            data-de="<strong>Designanalyse:</strong> Finite-Elemente-Analyse (FEA) zur Strukturvalidierung durchgeführt, einschließlich Von-Mises-Spannung, Sicherheitsfaktor und Verschiebungsanalyse"></li>
+        <li data-en="<strong>Open-Source Software:</strong> Utilized free, open-source software stack (GRBL, Grbl-Controller, FREEMILL) to minimize costs"
+            data-de="<strong>Open-Source-Software:</strong> Kostenlose Open-Source-Software-Stack (GRBL, Grbl-Controller, FREEMILL) zur Kostenminimierung genutzt"></li>
+        <li data-en="<strong>Prototype Development:</strong> Established foundation for iterative improvement and future versions"
+            data-de="<strong>Prototypenentwicklung:</strong> Grundlage für iterative Verbesserung und zukünftige Versionen geschaffen"></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 data-en="Gallery" data-de="Galerie"></h2>
+      
+      <h3 data-en="Final Assembly" data-de="Finale Montage"></h3>
+      <div class="gallery gallery--two">
+        <figure>
+          <img src="images/projects/desktop_cnc/final_assembly_1.jpg" alt="Final CNC Assembly - Front View" />
+          <figcaption data-en="Final Assembly - Front View" data-de="Finale Montage - Vorderansicht"></figcaption>
+        </figure>
+        <figure>
+          <img src="images/projects/desktop_cnc/final_assembly_2.jpg" alt="Final CNC Assembly - Side View" />
+          <figcaption data-en="Final Assembly - Side View" data-de="Finale Montage - Seitenansicht"></figcaption>
+        </figure>
+        <figure>
+          <img src="images/projects/desktop_cnc/final_assembly_3.jpg" alt="Final CNC Assembly - Top View" />
+          <figcaption data-en="Final Assembly - Top View" data-de="Finale Montage - Draufsicht"></figcaption>
+        </figure>
+      </div>
+
+      <h3 data-en="CAD Design & 3D Models" data-de="CAD-Design & 3D-Modelle"></h3>
+      <div class="gallery gallery--two">
+        <figure>
+          <img src="images/projects/desktop_cnc/cad_design_3d.jpg" alt="3D CAD Model of Complete Assembly" />
+          <figcaption data-en="3D CAD Model - Complete Assembly" data-de="3D CAD-Modell - Vollständige Montage"></figcaption>
+        </figure>
+        <figure>
+          <img src="images/projects/desktop_cnc/cad_frame_design.jpg" alt="CAD Frame Design with Joints" />
+          <figcaption data-en="Frame Design with Self-Interlocking Joints" data-de="Rahmendesign mit selbstverriegelnden Verbindungen"></figcaption>
+        </figure>
+        <figure>
+          <img src="images/projects/desktop_cnc/cad_axis_design.jpg" alt="3-Axis System CAD Design" />
+          <figcaption data-en="3-Axis System Design" data-de="3-Achsen-System Design"></figcaption>
+        </figure>
+        <figure>
+          <img src="images/projects/desktop_cnc/cad_dimensions.jpg" alt="CAD Design with Dimensions" />
+          <figcaption data-en="CAD Design with Dimensions" data-de="CAD-Design mit Abmessungen"></figcaption>
+        </figure>
+      </div>
+
+      <h3 data-en="Fabrication Process" data-de="Fertigungsprozess"></h3>
+      <div class="gallery gallery--two">
+        <figure>
+          <img src="images/projects/desktop_cnc/laser_cut_parts.jpg" alt="Laser Cut Aluminum Frame Parts" />
+          <figcaption data-en="Laser Cut Aluminum Frame Components" data-de="Lasergeschnittene Aluminiumrahmenkomponenten"></figcaption>
+        </figure>
+        <figure>
+          <img src="images/projects/desktop_cnc/3d_printed_parts.jpg" alt="3D Printed PLA Support Components" />
+          <figcaption data-en="3D Printed PLA Support Components" data-de="3D-gedruckte PLA-Stützkomponenten"></figcaption>
+        </figure>
+        <figure>
+          <img src="images/projects/desktop_cnc/mechanical_assembly.jpg" alt="Mechanical Assembly Process" />
+          <figcaption data-en="Mechanical Assembly in Progress" data-de="Mechanische Montage in Arbeit"></figcaption>
+        </figure>
+        <figure>
+          <img src="images/projects/desktop_cnc/frame_assembly.jpg" alt="Frame Assembly" />
+          <figcaption data-en="Frame Assembly with Joints" data-de="Rahmenmontage mit Verbindungen"></figcaption>
+        </figure>
+      </div>
+
+      <h3 data-en="Electrical Components & Wiring" data-de="Elektrische Komponenten & Verkabelung"></h3>
+      <div class="gallery gallery--two">
+        <figure>
+          <img src="images/projects/desktop_cnc/electrical_components.jpg" alt="Electrical Components Layout" />
+          <figcaption data-en="Electrical Components (Arduino, Drivers, Power Supplies)" data-de="Elektrische Komponenten (Arduino, Treiber, Netzteile)"></figcaption>
+        </figure>
+        <figure>
+          <img src="images/projects/desktop_cnc/stepper_motor_wiring.jpg" alt="Stepper Motor Wiring" />
+          <figcaption data-en="Stepper Motor Wiring" data-de="Schrittmotor-Verkabelung"></figcaption>
+        </figure>
+        <figure>
+          <img src="images/projects/desktop_cnc/spindle_wiring.jpg" alt="Spindle Motor Wiring" />
+          <figcaption data-en="Spindle Motor Wiring" data-de="Spindelmotor-Verkabelung"></figcaption>
+        </figure>
+        <figure>
+          <img src="images/projects/desktop_cnc/electrical_mounting.jpg" alt="Electrical Components Mounting" />
+          <figcaption data-en="Electrical Components Mounting" data-de="Montage der elektrischen Komponenten"></figcaption>
+        </figure>
+      </div>
+
+      <h3 data-en="Testing & Results" data-de="Tests & Ergebnisse"></h3>
+      <div class="gallery gallery--two">
+        <figure>
+          <img src="images/projects/desktop_cnc/milling_test_setup.jpg" alt="Milling Test Setup" />
+          <figcaption data-en="Milling Test Setup with Workpiece" data-de="Frästest-Aufbau mit Werkstück"></figcaption>
+        </figure>
+        <figure>
+          <img src="images/projects/desktop_cnc/milling_in_progress.jpg" alt="Milling Operation in Progress" />
+          <figcaption data-en="Milling Operation in Progress" data-de="Fräsvorgang in Arbeit"></figcaption>
+        </figure>
+        <figure>
+          <img src="images/projects/desktop_cnc/milling_results.jpg" alt="Milled Shapes Results" />
+          <figcaption data-en="Milled Shapes (Square, Triangle, Circle)" data-de="Gefräste Formen (Quadrat, Dreieck, Kreis)"></figcaption>
+        </figure>
+        <figure>
+          <img src="images/projects/desktop_cnc/measurement_verification.jpg" alt="Measurement Verification with Vernier Caliper" />
+          <figcaption data-en="Measurement Verification with Vernier Caliper" data-de="Messverifizierung mit Messschieber"></figcaption>
+        </figure>
+      </div>
+
+      <h3 data-en="Design Analysis" data-de="Designanalyse"></h3>
+      <div class="gallery gallery--two">
+        <figure>
+          <img src="images/projects/desktop_cnc/fea_von_mises.jpg" alt="FEA Von Mises Stress Analysis" />
+          <figcaption data-en="FEA - Von Mises Stress Analysis" data-de="FEA - Von-Mises-Spannungsanalyse"></figcaption>
+        </figure>
+        <figure>
+          <img src="images/projects/desktop_cnc/fea_safety_factor.jpg" alt="FEA Safety Factor Analysis" />
+          <figcaption data-en="FEA - Safety Factor Analysis" data-de="FEA - Sicherheitsfaktor-Analyse"></figcaption>
+        </figure>
+        <figure>
+          <img src="images/projects/desktop_cnc/fea_displacement.jpg" alt="FEA Displacement Analysis" />
+          <figcaption data-en="FEA - Displacement Analysis" data-de="FEA - Verschiebungsanalyse"></figcaption>
+        </figure>
+      </div>
+
+      <h3 data-en="Calibration & Setup" data-de="Kalibrierung & Einrichtung"></h3>
+      <div class="gallery gallery--two">
+        <figure>
+          <img src="images/projects/desktop_cnc/axis_calibration.jpg" alt="3-Axis Calibration Process" />
+          <figcaption data-en="3-Axis Calibration" data-de="3-Achsen-Kalibrierung"></figcaption>
+        </figure>
+        <figure>
+          <img src="images/projects/desktop_cnc/parallel_alignment.jpg" alt="Parallel Rod Alignment" />
+          <figcaption data-en="Parallel Rod Alignment (Y-Axis)" data-de="Parallele Stangenausrichtung (Y-Achse)"></figcaption>
+        </figure>
+        <figure>
+          <img src="images/projects/desktop_cnc/work_zero_setting.jpg" alt="Work Zero Positioning" />
+          <figcaption data-en="Work Zero Positioning" data-de="Arbeitsnullpunkt-Positionierung"></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section>
+      <h2 data-en="Links" data-de="Links"></h2>
+      <ul>
+        <li><a href="references/Bachelor thesis desktop cnc/Thesis Final - Copy.pdf" target="_blank" rel="noopener"
+               data-en="Bachelor's Thesis Document (PDF)"
+               data-de="Bachelorarbeit-Dokument (PDF)"></a></li>
+      </ul>
+    </section>
+
+    <p><a class="btn" href="projects.html" data-en="Back to Projects" data-de="Zurück zu Projekte"></a></p>
+    <p><a class="btn" href="index.html" data-en="Back to Resume" data-de="Zurück zu Lebenslauf"></a></p>
+  </main>
+
+  <footer>
+    <p data-en="© 2025 Agam Safaruddin" data-de="© 2025 Agam Safaruddin"></p>
+  </footer>
+</body>
+</html>
