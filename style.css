@@ -101,6 +101,10 @@ footer {
   font: 700 13px/1 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
+.lang-toggle.hidden {
+  display: none !important;
+}
+
 /* ===== Theme Toggle (same style as language toggle) ===== */
 .theme-toggle {
   position: absolute;
