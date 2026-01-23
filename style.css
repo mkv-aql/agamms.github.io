@@ -95,7 +95,7 @@ footer {
 /* ===== Language Toggle (labels outside track) ===== */
 .lang-toggle {
   position: absolute;
-  top: 1rem;
+  top: 5rem;
   right: 1rem;
   padding: 1rem;
   font: 700 13px/1 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -108,7 +108,7 @@ footer {
 /* ===== Theme Toggle (same style as language toggle) ===== */
 .theme-toggle {
   position: absolute;
-  top: 5rem;
+  top: 1rem;
   right: 1rem;
   padding: 1rem;
   font: 700 13px/1 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
