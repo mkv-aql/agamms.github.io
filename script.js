@@ -1,5 +1,16 @@
 function setLanguage(lang) {
+  const isNonDACH = document.body.getAttribute('data-region') === 'non-dach';
+  const isDACH = document.body.getAttribute('data-region') === 'dach';
+  
   document.querySelectorAll("[data-en]").forEach(el => {
+    // Skip elements with data-non-dach if we're in non-DACH region
+    if (isNonDACH && el.hasAttribute('data-non-dach')) {
+      return; // Don't update - let region-based content handle it
+    }
+    // Skip elements with data-dach if we're in DACH region
+    if (isDACH && el.hasAttribute('data-dach')) {
+      return; // Don't update - let region-based content handle it
+    }
     el.innerHTML = el.getAttribute(`data-${lang}`);
   });
   localStorage.setItem("portfolio_lang", lang);
@@ -122,6 +133,39 @@ function toggleLanguageSwitchVisibility(show) {
   }
 }
 
+/**
+ * Sets region-based content based on DACH region
+ */
+function setRegionBasedContent(isDACH) {
+  // Set data attribute on body for CSS targeting if needed
+  document.body.setAttribute('data-region', isDACH ? 'dach' : 'non-dach');
+  
+  // Update all elements with region-specific content
+  document.querySelectorAll("[data-non-dach], [data-dach]").forEach(el => {
+    if (isDACH) {
+      // DACH region: Use data-dach if available, otherwise let language system handle it
+      if (el.hasAttribute('data-dach')) {
+        el.style.display = '';
+        el.innerHTML = el.getAttribute('data-dach');
+      } else if (el.hasAttribute('data-non-dach')) {
+        // Element has non-DACH content but we're in DACH - let language system handle it
+        el.style.display = '';
+        // Don't set innerHTML here - let the language system handle it
+      }
+    } else {
+      // Non-DACH region: Show non-DACH content, override language attributes
+      if (el.hasAttribute('data-non-dach')) {
+        el.style.display = '';
+        el.innerHTML = el.getAttribute('data-non-dach');
+      } else if (el.hasAttribute('data-dach')) {
+        // Element has DACH content but we're in non-DACH - use language system
+        el.style.display = '';
+        // Don't set innerHTML here - let the language system handle it
+      }
+    }
+  });
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
   console.log("Script loaded successfully");
   const switchEl = document.getElementById("langSwitch");
@@ -140,6 +184,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   // Detect DACH region
   const regionInfo = await detectDACHRegion();
   console.log("Region detection:", regionInfo);
+
+  // Set region-based content
+  setRegionBasedContent(regionInfo.isDACH);
 
   // Show/hide language toggle based on region
   if (regionInfo.isDACH) {
