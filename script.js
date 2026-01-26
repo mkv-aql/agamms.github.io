@@ -297,4 +297,56 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
     });
   });
+
+  // Project category filtering functionality
+  const projectCategories = document.querySelectorAll('.project-category');
+  const projects = document.querySelectorAll('.project[data-category]');
+  const projectCountCurrent = document.getElementById('project-count-current');
+  const projectCountTotal = document.getElementById('project-count-total');
+
+  // Set total count (only once on page load)
+  if (projectCountTotal) {
+    projectCountTotal.textContent = projects.length;
+  }
+
+  function filterProjects(category) {
+    // Update active button
+    projectCategories.forEach(btn => {
+      if (btn.getAttribute('data-category') === category) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+
+    let visibleCount = 0;
+
+    // Show/hide projects based on category
+    projects.forEach(project => {
+      const projectCategories = project.getAttribute('data-category').split(' ');
+      if (projectCategories.includes(category)) {
+        project.style.display = '';
+        visibleCount++;
+        // Don't override opacity - let CSS handle under-construction styling
+      } else {
+        project.style.display = 'none';
+      }
+    });
+
+    // Update the visible count
+    if (projectCountCurrent) {
+      projectCountCurrent.textContent = visibleCount;
+    }
+  }
+
+  // Add click handlers to category buttons
+  projectCategories.forEach(button => {
+    button.addEventListener('click', () => {
+      const category = button.getAttribute('data-category');
+      filterProjects(category);
+    });
+  });
+
+  // Initialize with "top" category (My Top Projects)
+  filterProjects('top');
 });

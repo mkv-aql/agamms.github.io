@@ -32,19 +32,19 @@
     </div>
 
     <img src="images/headshot.jpg" alt="Agam Safaruddin" class="headshot">
-    <h1 data-en="Agam Safaruddin" data-de="Agam Safaruddin" data-dach="Agam Safaruddin, M.Sc." data-non-dach="Agam Muhajir Safaruddin"></h1>
+    <h1 data-en="Agam Safaruddin" data-de="Agam Safaruddin" data-dach="Agam Safaruddin, M.Sc., B.Eng." data-non-dach="Agam Muhajir Safaruddin"></h1>
       <!-- theme toggle
       <P data-en="WEBSITE IS STILL UNDER CONSTRUCTION!" data-de="DIE WEBSEITE WIRD DERZEIT NOCH BEARBEITET!"></P>
     -->
-      <p data-en="Mechatronics Engineer"
-       data-de="Mechatronik Ingenieur"></p>
+      <p data-en="Mechatronics & Mechanical Engineer"
+       data-de="Mechatronik- und Maschinenbauingenieur"></p>
   </header>
 
   <section id="about">
     <h2 data-en="About Me" data-de="Über mich"></h2>
-    <p data-en="I am a Master’s graduate in Mechatronics and also a Mechanical Engineer with expertise in <strong>Machine Learning, Computer Vision,</strong> <strong>Software Engineering,</strong> and <strong>CAD.</strong> "
-       data-de="Ich habe einen Master in Mechatronik und bin auch Maschinenbauingenieur mit Fachwissen in <strong>Machine Learning, Computer Vision,</strong> <strong>Softwareentwicklung</strong> und <strong>CAD.</strong>"
-       data-non-dach="I am both a <strong>Mechatronics and Mechanical Engineer</strong> with a highly flexible skill set, enabling me to work effectively across many different areas and industries. My diverse skills allow me to adapt and contribute to a wide range of projects and challenges."></p>
+    <p data-en="I am a Master’s graduate in Mechatronics and also a Mechanical Engineer with expertise in <strong>Machine Learning, Computer Vision,</strong> <strong>Software Engineering,</strong> and <strong>Computer Aided Design (CAD).</strong> "
+       data-de="Ich habe einen Master in Mechatronik und bin auch Maschinenbauingenieur mit Fachwissen in <strong>Machine Learning, Computer Vision,</strong> <strong>Softwareentwicklung</strong> und <strong>Computer Aided Design (CAD).</strong>"
+       data-non-dach="I am both a <strong>Mechatronics</strong> and <strong>Mechanical Engineer</strong> with a highly flexible skill set, enabling me to work effectively across many different areas and industries. My diverse skills allow me to adapt and contribute to a wide range of projects and challenges."></p>
   </section>
 
   <section id="skills">
@@ -148,9 +148,13 @@
         
         <div class="skill-tab-content" data-content="cloud">
           <ul>
-            <li>Google Street View API</li>
-            <li>Google Static Maps API</li>
-            <li>Google Pub/Sub</li>
+              <li>Google API
+              <ul>
+              <li>Street View</li>
+              <li>Static Maps</li>
+                  <li>Pub/Sub</li>
+                </ul>
+              </li>
             <li>AWS</li>
           </ul>
         </div>
@@ -240,9 +244,14 @@
         
         <div class="skill-tab-content" data-content="cloud">
           <ul>
-            <li>Google Street View API</li>
-            <li>Google Static Maps API</li>
-            <li>Google Pub/Sub</li>
+              <li>Google API
+              <ul>
+              <li>Street View</li>
+              <li>Static Maps</li>
+                  <li>Pub/Sub</li>
+                </ul>
+              </li>
+
             <li>AWS</li>
           </ul>
         </div>
@@ -291,15 +300,43 @@
    data-en="View All Projects"
    data-de="Alle Projekte Anzeigen"></a> <hr /> <br>
 
+      <p style="margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--text-color);" data-en="List projects by topics:" data-de="Projekte nach Themen auflisten:"></p>
+      <div class="project-categories">
+        <button class="project-category active" data-category="top">
+          <span class="category-chevron">▶</span>
+          <span data-en="My Top Projects" data-de="Meine Top-Projekte"></span>
+        </button>
+        <button class="project-category" data-category="ml">
+          <span class="category-chevron">▶</span>
+          <span data-en="Machine Learning" data-de="Künstliche Intelligenz"></span>
+        </button>
+        <button class="project-category" data-category="cv">
+          <span class="category-chevron">▶</span>
+          <span data-en="Computer Vision" data-de="Computer Vision"></span>
+        </button>
+        <button class="project-category" data-category="uncategorized">
+          <span class="category-chevron">▶</span>
+          <span data-en="Uncategorized" data-de="Nicht kategorisiert"></span>
+        </button>
+      </div>
+      <br>
 
-    <div class="project">
+      <p class="project-count" style="margin-bottom: 1rem; font-size: 0.9rem; color: var(--text-color); font-style: italic;">
+        <span data-en="Showing " data-de="Zeige "></span>
+        <span id="project-count-current">0</span>
+        <span data-en=" of " data-de=" von "></span>
+        <span id="project-count-total">0</span>
+        <span data-en=" projects" data-de=" Projekte"></span>
+      </p>
+
+    <div class="project" data-category="top ml cv">
       <h3 data-en="Human-Robot Collaboration" data-de="Mensch-Roboter Zusammenarbeit"></h3>
       <p data-en="Master's thesis using 4D cameras, OpenCV, and LSTM for real-time human action recognition."
          data-de="Masterarbeit mit 4D-Kameras, OpenCV und LSTM zur Echtzeit-Erkennung menschlicher Aktionen."></p>
     <a href="project-human-robot.html" class="btn" data-en="View Project" data-de="Projekt ansehen"></a>
     </div>
 
-      <div class="project">
+      <div class="project" data-category="top ml cv">
       <h3 data-en="Street Surface Material Classification and Analysis AI Model (Phase 1)"
           data-de="KI-Modell zur Klassifizierung und Analyse von Straßenbelagsmaterialien (Phase 1)"></h3>
       <p data-en="Advanced deep learning classifier for comprehensive street-level material analysis using computer vision and neural networks. Phase 1: Dataset Collection"
@@ -307,7 +344,7 @@
       <a href="project-street-material-phase1.html" class="btn" data-en="View Project" data-de="Projekt ansehen"></a>
     </div>
 
-      <div class="project under-construction">
+      <div class="project under-construction" data-category="ml cv">
       <h3 data-en="Street Surface Material Classification and Analysis AI Model (Phase 2)"
           data-de="KI-Modell zur Klassifizierung und Analyse von Straßenbelagsmaterialien (Phase 2)"></h3>
       <p data-en="Dataset pre-processing, training architecture design, model training, and model evaluation, model tuning."
@@ -315,35 +352,35 @@
       <a href="project-street-material-phase2.html" class="btn" data-en="View Project" data-de="Projekt ansehen"></a>
     </div>
 
-      <div class="project">
+      <div class="project" data-category="cv">
       <h3 data-en="3D Point Cloud of Street View and Satellite View" data-de="3D-Punktwolke von Street View und Satellitenansicht"></h3>
       <p data-en="Experimental research project connecting street view and satellite perspectives through 3D point cloud data for unified urban analysis."
       data-de="Experimentelles Forschungsprojekt zur Verbindung von Street View und Satellitenperspektiven durch 3D-Punktwolkendaten für einheitliche Stadtanalyse."></p>
       <a href="project-3d-point-cloud.html" class="btn" data-en="View Project" data-de="Projekt ansehen"></a>
     </div>
 
-    <div class="project under-construction">
+    <div class="project under-construction" data-category="uncategorized">
       <h3 data-en="Augmented Reality of internal Buildings Digital Twin for Indoor navigations" data-de="Augmented Reality von internen Gebäuden Digital Twin für Indoor-Navigation"></h3>
       <p data-en="Development of an Augmented Reality Simulation for a digital twin indoor of a building with Hololens 2, using Cesium library to draw the real world into Unity for a navigation system."
       data-de="Entwicklung einer Augmented Reality Simulation für einen digitalen Zwilling im Innenbereich eines Gebäudes mit Hololens 2, unter Verwendung der Cesium-Bibliothek zur Darstellung der realen Welt in Unity für ein Navigationssystem."></p>
       <a href="nothing.html" class="btn" data-en="View Project" data-de="Projekt ansehen"></a>
     </div>
 
-    <div class="project under-construction">
+    <div class="project under-construction" data-category="cv">
       <h3 data-en="Wrist Therapy | Hand Detection and Analyzer" data-de="Handgelenk-Therapie | Hand-Erkennung und Analyser"></h3>
       <p data-en="Development of smart camera for Wrist-Therapy project from IMEK-TUHH using OpenCV and Google's Mediapipe, then sending the wrist live position data to another machine via Google's Pub/Sub."
       data-de="Entwicklung einer intelligenten Kamera für das Handgelenk-Therapie-Projekt von IMEK-TUHH unter Verwendung von OpenCV und Google's Mediapipe, dann Übertragung der Live-Positionsdaten des Handgelenks an eine andere Maschine über Google's Pub/Sub."></p>
       <a href="nothing.html" class="btn" data-en="View Project" data-de="Projekt ansehen"></a>
     </div>
 
-    <div class="project">
+    <div class="project" data-category="ml cv">
       <h3 data-en="CT Scan Lung Disease Classification" data-de="CT-Scan Lungenkrankheits-Klassifikation"></h3>
       <p data-en="Deep learning model for automated classification of lung diseases (Normal, COVID-19, Lung Opacity, Pneumonia) using U-Net architecture with TensorRT FP16 optimization for faster inference."
       data-de="Deep Learning Modell für automatisierte Klassifikation von Lungenkrankheiten (Normal, COVID-19, Lungenopazität, Lungenentzündung) unter Verwendung der U-Net Architektur mit TensorRT FP16 Optimierung für schnellere Inferenz."></p>
       <a href="project-lung-diseases-classification.html" class="btn" data-en="View Project" data-de="Projekt ansehen"></a>
     </div>
 
-    <div class="project">
+    <div class="project" data-category="top ml">
       <h3 data-en="Fluidized Bed Spray Granulation (ML Prediction)"
           data-de="Wirbelschicht-Sprühgranulation (ML-Vorhersage)"></h3>
       <p data-en="Machine learning model for predicting particle size distribution (PSD) over time in a fluidized bed spray granulation process using Random Forest Regressor trained on inline and offline sensor data."
@@ -353,7 +390,7 @@
          data-de="Projekt ansehen"></a>
     </div>
 
-    <div class="project">
+    <div class="project" data-category="top">
       <h3 data-en="Desktop CNC Milling Machine V1"
           data-de="Desktop CNC Fräsmaschine V1"></h3>
       <p data-en="Bachelor's thesis: Design, fabrication, and testing of a low-cost desktop CNC milling machine prototype for wood materials. Complete system integration of mechanical, electrical, and software components."
