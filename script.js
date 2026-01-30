@@ -258,6 +258,14 @@ document.addEventListener("DOMContentLoaded", async () => {
   const skillsContainer = document.querySelector('.skills-container');
   const col2Content = document.getElementById('skills-content-col2');
   const col3Content = document.getElementById('skills-content-col3');
+  const skillsNarrow = window.matchMedia('(max-width: 768px)');
+
+  function restoreSkillsContentOrder() {
+    if (col2Content && col3Content && skillsContainer) {
+      skillsContainer.appendChild(col2Content);
+      skillsContainer.appendChild(col3Content);
+    }
+  }
 
   skillCategories.forEach(category => {
     category.addEventListener('click', () => {
@@ -294,8 +302,26 @@ document.addEventListener("DOMContentLoaded", async () => {
             content.classList.add('active');
           }
         }
+
+        // Narrow screen: show skills list directly below the selected category
+        if (skillsNarrow.matches) {
+          const visibleContent = column === '1' ? col2Content : col3Content;
+          category.after(visibleContent);
+        }
+      } else {
+        // Closed category; on narrow screen restore content containers to grid area
+        if (skillsNarrow.matches) {
+          restoreSkillsContentOrder();
+        }
       }
     });
+  });
+
+  // When resizing to wide, put content back so grid layout works
+  skillsNarrow.addEventListener('change', (e) => {
+    if (!e.matches) {
+      restoreSkillsContentOrder();
+    }
   });
 
   // Project category filtering functionality

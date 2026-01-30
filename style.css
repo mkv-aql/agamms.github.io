@@ -583,60 +583,75 @@ main p .btn {
   }
 }
 
-/* Mobile: stack vertically with horizontal scroll for categories */
+/* Narrow screens (phone): single column, vertical category list, content below */
 @media (max-width: 768px) {
   .skills-container {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-  
+
+  /* Explicit placement so content always appears below both category columns */
+  .skills-categories-col1 {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .skills-categories-col2 {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  #skills-content-col2,
+  #skills-content-col3 {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  /* Override desktop .col1-active / .col2-active so nothing shifts to non-existent columns */
+  .skills-container.col1-active .skills-categories-col2 {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .skills-container.col1-active #skills-content-col2 {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  /* Vertical list: full-width buttons, text can wrap */
   .skills-categories-col1,
   .skills-categories-col2 {
     display: flex;
-    flex-direction: row;
-    overflow-x: auto;
-    overflow-y: hidden;
+    flex-direction: column;
+    overflow: visible;
     gap: 0.5rem;
-    padding-bottom: 0.5rem;
-    scrollbar-width: thin;
-    scrollbar-color: var(--border-color) transparent;
-    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0;
   }
-  
-  .skills-categories-col1::-webkit-scrollbar,
-  .skills-categories-col2::-webkit-scrollbar {
-    height: 6px;
-  }
-  
-  .skills-categories-col1::-webkit-scrollbar-track,
-  .skills-categories-col2::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  
-  .skills-categories-col1::-webkit-scrollbar-thumb,
-  .skills-categories-col2::-webkit-scrollbar-thumb {
-    background: var(--border-color);
-    border-radius: 3px;
-  }
-  
+
   .skill-category {
-    flex-shrink: 0;
-    white-space: nowrap;
-    min-width: fit-content;
+    width: 100%;
+    min-width: 0;
+    white-space: normal;
     padding: 0.75rem 1rem;
     font-size: 0.9rem;
   }
-  
+
   .skill-category:hover {
     transform: translateY(-2px);
   }
-  
+
   .skills-content {
     margin-top: 0;
   }
-  
+
   .skill-tab-content {
     padding: 1rem;
+  }
+
+  /* When content is moved below the selected category (by JS), add spacing */
+  .skills-categories-col1 .skills-content,
+  .skills-categories-col2 .skills-content {
+    margin: 0.5rem 0;
   }
 }
 
