@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Autonomous Survey Drone (Vision) – Project</title>
+  <link rel="stylesheet" href="style.css?v=darkmode1" />
+  <script defer src="script.js?v=darkmode1"></script>
+</head>
+<body>
+  <header>
+    <div class="lang-toggle" aria-label="Language toggle">
+      <input id="langSwitch" type="checkbox" aria-label="Switch language" />
+      <label for="langSwitch" class="toggle">
+        <span class="label left">EN</span>
+        <span class="track"></span>
+        <span class="thumb" aria-hidden="true">EN</span>
+        <span class="label right">DE</span>
+      </label>
+    </div>
+
+    <div class="theme-toggle" aria-label="Theme toggle">
+      <input id="themeSwitch" type="checkbox" aria-label="Switch theme" />
+      <label for="themeSwitch" class="toggle">
+        <span class="label left">☀️</span>
+        <span class="track"></span>
+        <span class="thumb" id="themeThumb" aria-hidden="true"></span>
+        <span class="label right">🌙</span>
+      </label>
+    </div>
+
+    <h1 data-en="Autonomous Survey Drone (Vision)"
+        data-de="Autonomer Survey-Drohne (Vision)"></h1>
+    <p data-en="On-going: PX4, ROS 2, onboard vision and geotagging for survey missions."
+       data-de="Laufend: PX4, ROS 2, Onboard-Vision und Geotagging für Vermessungsmissionen."></p>
+
+    <nav class="breadcrumb">
+      <a href="index.html" class="btn" data-en="Back to Home" data-de="Zurück zum Start"></a>
+      <a href="projects.html" class="btn" data-en="Back to Projects" data-de="Zurück zur Projekte"></a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2 data-en="Overview" data-de="Überblick"></h2>
+      <p data-en="Building an autonomous survey drone system: the drone flies missions (travel to area, then scan at lower speed), uses an onboard camera and companion computer for vision and optional ML inference, and geotags detections using the flight controller position. Work covers both simulation (PX4 SITL, Gazebo, ROS 2, camera bridge, OpenCV) and real hardware (Pixhawk 6C stack, companion computer, camera)."
+         data-de="Aufbau eines autonomen Survey-Drohnensystems: Die Drohne fliegt Missionen (Anflug, dann Scan mit geringerer Geschwindigkeit), nutzt eine Onboard-Kamera und einen Companion-Computer für Vision und optionale ML-Inferenz und geotaggt Detektionen über die Flugregler-Position. Die Arbeit umfasst Simulation (PX4 SITL, Gazebo, ROS 2, Kamerabridge, OpenCV) und reale Hardware (Pixhawk-6C-Stack, Companion-Computer, Kamera)."></p>
+      <p data-en="Target specs: &lt;1 kg take-off weight, &lt;500 mm size, 6 m/s scan / 10 m/s travel. Skills involved: <strong>computer vision</strong>, <strong>ROS&nbsp;2</strong>, <strong>PX4</strong>, <strong>mechanical/hardware integration</strong>."
+         data-de="Ziel-Spezifikationen: &lt;1 kg Startgewicht, &lt;500 mm Größe, 6 m/s Scan / 10 m/s Anflug. Relevante Skills: <strong>Computer Vision</strong>, <strong>ROS&nbsp;2</strong>, <strong>PX4</strong>, <strong>mechanische/Hardware-Integration</strong>."></p>
+    </section>
+
+    <section>
+      <h2 data-en="Focus" data-de="Schwerpunkte"></h2>
+      <ul>
+        <li data-en="Simulation: PX4 SITL, Gazebo, custom model with camera, ROS 2 bridge, OpenCV on camera stream"
+            data-de="Simulation: PX4 SITL, Gazebo, eigenes Modell mit Kamera, ROS-2-Bridge, OpenCV auf Kamerastream"></li>
+        <li data-en="Hardware: Pixhawk 6C, companion computer (Raspberry Pi / Jetson), camera, optional depth sensor"
+            data-de="Hardware: Pixhawk 6C, Companion-Computer (Raspberry Pi / Jetson), Kamera, optional Tiefensensor"></li>
+        <li data-en="Software: ROS 2 (camera, OpenCV/ML, geotagging with PX4 position)"
+            data-de="Software: ROS 2 (Kamera, OpenCV/ML, Geotagging mit PX4-Position)"></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p data-en="© 2026 Agam Safaruddin" data-de="© 2026 Agam Safaruddin"></p>
+  </footer>
+</body>
+</html>

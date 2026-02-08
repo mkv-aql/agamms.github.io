@@ -185,11 +185,17 @@ document.addEventListener("DOMContentLoaded", async () => {
   const regionInfo = await detectDACHRegion();
   console.log("Region detection:", regionInfo);
 
+  // [PRODUCTION] Use detected region only (for live site / no override)
+  const isDACH = regionInfo.isDACH;
+  // [LOCAL DEV] Force DACH on localhost (comment the line above, uncomment the 2 lines below)
+//   const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+//   const isDACH = isLocalhost ? true : regionInfo.isDACH;
+
   // Set region-based content
-  setRegionBasedContent(regionInfo.isDACH);
+  setRegionBasedContent(isDACH);
 
   // Show/hide language toggle based on region
-  if (regionInfo.isDACH) {
+  if (isDACH) {
     // DACH region: Show toggle and allow language switching
     toggleLanguageSwitchVisibility(true);
     
