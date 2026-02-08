@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Doorbell name data acquisition and cleaner pipeline – Project</title>
+  <link rel="stylesheet" href="style.css?v=darkmode1" />
+  <script defer src="script.js?v=darkmode1"></script>
+</head>
+<body>
+  <header>
+    <div class="lang-toggle" aria-label="Language toggle">
+      <input id="langSwitch" type="checkbox" aria-label="Switch language" />
+      <label for="langSwitch" class="toggle">
+        <span class="label left">EN</span>
+        <span class="track"></span>
+        <span class="thumb" aria-hidden="true">EN</span>
+        <span class="label right">DE</span>
+      </label>
+    </div>
+
+    <div class="theme-toggle" aria-label="Theme toggle">
+      <input id="themeSwitch" type="checkbox" aria-label="Switch theme" />
+      <label for="themeSwitch" class="toggle">
+        <span class="label left">☀️</span>
+        <span class="track"></span>
+        <span class="thumb" id="themeThumb" aria-hidden="true"></span>
+        <span class="label right">🌙</span>
+      </label>
+    </div>
+
+    <h1 data-en="Doorbell name data acquisition and cleaner pipeline"
+        data-de="Klingelschild-Namensdaten-Erfassung und Bereinigungspipeline"></h1>
+    <p data-en="Computer vision pipeline for digitizing doorbell nameplates"
+       data-de="Computer-Vision-Pipeline zur Digitalisierung von Klingelschildern"></p>
+
+    <nav class="breadcrumb">
+      <a href="index.html" class="btn" data-en="Back to Home" data-de="Zurück zum Start"></a>
+      <a href="projects.html" class="btn" data-en="Back to Projects" data-de="Zurück zur Projekte"></a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2 data-en="Overview" data-de="Überblick"></h2>
+      <p data-en="This project is a desktop pipeline for acquiring and cleaning name data from doorbell nameplate photos (e.g. building entrances, mailbox panels). It loads images of nameplates, runs OCR (EasyOCR) to detect resident names, displays results as bounding boxes with confidence-based coloring, and lets users remove or edit entries before exporting to CSV."
+         data-de="Dieses Projekt ist eine Desktop-Pipeline zur Erfassung und Bereinigung von Namensdaten aus Klingelschild-Fotos (z. B. Hauseingänge, Briefkastenanlagen). Es lädt Bilder von Namensschildern, führt OCR (EasyOCR) zur Erkennung von Bewohnernamen durch, zeigt Ergebnisse als Bounding Boxes mit konfidenzbasierter Einfärbung und ermöglicht das Entfernen oder Bearbeiten von Einträgen vor dem CSV-Export."></p>
+      <p data-en="The pipeline supports batch scanning, magnification for detail inspection, and separate CSV outputs for saved results and deleted entries. It is implemented in <strong>Python</strong> with <strong>OpenCV</strong>, <strong>EasyOCR</strong>, and <strong>Pandas</strong>, and is categorized under <strong>Computer Vision</strong>."
+         data-de="Die Pipeline unterstützt Stapel-Scans, Vergrößerung zur Detailprüfung und getrennte CSV-Ausgaben für gespeicherte Ergebnisse und gelöschte Einträge. Sie ist in <strong>Python</strong> mit <strong>OpenCV</strong>, <strong>EasyOCR</strong> und <strong>Pandas</strong> umgesetzt und wird unter <strong>Computer Vision</strong> eingeordnet."></p>
+    </section>
+
+    <section>
+      <h2 data-en="Tech Stack" data-de="Technologie-Stack"></h2>
+      <ul>
+        <li data-en="<strong>Python</strong> with OpenCV for image loading and drawing"
+            data-de="<strong>Python</strong> mit OpenCV für Bildladen und -zeichnen"></li>
+        <li data-en="<strong>EasyOCR</strong> for text detection (e.g. German names) on nameplate images"
+            data-de="<strong>EasyOCR</strong> für Texterkennung (z. B. deutsche Namen) auf Namensschild-Bildern"></li>
+        <li data-en="<strong>Pandas</strong> for CSV read/write and table handling (bbox, names, confidence)"
+            data-de="<strong>Pandas</strong> für CSV-Lesen/Schreiben und Tabellenverwaltung (bbox, Namen, Konfidenz)"></li>
+        <li data-en="<strong>Desktop GUI</strong> (PyQt/Tkinter) for image display, boxes, and CSV editing"
+            data-de="<strong>Desktop-GUI</strong> (PyQt/Tkinter) für Bildanzeige, Boxen und CSV-Bearbeitung"></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 data-en="Key Features" data-de="Hauptmerkmale"></h2>
+      <ul>
+        <li data-en="<strong>OCR on doorbell photos</strong> to extract resident names and positions"
+            data-de="<strong>OCR auf Klingelschild-Fotos</strong> zur Extraktion von Bewohnernamen und Positionen"></li>
+        <li data-en="<strong>Bounding box visualization</strong> with color by confidence (e.g. green ≥ threshold, red below)"
+            data-de="<strong>Bounding-Box-Visualisierung</strong> mit Farbe nach Konfidenz (z. B. grün ≥ Schwellwert, rot darunter)"></li>
+        <li data-en="<strong>Click-to-remove</strong> mode to delete detections and move them to a “delete” CSV"
+            data-de="<strong>Klick-zum-Entfernen</strong> Modus zum Löschen von Erkennungen und Verschieben in eine „Löschen“-CSV"></li>
+        <li data-en="<strong>Magnification / zoom</strong> for detailed inspection of text regions"
+            data-de="<strong>Vergrößerung / Zoom</strong> zur detaillierten Prüfung von Textbereichen"></li>
+        <li data-en="<strong>Batch scanning</strong> over multiple images and CSV export"
+            data-de="<strong>Stapel-Scan</strong> über mehrere Bilder und CSV-Export"></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 data-en="Gallery" data-de="Galerie"></h2>
+      <p class="placeholder-note" data-en="Placeholder images: replace with your own files (see list below)."
+         data-de="Platzhalterbilder: durch eigene Dateien ersetzen (siehe Liste unten)."></p>
+      <div class="gallery gallery--two">
+        <figure>
+          <!-- PLACEHOLDER: doorbell_sample_photo.jpg - Sample doorbell / nameplate photo -->
+          <img src="images/projects/doorbell_name_data/doorbell_sample_photo.jpg" alt="Sample doorbell nameplate photo" />
+          <figcaption data-en="Sample doorbell nameplate photo" data-de="Beispiel-Klingelschild-Foto"></figcaption>
+        </figure>
+        <figure>
+          <!-- PLACEHOLDER: doorbell_ocr_boxes.jpg - Image with OCR bounding boxes overlay -->
+          <img src="images/projects/doorbell_name_data/doorbell_ocr_boxes.jpg" alt="OCR bounding boxes on nameplate" />
+          <figcaption data-en="OCR bounding boxes on nameplate" data-de="OCR-Bounding-Boxen auf Namensschild"></figcaption>
+        </figure>
+        <figure>
+          <!-- PLACEHOLDER: doorbell_confidence_colors.jpg - Color-coded confidence (green/red) -->
+          <img src="images/projects/doorbell_name_data/doorbell_confidence_colors.jpg" alt="Confidence-based box coloring" />
+          <figcaption data-en="Confidence-based box coloring" data-de="Konfidenzbasierte Box-Einfärbung"></figcaption>
+        </figure>
+        <figure>
+          <!-- PLACEHOLDER: doorbell_csv_export.jpg - CSV / list view or export -->
+          <img src="images/projects/doorbell_name_data/doorbell_csv_export.jpg" alt="CSV list or export view" />
+          <figcaption data-en="CSV list or export view" data-de="CSV-Liste oder Export-Ansicht"></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <p><a class="btn" href="projects.html" data-en="Back to Projects" data-de="Zurück zu Projekte"></a></p>
+    <p><a class="btn" href="index.html" data-en="Back to Resume" data-de="Zurück zu Lebenslauf"></a></p>
+  </main>
+
+  <footer>
+    <p data-en="© 2026 Agam Safaruddin" data-de="© 2026 Agam Safaruddin"></p>
+  </footer>
+</body>
+</html>
