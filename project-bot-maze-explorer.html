@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Maze Explorer Bot - Project</title>
+  <link rel="stylesheet" href="style.css?v=darkmode1" />
+  <script defer src="script.js?v=darkmode1"></script>
+</head>
+<body>
+  <header>
+    <div class="lang-toggle" aria-label="Language toggle">
+      <input id="langSwitch" type="checkbox" aria-label="Switch language" />
+      <label for="langSwitch" class="toggle">
+        <span class="label left">EN</span>
+        <span class="track"></span>
+        <span class="thumb" aria-hidden="true">EN</span>
+        <span class="label right">DE</span>
+      </label>
+    </div>
+
+    <div class="theme-toggle" aria-label="Theme toggle">
+      <input id="themeSwitch" type="checkbox" aria-label="Switch theme" />
+      <label for="themeSwitch" class="toggle">
+        <span class="label left">☀️</span>
+        <span class="track"></span>
+        <span class="thumb" id="themeThumb" aria-hidden="true"></span>
+        <span class="label right">🌙</span>
+      </label>
+    </div>
+
+    <h1 data-en="Maze Explorer Bot"
+        data-de="Labyrinth-Explorer-Roboter"></h1>
+    <p data-en="Sensor-based maze exploration and mapping with a Zumo robot"
+       data-de="Sensorbasierte Labyrinth-Erkundung und Kartierung mit einem Zumo-Roboter"></p>
+
+    <nav class="breadcrumb">
+      <a href="index.html" class="btn" data-en="Back to Home" data-de="Zuruck zum Start"></a>
+      <a href="projects.html" class="btn" data-en="Back to Projects" data-de="Zuruck zu Projekte"></a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2 data-en="Overview" data-de="Uberblick"></h2>
+      <p data-en="This project was developed in January 2020 at Deggendorf Institute of Technology as part of a university mechatronics project. The objective was to create a maze explorer robot that can navigate and map an unknown environment using only distance sensors and no camera, similar to a robot exploring a dark cave."
+         data-de="Dieses Projekt wurde im Januar 2020 an der Technischen Hochschule Deggendorf im Rahmen eines universitaren Mechatronikprojekts entwickelt. Das Ziel war ein Labyrinth-Explorer-Roboter, der eine unbekannte Umgebung nur mit Distanzsensoren und ohne Kamera navigiert und kartiert, ahnlich wie ein Roboter zur Erkundung einer dunklen Hohle."></p>
+      <p data-en="The platform uses an Arduino-based Zumo bot with a Raspberry Pi, powered by a power bank, and three ultrasonic sensors facing front, left, and right. To validate the approach, the bot was tested in two custom cardboard mazes with S-shaped and U-shaped layouts."
+         data-de="Die Plattform verwendet einen Arduino-basierten Zumo-Bot mit einem Raspberry Pi, versorgt uber eine Powerbank, sowie drei Ultraschallsensoren nach vorne, links und rechts. Zur Validierung wurde der Bot in zwei selbstgebauten Karton-Labyrinthen mit S- und U-Form getestet."></p>
+    </section>
+
+    <section>
+      <h2 data-en="Hardware Setup" data-de="Hardware-Aufbau"></h2>
+      <ul>
+        <li data-en="<strong>Arduino-based Zumo bot</strong> for motor control and low-level sensing"
+            data-de="<strong>Arduino-basierter Zumo-Bot</strong> fur Motorsteuerung und Low-Level-Sensorik"></li>
+        <li data-en="<strong>Raspberry Pi</strong> for serial data processing and map generation logic"
+            data-de="<strong>Raspberry Pi</strong> fur serielle Datenverarbeitung und Logik zur Kartenerstellung"></li>
+        <li data-en="<strong>Three ultrasonic sensors</strong> (front, left, right) for wall and corridor detection"
+            data-de="<strong>Drei Ultraschallsensoren</strong> (vorne, links, rechts) zur Wand- und Korridorerkennung"></li>
+        <li data-en="<strong>3D-printed mounting parts</strong> to integrate electronics on the Zumo platform"
+            data-de="<strong>3D-gedruckte Halterungen</strong> zur Integration der Elektronik auf der Zumo-Plattform"></li>
+        <li data-en="<strong>Power bank</strong> for mobile power supply"
+            data-de="<strong>Powerbank</strong> als mobile Stromversorgung"></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 data-en="How It Works" data-de="Funktionsweise"></h2>
+      <p data-en="The Arduino continuously reads the ultrasonic sensors and controls movement. Sensor data is streamed via serial connection to the Raspberry Pi. When left and right distances remain stable and front distance is clear, the robot is interpreted as moving straight."
+         data-de="Der Arduino liest kontinuierlich die Ultraschallsensoren und steuert die Bewegung. Sensordaten werden uber eine serielle Verbindung an den Raspberry Pi gestreamt. Wenn linke und rechte Distanz stabil bleiben und vorne frei ist, wird dies als Geradeausfahrt interpretiert."></p>
+      <p data-en="When the robot reaches a front wall, it compares left and right distances, turns toward the side with greater free space, and reports the turn event. The Raspberry Pi uses these events to reconstruct corridors and turns, producing a visual map of the explored maze."
+         data-de="Wenn der Roboter auf eine Frontwand trifft, vergleicht er linke und rechte Distanz, dreht zur Seite mit mehr freiem Raum und meldet das Abbiegeereignis. Der Raspberry Pi nutzt diese Ereignisse, um Korridore und Kurven zu rekonstruieren und eine visuelle Karte des erkundeten Labyrinths zu erzeugen."></p>
+    </section>
+
+    <section>
+      <h2 data-en="Control App and Data Processing" data-de="Steuerungs-App und Datenverarbeitung"></h2>
+      <p data-en="A Python desktop app (Tkinter + Turtle graphics) was used to monitor and control the system live. The GUI could send commands such as start, stop, move, rotate angle, and speed to the Arduino while showing live sensor values and motor rotation feedback."
+         data-de="Eine Python-Desktop-App (Tkinter + Turtle-Grafik) wurde verwendet, um das System live zu uberwachen und zu steuern. Die GUI konnte Befehle wie Start, Stopp, Fahren, Drehwinkel und Geschwindigkeit an den Arduino senden und gleichzeitig Live-Sensorwerte sowie Motorrotationsdaten anzeigen."></p>
+      <p data-en="Based on collected sensor streams and movement data, the app generated the final maze map as the exploration result."
+         data-de="Basierend auf den erfassten Sensorstreams und Bewegungsdaten erzeugte die App die finale Labyrinthkarte als Erkundungsergebnis."></p>
+    </section>
+
+    <section>
+      <h2 data-en="Project Video" data-de="Projektvideo"></h2>
+      <div class="video-embed">
+        <iframe src="https://www.youtube.com/embed/PRtfCQ121HU"
+                title="Bot Maze Explorer - Processing Data and Maze Map Generation"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <section>
+      <h2 data-en="Gallery" data-de="Galerie"></h2>
+      <p class="placeholder-note"
+         data-en="Image placeholders are set. Move your files into images/projects/bot_maze_explorer/ with these names."
+         data-de="Bild-Platzhalter sind gesetzt. Verschiebe deine Dateien nach images/projects/bot_maze_explorer/ mit diesen Namen."></p>
+      <div class="gallery gallery--two">
+        <figure>
+          <img src="images/projects/bot_maze_explorer/front_view_of_bot.jpg" alt="Front view of bot" />
+          <figcaption data-en="Front view of bot" data-de="Vorderansicht des Roboters"></figcaption>
+        </figure>
+        <figure>
+          <img src="images/projects/bot_maze_explorer/back_view_of_bot.jpg" alt="Back view of bot" />
+          <figcaption data-en="Back view of bot" data-de="Ruckansicht des Roboters"></figcaption>
+        </figure>
+        <figure>
+          <img src="images/projects/bot_maze_explorer/side_view_of_bot.jpg" alt="Side view of bot" />
+          <figcaption data-en="Side view of bot" data-de="Seitenansicht des Roboters"></figcaption>
+        </figure>
+        <figure>
+          <img src="images/projects/bot_maze_explorer/mounting_hardware_onto_bot.jpg" alt="Mounting hardware onto Zumo bot" />
+          <figcaption data-en="Mounting the hardware onto the Zumo bot" data-de="Montage der Hardware auf dem Zumo-Bot"></figcaption>
+        </figure>
+        <figure>
+          <img src="images/projects/bot_maze_explorer/maze_test_generation_s_shaped.jpg" alt="Maze test S shaped" />
+          <figcaption data-en="Maze test and generation - S shaped" data-de="Labyrinthtest und Generierung - S-Form"></figcaption>
+        </figure>
+        <figure>
+          <img src="images/projects/bot_maze_explorer/maze_test_generation_u_shaped.jpg" alt="Maze test U shaped" />
+          <figcaption data-en="Maze test and generation - U shaped" data-de="Labyrinthtest und Generierung - U-Form"></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <p><a class="btn" href="projects.html" data-en="Back to Projects" data-de="Zuruck zu Projekte"></a></p>
+    <p><a class="btn" href="index.html" data-en="Back to Resume" data-de="Zuruck zu Lebenslauf"></a></p>
+  </main>
+
+  <footer>
+    <p data-en="© 2026 Agam Safaruddin" data-de="© 2026 Agam Safaruddin"></p>
+  </footer>
+</body>
+</html>
