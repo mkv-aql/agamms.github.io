@@ -30,7 +30,7 @@
     </div>
 
     <h1 data-en="Autonomous Survey Drone (Vision)"
-        data-de="Autonomer Survey-Drohne (Vision)"></h1>
+        data-de="Autonome Survey-Drohne (Vision)"></h1>
     <p data-en="On-going: PX4, ROS 2, onboard vision and geotagging for survey missions."
        data-de="Laufend: PX4, ROS 2, Onboard-Vision und Geotagging für Vermessungsmissionen."></p>
 
@@ -60,6 +60,66 @@
             data-de="Software: ROS 2 (Kamera, OpenCV/ML, Geotagging mit PX4-Position)"></li>
       </ul>
     </section>
+
+      <section>
+  <h2 data-en="Current Progress" data-de="Aktueller Stand"></h2>
+
+  <p data-en="Current milestone: a working PX4 SITL and Gazebo simulation with a custom camera-equipped x500 drone, QGroundControl monitoring, ROS 2 image transport, and OpenCV edge detection on the simulated camera stream. In parallel, real aerial footage and image samples are being collected from a palm oil farm environment to support future training data preparation and field validation."
+     data-de="Aktueller Meilenstein: eine funktionierende PX4-SITL- und Gazebo-Simulation mit einer eigenen kamerabestückten x500-Drohne, QGroundControl-Monitoring, ROS-2-Bildübertragung und OpenCV-Edge-Detection auf dem simulierten Kamerastream. Parallel dazu werden reale Luftaufnahmen und Bildbeispiele aus einer Palmöl-Farmumgebung gesammelt, um zukünftige Trainingsdatenaufbereitung und Validierung im Feld zu unterstützen."></p>
+
+  <ul>
+    <li data-en="Created a custom Gazebo x500 drone model with onboard camera support."
+        data-de="Eigenes Gazebo-x500-Drohnenmodell mit Onboard-Kamera-Unterstützung erstellt."></li>
+
+    <li data-en="Connected PX4 SITL, Gazebo, QGroundControl, and ROS 2 into one simulation workflow."
+        data-de="PX4 SITL, Gazebo, QGroundControl und ROS 2 in einem Simulationsworkflow verbunden."></li>
+
+    <li data-en="Published camera-based OpenCV edge detection through ROS 2 for perception testing."
+        data-de="Kamerabasierte OpenCV-Edge-Detection über ROS 2 für Perception-Tests veröffentlicht."></li>
+
+    <li data-en="Tested takeoff and hover behavior in a tree-based survey environment."
+        data-de="Takeoff- und Hover-Verhalten in einer baumbasierten Survey-Umgebung getestet."></li>
+
+    <li data-en="Started collecting real aerial footage and image samples from a palm oil farm environment for future vision model training and validation."
+        data-de="Mit der Sammlung realer Luftaufnahmen und Bilddaten aus einer Palmöl-Farmumgebung für zukünftiges Vision-Model-Training und Validierung begonnen."></li>
+  </ul>
+</section>
+
+<section>
+  <h2 data-en="Simulation Demo" data-de="Simulationsdemo"></h2>
+
+  <div class="video-wrapper">
+    <iframe
+      src="https://www.youtube-nocookie.com/embed/bLlnsil3wUs?si=O_xq5QT8Qr7uMbJZ"
+      title="PX4 Gazebo ROS 2 Drone Simulation Demo"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <p data-en="The demo shows the current PX4/Gazebo simulation workflow with QGroundControl monitoring and a ROS 2 OpenCV edge-detection stream from the simulated onboard camera."
+     data-de="Die Demo zeigt den aktuellen PX4/Gazebo-Simulationsworkflow mit QGroundControl-Monitoring und einem ROS-2-OpenCV-Edge-Detection-Stream der simulierten Onboard-Kamera."></p>
+</section>
+
+      <section>
+  <h2 data-en="Field Reference Footage" data-de="Referenzaufnahmen aus dem Feld"></h2>
+
+  <div class="video-wrapper">
+    <iframe
+      src="https://www.youtube-nocookie.com/embed/bE_B7xkNxZk?si=cx6r_AZt47Rqu4kV"
+      title="Palm Oil Farm Aerial Survey Reference Footage"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <p data-en="Sample aerial survey footage from a palm oil farm environment. This material is used as real-world reference data for future training data preparation, perception testing, and validation of the autonomous survey drone concept."
+     data-de="Beispielhafte Luftaufnahmen aus einer Palmöl-Farmumgebung. Dieses Material dient als reale Referenz für zukünftige Trainingsdatenaufbereitung, Perception-Tests und die Validierung des autonomen Survey-Drohnenkonzepts."></p>
+</section>
   </main>
 
   <footer>
