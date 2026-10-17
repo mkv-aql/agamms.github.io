@@ -375,6 +375,9 @@ main p .btn {
 
 /* Optional: larger images inside figures while preserving aspect ratio */
 .gallery figure img { max-height: 340px; }
+/* App screenshots: show larger than photo galleries so the UI text stays readable */
+.gallery figure.screenshot img { max-height: 620px; }
+
 
 /* Optional: caption styling for clarity */
 .gallery figure { margin: 0; }

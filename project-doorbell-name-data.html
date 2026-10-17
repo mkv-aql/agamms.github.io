@@ -58,31 +58,58 @@
             data-de="<strong>EasyOCR</strong> für Texterkennung (z. B. deutsche Namen) auf Namensschild-Bildern"></li>
         <li data-en="<strong>Pandas</strong> for CSV read/write and table handling (bbox, names, confidence)"
             data-de="<strong>Pandas</strong> für CSV-Lesen/Schreiben und Tabellenverwaltung (bbox, Namen, Konfidenz)"></li>
-        <li data-en="<strong>Desktop GUI</strong> (PyQt/Tkinter) for image display, boxes, and CSV editing"
-            data-de="<strong>Desktop-GUI</strong> (PyQt/Tkinter) für Bildanzeige, Boxen und CSV-Bearbeitung"></li>
+        <li data-en="<strong>PyQt5</strong> desktop GUI for image display, boxes, and CSV editing"
+            data-de="<strong>PyQt5</strong>-Desktop-GUI für Bildanzeige, Boxen und CSV-Bearbeitung"></li>
       </ul>
     </section>
 
     <section>
       <h2 data-en="Key Features" data-de="Hauptmerkmale"></h2>
-      <ul>
-        <li data-en="<strong>OCR on doorbell photos</strong> to extract resident names and positions"
-            data-de="<strong>OCR auf Klingelschild-Fotos</strong> zur Extraktion von Bewohnernamen und Positionen"></li>
-        <li data-en="<strong>Bounding box visualization</strong> with color by confidence (e.g. green ≥ threshold, red below)"
-            data-de="<strong>Bounding-Box-Visualisierung</strong> mit Farbe nach Konfidenz (z. B. grün ≥ Schwellwert, rot darunter)"></li>
-        <li data-en="<strong>Click-to-remove</strong> mode to delete detections and move them to a “delete” CSV"
-            data-de="<strong>Klick-zum-Entfernen</strong> Modus zum Löschen von Erkennungen und Verschieben in eine „Löschen“-CSV"></li>
-        <li data-en="<strong>Magnification / zoom</strong> for detailed inspection of text regions"
-            data-de="<strong>Vergrößerung / Zoom</strong> zur detaillierten Prüfung von Textbereichen"></li>
-        <li data-en="<strong>Batch scanning</strong> over multiple images and CSV export"
-            data-de="<strong>Stapel-Scan</strong> über mehrere Bilder und CSV-Export"></li>
-      </ul>
+
+      <h3 data-en="Workspace &amp; Batch Scanning" data-de="Arbeitsplatz &amp; Stapel-Scan"></h3>
+      <p data-en="Select a single image or a whole folder. The image list flags which photos already have a CSV (red = not yet scanned), and <strong>batch scanning</strong> runs OCR over every image in one go. The results table shows each detection with its bounding box, recognized name, confidence and source image."
+         data-de="Einzelbild oder ganzen Ordner auswählen. Die Bildliste markiert, welche Fotos bereits eine CSV haben (rot = noch nicht gescannt), und der <strong>Stapel-Scan</strong> führt OCR über alle Bilder in einem Durchgang aus. Die Ergebnistabelle zeigt jede Erkennung mit Bounding Box, erkanntem Namen, Konfidenz und Quellbild."></p>
+      <div class="gallery gallery--two">
+        <figure class="screenshot">
+          <a href="images/projects/doorbell_name_data/doorbell_csv_export.jpg" target="_blank" rel="noopener"><img src="images/projects/doorbell_name_data/doorbell_csv_export.jpg" alt="Workspace with OCR results table and image list" /></a>
+          <figcaption data-en="Workspace: OCR results (box, name, confidence) and image list with CSV status" data-de="Arbeitsplatz: OCR-Ergebnisse (Box, Name, Konfidenz) und Bildliste mit CSV-Status"></figcaption>
+        </figure>
+      </div>
+
+      <h3 data-en="OCR with Confidence-Coded Boxes" data-de="OCR mit konfidenzbasierten Boxen"></h3>
+      <p data-en="<strong>EasyOCR</strong> (German, GPU-accelerated) detects the text on each nameplate. Every detection is drawn as a bounding box colored by confidence: green at or above the threshold, blue below it, so uncertain readings stand out at a glance."
+         data-de="<strong>EasyOCR</strong> (Deutsch, GPU-beschleunigt) erkennt den Text auf jedem Namensschild. Jede Erkennung wird als Bounding Box nach Konfidenz eingefärbt: grün ab dem Schwellwert, blau darunter, sodass unsichere Ergebnisse sofort auffallen."></p>
+      <div class="gallery gallery--two">
+        <figure class="screenshot">
+          <a href="images/projects/doorbell_name_data/doorbell_confidence_colors.jpg" target="_blank" rel="noopener"><img src="images/projects/doorbell_name_data/doorbell_confidence_colors.jpg" alt="OCR scan with confidence-coded bounding boxes" /></a>
+          <figcaption data-en="OCR scan with confidence-coded boxes (green = high, blue = low confidence)" data-de="OCR-Scan mit konfidenzbasierten Boxen (grün = hohe, blau = niedrige Konfidenz)"></figcaption>
+        </figure>
+      </div>
+
+      <h3 data-en="Click-to-Remove Cleaning" data-de="Bereinigung per Klick"></h3>
+      <p data-en="In <strong>remove-name mode</strong> a wrong detection is deleted by clicking its box on the image. The entry disappears from the name list and is written to a separate “delete” CSV, and the removal can be undone."
+         data-de="Im <strong>Namen-entfernen-Modus</strong> wird eine falsche Erkennung per Klick auf ihre Box im Bild gelöscht. Der Eintrag verschwindet aus der Namensliste, wird in eine separate „Löschen“-CSV geschrieben und kann rückgängig gemacht werden."></p>
+      <div class="gallery gallery--two">
+        <figure class="screenshot">
+          <a href="images/projects/doorbell_name_data/doorbell_remove_name.jpg" target="_blank" rel="noopener"><img src="images/projects/doorbell_name_data/doorbell_remove_name.jpg" alt="Remove-name mode: misread entry deleted by clicking its box" /></a>
+          <figcaption data-en="Remove-name mode: a misread entry is deleted by clicking its box" data-de="Namen-entfernen-Modus: ein falsch gelesener Eintrag wird per Klick auf die Box gelöscht"></figcaption>
+        </figure>
+      </div>
+
+      <h3 data-en="Magnification for Detail Checks" data-de="Lupe zur Detailprüfung"></h3>
+      <p data-en="<strong>Magnify mode</strong> shows a zoomed view of the area under the cursor, making it easy to verify small or blurry nameplate text before accepting or removing a detection."
+         data-de="Der <strong>Lupenmodus</strong> zeigt eine vergrößerte Ansicht des Bereichs unter dem Mauszeiger, um kleine oder unscharfe Klingelschild-Texte vor dem Übernehmen oder Entfernen zu prüfen."></p>
+      <div class="gallery gallery--two">
+        <figure class="screenshot">
+          <a href="images/projects/doorbell_name_data/doorbell_magnifier.jpg" target="_blank" rel="noopener"><img src="images/projects/doorbell_name_data/doorbell_magnifier.jpg" alt="Magnify mode for checking small nameplate text" /></a>
+          <figcaption data-en="Magnify mode for checking small nameplate text" data-de="Lupenmodus zum Prüfen kleiner Klingelschild-Texte"></figcaption>
+        </figure>
+      </div>
+
     </section>
 
     <section>
       <h2 data-en="Gallery" data-de="Galerie"></h2>
-      <p class="placeholder-note" data-en="Placeholder images: replace with your own files (see list below)."
-         data-de="Platzhalterbilder: durch eigene Dateien ersetzen (siehe Liste unten)."></p>
       <div class="gallery gallery--two">
         <figure>
           <!-- PLACEHOLDER: doorbell_sample_photo.jpg - Sample doorbell / nameplate photo -->
@@ -93,16 +120,6 @@
           <!-- PLACEHOLDER: doorbell_ocr_boxes.jpg - Image with OCR bounding boxes overlay -->
           <img src="images/projects/doorbell_name_data/doorbell_ocr_boxes.jpg" alt="OCR bounding boxes on nameplate" />
           <figcaption data-en="OCR bounding boxes on nameplate" data-de="OCR-Bounding-Boxen auf Namensschild"></figcaption>
-        </figure>
-        <figure>
-          <!-- PLACEHOLDER: doorbell_confidence_colors.jpg - Color-coded confidence (green/red) -->
-          <img src="images/projects/doorbell_name_data/doorbell_confidence_colors.jpg" alt="Confidence-based box coloring" />
-          <figcaption data-en="Confidence-based box coloring" data-de="Konfidenzbasierte Box-Einfärbung"></figcaption>
-        </figure>
-        <figure>
-          <!-- PLACEHOLDER: doorbell_csv_export.jpg - CSV / list view or export -->
-          <img src="images/projects/doorbell_name_data/doorbell_csv_export.jpg" alt="CSV list or export view" />
-          <figcaption data-en="CSV list or export view" data-de="CSV-Liste oder Export-Ansicht"></figcaption>
         </figure>
       </div>
     </section>
