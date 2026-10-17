@@ -1,3 +1,12 @@
 /references/
 /ignore/
 /images/projects/desktop_cnc/IMAGE_LIST.txt
+
+# Exported portfolio PDFs (generated locally)
+/project-desktop-cnc-v1.pdf
+/project-drone-farm.pdf
+/projects-cnc-and-drone.pdf
+
+# Raw CNC photos, videos and CAD renders (only the resized copies in desktop_cnc/ are used on the site)
+/images/projects/desktop_cnc/More Pictures/
+/images/projects/desktop_cnc/Thesis Images Rendered/
