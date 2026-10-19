@@ -57,9 +57,10 @@ header {
 }
 
 header .headshot {
+  display: block;
   width: 150px;
   border-radius: 12px; /* soft rounded corners */
-  margin-bottom: 1rem;
+  margin: 0 auto 1rem;
 }
 
 /* Name in the CV header (shown without profile photo) */
